@@ -74,4 +74,3 @@ ggplot(df_plots %>% filter(var%in%c("expected_years_saved_L", "expected_years_sa
         panel.background = element_blank())
 
 ggsave(filename = here("2_Figures", "figure_s1.png"), width = 9, height = 5)
-
