@@ -12,6 +12,7 @@ library(lubridate)
 library(ISOweek)
 library(knitr)
 library(ggpubr)
+library(ggplot2)
 library(here)
 library(tictoc)
 library(scales)
@@ -30,6 +31,8 @@ library(margins)
 library(sandwich)
 library(lmtest)
 library(viridis)
+library(RColorBrewer)
+library(countrycode)
 
 # ggplot theme and color options
 theme_opts = theme_minimal() + 
