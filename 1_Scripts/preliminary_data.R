@@ -1,17 +1,16 @@
 #Data: Different Diseases/Burdens/Treatment
 #This file will create one dataset for HPV, HepB, HCV
 
-#setup
+# set up: 
+here::i_am("1_Scripts/preliminary_data.R")
 source("global_options.R")
-install.packages("countrycode")
-library(countrycode)
 
 ##### FIRST: HPV
 #### STEP1: Read in data
 
 #existence of HPV campaign
-#QUESTION: am I supposed to read this in a different way?
-hpv_campaign<-read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hpv_vaxprogram.csv")
+#QUESTION: how do I use here if I'm going to 1_Scripts
+hpv_campaign<-read.csv(here("0_Data/Raw_Data", "hpv_vaxprogram.csv"))
 
 hpv_campaign_clean<-hpv_campaign %>%
   mutate(country=countrycode(COUNTRY, "iso3c", "country.name")) %>% #need country name for merge
@@ -21,7 +20,7 @@ hpv_campaign_clean<-hpv_campaign %>%
   arrange(country, yr) 
 
 #hpv vaccination rates
-hpv_vax<-read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hpv.csv")
+hpv_vax<-read.csv(here("0_Data/Raw_Data","hpv.csv"))
 
 hpv_vax_clean<- hpv_vax %>%
   select(Location, Period, Value) %>%
@@ -32,7 +31,7 @@ hpv_vax_clean<- hpv_vax %>%
   mutate(country=countrycode(country, "country.name", "country.name"))  #to make sure all have same names
 
 #hpv incidence
-hpv_incidence<- read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hpv_incidence.csv")
+hpv_incidence<- read.csv(here("0_Data/Raw_Data", "hpv_incidence.csv"))
 
 hpv_incidence_clean<- hpv_incidence %>%
   select(Population,ASR..World.) %>%
@@ -43,7 +42,7 @@ hpv_incidence_clean<- hpv_incidence %>%
   filter(!row_number() %in% 1) #don't want world rate
 
 #hpv mortality
-hpv_mortality<-read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hpv_mortality.csv")
+hpv_mortality<-read.csv(here("0_Data/Raw_Data","hpv_mortality.csv"))
 
 hpv_mortality_clean<- hpv_mortality %>%
   select(Population, ASR..World.) %>%
@@ -58,7 +57,7 @@ View(hpv_mortality_clean)
 ##############
 #HBV Data
 #hepb vaccination (2000-2020)
-hepb_vax<-read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hepb.csv")
+hepb_vax<-read.csv(here("0_Data/Raw_Data", "hepb.csv"))
 
 hepb_vax_clean<- hepb_vax %>%
   select(Location, Period, Value) %>%
@@ -69,7 +68,7 @@ hepb_vax_clean<- hepb_vax %>%
 
 
 #hepb incidence (2010-2019 data) - IR per 100,000
-hepb_incidence<- read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hepb_incidence.csv")
+hepb_incidence<-read.csv(here("0_Data/Raw_Data", "hepb_incidence.csv"))
 
 hepb_incidence_clean <- hepb_incidence %>%
   select(location_name, year, val) %>%
@@ -81,8 +80,8 @@ hepb_incidence_clean <- hepb_incidence %>%
 #############
 #HepC Data
 #HepC incidence per 100,000 (2015 and 2019)
-hepc_incidence<- read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hepc_incidence.csv")
-
+hepc_incidence<-read.csv(here("0_Data/Raw_Data", "hepc_incidence.csv"))
+                         
 hepc_incidence_clean <- hepc_incidence %>%
   select(location_name, year, val) %>%
   rename("country"="location_name") %>%
@@ -91,7 +90,7 @@ hepc_incidence_clean <- hepc_incidence %>%
   mutate(country=countrycode(country, "country.name", "country.name")) 
   
 #HepC tested and treated (only 2015 data)
-hepc_diag_treat<-read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/0_Data/Raw_Data/hepc_lancet_diagnosed_treated.csv")
+hepc_diag_treat<-read.csv(here("0_Data/Raw_Data", "hepc_lancet_diagnosed_treated.csv"))
 
 hepc_diag_treat_clean<- hepc_diag_treat %>%
   rename("country" = "Country") %>%
@@ -100,10 +99,50 @@ hepc_diag_treat_clean<- hepc_diag_treat %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   mutate("yr"=2015)
 
+
+##########
+#population of each country: note- there are more "countries" here than in other datasets above
+population_per_country<-read.csv(here("0_Data/Raw_Data", "population_per_country.csv"))
+
+View(population_per_country)
+
+#definitely not the most efficient way...
+population_clean<- population_per_country %>%
+  select(Country.Name,X2000,X2001,X2002,X2003,X2004,X2005,X2006,X2007,X2008,X2009,
+         X2010,X2011,X2012,X2013,X2014,X2015,X2016,X2017,X2018,X2019,X2020) %>%
+  rename("country"= "Country.Name") %>%
+  rename("2000"="X2000") %>%
+  rename("2001"="X2001") %>%
+  rename("2002"="X2002") %>%
+  rename("2003"="X2003") %>%
+  rename("2004"="X2004") %>%
+  rename("2005"="X2005") %>%
+  rename("2006"="X2006") %>%
+  rename("2007"="X2007") %>%
+  rename("2008"="X2008") %>%
+  rename("2009"="X2009") %>%
+  rename("2010"="X2010") %>%
+  rename("2011"="X2011") %>%
+  rename("2012"="X2012") %>%
+  rename("2013"="X2013") %>%
+  rename("2014"="X2014") %>%
+  rename("2015"="X2015") %>%
+  rename("2016"="X2016") %>%
+  rename("2017"="X2017") %>%
+  rename("2018"="X2018") %>%
+  rename("2019"="X2019") %>%
+  rename("2020"="X2020") 
+
+View(population_clean)
+
+population_clean_long<-pivot_longer(population_clean, cols="2000":"2020",names_to="yr", values_to = "population") %>%
+  mutate(yr = as.numeric(yr))
+View(population_clean_long)
+
 ##########
 #COMBINE INTO ONE DATA FRAME
 #this doesn't link mortality/incidence data well b/c it's for the yr 2020, and there aren't many 2020 measurements
-all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_treat_clean, hepc_incidence_clean)
+all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_treat_clean, hepc_incidence_clean, population_clean_long)
 
 all_data <- all_list %>%
   reduce(full_join, by=c("country","yr"))
