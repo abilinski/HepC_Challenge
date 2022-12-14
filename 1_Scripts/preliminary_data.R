@@ -5,8 +5,7 @@
 here::i_am("1_Scripts/preliminary_data.R")
 source("global_options.R")
 
-##### FIRST: HPV
-#### STEP1: Read in data
+##### HPV Data
 
 #existence of HPV campaign
 #QUESTION: how do I use here if I'm going to 1_Scripts
@@ -52,8 +51,6 @@ hpv_mortality_clean<- hpv_mortality %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   mutate("yr"=2020)
 
-View(hpv_mortality_clean)
-
 ##############
 #HBV Data
 #hepb vaccination (2000-2020)
@@ -81,30 +78,32 @@ hepb_incidence_clean <- hepb_incidence %>%
 #HepC Data
 #HepC incidence per 100,000 (2015 and 2019)
 hepc_incidence<-read.csv(here("0_Data/Raw_Data", "hepc_incidence.csv"))
-                         
+
 hepc_incidence_clean <- hepc_incidence %>%
-  select(location_name, year, val) %>%
-  rename("country"="location_name") %>%
+  select(location, year, val) %>%
+  rename("country"="location") %>%
   rename("yr"="year") %>%
   rename("hepC_IR"="val") %>%
   mutate(country=countrycode(country, "country.name", "country.name")) 
-  
-#HepC tested and treated (only 2015 data)
-hepc_diag_treat<-read.csv(here("0_Data/Raw_Data", "hepc_lancet_diagnosed_treated.csv"))
 
-hepc_diag_treat_clean<- hepc_diag_treat %>%
-  rename("country" = "Country") %>%
-  rename("% diagnosed HepC" = "Percentage.diagnosed") %>%
-  rename("% treated HepC of diagnosed"="Percentage.treated.of.diagnosed") %>%
+#HepC #initiated on treatent, annually newly diagnosed (chronic)
+#note- only kept yr for initiated on treatment (yr's generally the same for both)
+hepc_diag_tx<- read.csv(here("0_Data/Raw_Data", "hepc_correct_txDiag.csv"))
+
+hepc_diag_tx_clean<- hepc_diag_tx %>%
+  select(Country.Territory, Annual.Number.Initiated.on.Treatment, Year.of.Data, Annual.Newly.Diagnosed..Viremic.) %>%
+  rename("country"="Country.Territory") %>%
+  rename("yr"="Year.of.Data") %>%
+  rename("Annual # Initiated HepC Treatment"="Annual.Number.Initiated.on.Treatment")%>%
+  rename("Annual # Newly Diagnosed"="Annual.Newly.Diagnosed..Viremic.") %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
-  mutate("yr"=2015)
+  mutate(yr = as.numeric(yr))
 
 
 ##########
 #population of each country: note- there are more "countries" here than in other datasets above
 population_per_country<-read.csv(here("0_Data/Raw_Data", "population_per_country.csv"))
 
-View(population_per_country)
 
 #definitely not the most efficient way...
 population_clean<- population_per_country %>%
@@ -133,16 +132,14 @@ population_clean<- population_per_country %>%
   rename("2019"="X2019") %>%
   rename("2020"="X2020") 
 
-View(population_clean)
-
 population_clean_long<-pivot_longer(population_clean, cols="2000":"2020",names_to="yr", values_to = "population") %>%
   mutate(yr = as.numeric(yr))
-View(population_clean_long)
+
 
 ##########
 #COMBINE INTO ONE DATA FRAME
 #this doesn't link mortality/incidence data well b/c it's for the yr 2020, and there aren't many 2020 measurements
-all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_treat_clean, hepc_incidence_clean, population_clean_long)
+all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_tx_clean, hepc_incidence_clean, population_clean_long)
 
 all_data <- all_list %>%
   reduce(full_join, by=c("country","yr"))
