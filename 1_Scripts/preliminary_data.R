@@ -108,7 +108,7 @@ population_per_country<-read.csv(here("0_Data/Raw_Data", "population_per_country
 #definitely not the most efficient way...
 population_clean<- population_per_country %>%
   select(Country.Name,X2000,X2001,X2002,X2003,X2004,X2005,X2006,X2007,X2008,X2009,
-         X2010,X2011,X2012,X2013,X2014,X2015,X2016,X2017,X2018,X2019,X2020) %>%
+         X2010,X2011,X2012,X2013,X2014,X2015,X2016,X2017,X2018,X2019,X2020,X2021) %>%
   rename("country"= "Country.Name") %>%
   rename("2000"="X2000") %>%
   rename("2001"="X2001") %>%
@@ -130,7 +130,9 @@ population_clean<- population_per_country %>%
   rename("2017"="X2017") %>%
   rename("2018"="X2018") %>%
   rename("2019"="X2019") %>%
-  rename("2020"="X2020") 
+  rename("2020"="X2020") %>%
+  rename("2021"="X2021") %>%
+  mutate(country=countrycode(country, "country.name", "country.name")) 
 
 population_clean_long<-pivot_longer(population_clean, cols="2000":"2020",names_to="yr", values_to = "population") %>%
   mutate(yr = as.numeric(yr))
