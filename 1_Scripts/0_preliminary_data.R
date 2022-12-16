@@ -2,7 +2,7 @@
 #This file will create one dataset for HPV, HepB, HCV
 
 # set up: 
-here::i_am("1_Scripts/preliminary_data.R")
+here::i_am("1_Scripts/0_preliminary_data.R")
 source("global_options.R")
 
 ##### HPV Data
@@ -36,7 +36,7 @@ hpv_incidence_clean<- hpv_incidence %>%
   select(Population,ASR..World.) %>%
   rename("ASIR HPV"="ASR..World.") %>%
   rename("country"="Population") %>%
-  mutate("yr"=2020) %>%
+  mutate("yr"=2019) %>% # from 2020, changed for match
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   filter(!row_number() %in% 1) #don't want world rate
 
@@ -49,7 +49,7 @@ hpv_mortality_clean<- hpv_mortality %>%
   rename("ASmortality_rate_HPV"="ASR..World.") %>%
   filter(!row_number() %in% 1) %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
-  mutate("yr"=2020)
+  mutate("yr"=2019) # from 2020, changed for match
 
 ##############
 #HBV Data
@@ -146,4 +146,6 @@ all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortal
 all_data <- all_list %>%
   reduce(full_join, by=c("country","yr"))
 
-View(all_data)
+View(all_data) # why are there lots of NAs with 99% hep b vax?
+View(table(all_data$country, all_data$yr)) # what's up with France?
+

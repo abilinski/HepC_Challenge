@@ -46,3 +46,7 @@ col = "#0b2358"
 size = 12
 font = 3
 lim = 8
+
+# palette
+pal = brewer_pal(palette = "Blues")(9)[5:9]
+

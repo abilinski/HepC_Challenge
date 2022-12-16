@@ -36,8 +36,7 @@ for(i in 1:nrow(df)){
   df$prob_success[i] = 1-(1-df$p[i])^(j)
 }
 
-# palette
-pal = brewer_pal(palette = "Blues")(9)[5:9]
+View(df)
 
 # run plots
 df_plots = df %>% gather(var, value, prob_success,
@@ -52,7 +51,7 @@ df_plots = df %>% gather(var, value, prob_success,
 ggplot(df_plots %>% filter(var%in%c("prob_success", "expected_years_saved")), 
        aes(x = p, y = value, col = factor(t), group = t)) + 
   geom_line() + 
-  scale_color_manual(name = "Maximum number of \nchallenge trials", values = pal) + 
+  scale_color_manual(name = "Maximum number of \nchallenge trials \n(available candidates)", values = pal) + 
   facet_grid(var2~y, scales = "free") + theme_bw() + 
   ylim(0, NA) + 
   labs(x = "Probability of success in each trial", y = "") + 
@@ -66,7 +65,7 @@ ggsave(filename = here("2_Figures", "figure1.png"), width = 9, height = 5)
 ggplot(df_plots %>% filter(var%in%c("expected_years_saved_L", "expected_years_saved_U")), 
        aes(x = p, y = value, col = factor(t), group = t)) + 
   geom_line() + 
-  scale_color_manual(name = "Maximum number of \nchallenge trials", values = pal) + 
+  scale_color_manual(name = "Maximum number of \nchallenge trials \n(available candidates)", values = pal) + 
   facet_grid(var2~y, scales = "free") + theme_bw() + 
   ylim(0, NA) + 
   labs(x = "Probability of success in each trial", y = "") + 
