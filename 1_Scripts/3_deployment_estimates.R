@@ -72,6 +72,10 @@ HBV_perc_uptake_burden = df %>% filter(!is.na(`hepb_vax%`) & !is.na(country)) %>
 
 ####***************************** DAAs **************************************####
 
+hcv = all_data %>% filter(!is.na(`Annual # Initiated HepC Treatment`)) %>%
+  mutate(treated = as.numeric(gsub(",", "", `Annual # Initiated HepC Treatment`)),
+         treated = ifelse(is.na(treated), 0, treated),
+         diagnosed = as.numeric(gsub(",|*", "", `Annual # Newly Diagnosed`))) 
 
 ####*************************** FIGURE 3 ***********************************####
 

@@ -97,7 +97,8 @@ hepc_diag_tx_clean<- hepc_diag_tx %>%
   rename("Annual # Initiated HepC Treatment"="Annual.Number.Initiated.on.Treatment")%>%
   rename("Annual # Newly Diagnosed"="Annual.Newly.Diagnosed..Viremic.") %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
-  mutate(yr = as.numeric(yr))
+  mutate(yr = as.numeric(yr),
+         yr = ifelse(is.na(yr), 2018, yr))
 
 
 ##########
