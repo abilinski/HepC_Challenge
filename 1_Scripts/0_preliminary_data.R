@@ -16,7 +16,8 @@ hpv_campaign_clean<-hpv_campaign %>%
   select(YEAR,country,Display.Value,REGION) %>%
   rename("HPV Vaccine Program"="Display.Value") %>%
   rename("yr"="YEAR") %>%
-  arrange(country, yr) 
+  arrange(country, yr)
+View(hpv_campaign_clean)
 
 #hpv vaccination rates
 hpv_vax<-read.csv(here("0_Data/Raw_Data","hpv.csv"))
@@ -33,10 +34,11 @@ hpv_vax_clean<- hpv_vax %>%
 hpv_incidence<- read.csv(here("0_Data/Raw_Data", "hpv_incidence.csv"))
 
 hpv_incidence_clean<- hpv_incidence %>%
-  select(Population,ASR..World.) %>%
-  rename("ASIR HPV"="ASR..World.") %>%
+  select(Population,Crude.Rate) %>%
+  rename("IR HPV"="Crude.Rate") %>%
   rename("country"="Population") %>%
   mutate("yr"=2019) %>% # from 2020, changed for match
+  subset(country!="France, Guadeloupe" & country!="France, Martinique" & country!="France, New Caledonia" & !grepl("France, La", country)) %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   filter(!row_number() %in% 1) #don't want world rate
 
@@ -44,12 +46,13 @@ hpv_incidence_clean<- hpv_incidence %>%
 hpv_mortality<-read.csv(here("0_Data/Raw_Data","hpv_mortality.csv"))
 
 hpv_mortality_clean<- hpv_mortality %>%
-  select(Population, ASR..World.) %>%
+  select(Population, Crude.Rate) %>%
   rename("country"="Population") %>%
-  rename("ASmortality_rate_HPV"="ASR..World.") %>%
+  rename("mortality_rate_HPV"="Crude.Rate") %>%
   filter(!row_number() %in% 1) %>%
+  subset(country!="France, Guadeloupe" & country!="France, Martinique" & country!="France, New Caledonia" & !grepl("France, La", country)) %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
-  mutate("yr"=2019) # from 2020, changed for match
+  mutate("yr"=2019)  # from 2020, changed for match
 
 ##############
 #HBV Data
@@ -57,12 +60,11 @@ hpv_mortality_clean<- hpv_mortality %>%
 hepb_vax<-read.csv(here("0_Data/Raw_Data", "hepb.csv"))
 
 hepb_vax_clean<- hepb_vax %>%
-  select(Location, Period, Value) %>%
-  rename("country"="Location") %>%
+  select(SpatialDimValueCode, Period, Value) %>%
+  rename("country"="SpatialDimValueCode") %>%
   rename("hepb_vax%"="Value") %>%
   rename("yr"="Period") %>%
-  mutate(country=countrycode(country, "country.name", "country.name")) 
-
+  mutate(country=countrycode(country, "iso3c", "country.name")) 
 
 #hepb incidence (2010-2019 data) - IR per 100,000
 hepb_incidence<-read.csv(here("0_Data/Raw_Data", "hepb_incidence.csv"))
@@ -86,8 +88,18 @@ hepc_incidence_clean <- hepc_incidence %>%
   rename("hepC_IR"="val") %>%
   mutate(country=countrycode(country, "country.name", "country.name")) 
 
+#HepC incidence number (2016 through 2019)
+hepc_incidence_number<-read.csv(here("0_Data/Raw_Data", "HepC_incidenceNumber.csv"))
+View(hepc_incidence_number)
+
+hepc_incidence_number_clean <- hepc_incidence_number %>%
+  select(location, year, val) %>%
+  rename("country"="location") %>%
+  rename("yr"="year") %>%
+  rename("acute_HepC_incidence_number"="val") %>%
+  mutate(country=countrycode(country, "country.name", "country.name")) 
+                        
 #HepC #initiated on treatent, annually newly diagnosed (chronic)
-#note- only kept yr for initiated on treatment (yr's generally the same for both)
 hepc_diag_tx<- read.csv(here("0_Data/Raw_Data", "hepc_correct_txDiag.csv"))
 
 hepc_diag_tx_clean<- hepc_diag_tx %>%
@@ -100,6 +112,20 @@ hepc_diag_tx_clean<- hepc_diag_tx %>%
   mutate(yr = as.numeric(yr),
          yr = ifelse(is.na(yr), 2018, yr))
 
+
+##########
+#Rotavirus
+#Rotavirus vaccine
+rotavirus_vax<- read.csv(here("0_Data/Raw_Data", "rotavirus_vaccinated.csv"))
+
+rotavirus_vax_clean<- rotavirus_vax %>%
+  subset(COVERAGE_CATEGORY!="ADMIN" & COVERAGE_CATEGORY!="OFFICIAL") %>%
+  select(NAME, YEAR, COVERAGE) %>%
+  rename("country"="NAME") %>%
+  rename ("yr"="YEAR") %>%
+  rename("rotavirus_vax%"="COVERAGE") 
+
+#Rotavirus incidence rate - am going to work on this on Sunday!
 
 ##########
 #population of each country: note- there are more "countries" here than in other datasets above
@@ -136,17 +162,26 @@ population_clean<- population_per_country %>%
   mutate(country=countrycode(country, "country.name", "country.name")) 
 
 population_clean_long<-pivot_longer(population_clean, cols="2000":"2020",names_to="yr", values_to = "population") %>%
-  mutate(yr = as.numeric(yr))
+  mutate(yr = as.numeric(yr)) %>%
+  select(country, yr, population)
 
+View(population_clean_long)
 
 ##########
 #COMBINE INTO ONE DATA FRAME
 #this doesn't link mortality/incidence data well b/c it's for the yr 2020, and there aren't many 2020 measurements
-all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_tx_clean, hepc_incidence_clean, population_clean_long)
+all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_tx_clean, hepc_incidence_clean, rotavirus_vax_clean, population_clean_long)
 
 all_data <- all_list %>%
   reduce(full_join, by=c("country","yr"))
 
+#QUESTIONS TO LOOK INTO:
+
 View(all_data) # why are there lots of NAs with 99% hep b vax?
 View(table(all_data$country, all_data$yr)) # what's up with France?
 
+all_data_france<- all_data %>%
+  filter(yr=="2020") %>%
+  filter(country=="France")
+
+View(all_data_france)
