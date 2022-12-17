@@ -1,0 +1,817 @@
+measure,location,sex,age,cause,metric,year,val,upper,lower
+Incidence,Uzbekistan,Both,All ages,Acute hepatitis C,Number,2016,56891.91361914878,65730.2146195549,50206.58402309192
+Incidence,Cyprus,Both,All ages,Acute hepatitis C,Number,2016,440.3605313377327,520.764428959455,373.92377328295936
+Incidence,Costa Rica,Both,All ages,Acute hepatitis C,Number,2016,4219.550484216197,4889.218556049248,3674.524510383248
+Incidence,Tonga,Both,All ages,Acute hepatitis C,Number,2016,40.67604676329867,46.34104693591433,36.06531759494935
+Incidence,Slovakia,Both,All ages,Acute hepatitis C,Number,2016,2086.489783214887,2431.669079223872,1789.5079596456947
+Incidence,Benin,Both,All ages,Acute hepatitis C,Number,2016,24399.500297039773,28788.03132912751,20826.812395783454
+Incidence,Burundi,Both,All ages,Acute hepatitis C,Number,2016,19114.12315051742,22779.14207824147,16296.702901722223
+Incidence,China,Both,All ages,Acute hepatitis C,Number,2016,378171.7406858419,436920.3441489049,329860.4239147887
+Incidence,Brunei Darussalam,Both,All ages,Acute hepatitis C,Number,2016,116.16280557145664,137.7541801288351,99.81897550993612
+Incidence,Haiti,Both,All ages,Acute hepatitis C,Number,2016,13958.067999206614,16485.33947059175,12027.543579427575
+Incidence,Algeria,Both,All ages,Acute hepatitis C,Number,2016,37231.96513701707,43677.17383177012,32145.239621930825
+Incidence,Norway,Both,All ages,Acute hepatitis C,Number,2016,2302.688688705341,2767.9700035742753,1920.0622663693277
+Incidence,Greece,Both,All ages,Acute hepatitis C,Number,2017,3404.2246232591056,4165.327031088151,2813.077150794813
+Incidence,Sri Lanka,Both,All ages,Acute hepatitis C,Number,2016,6462.570443606882,7414.471427437271,5744.082294786482
+Incidence,United States of America,Both,All ages,Acute hepatitis C,Number,2016,168395.05798455075,198396.93551812955,144067.60849571732
+Incidence,Sudan,Both,All ages,Acute hepatitis C,Number,2016,39076.426914250835,46075.92437365833,33709.38650729261
+Incidence,Burkina Faso,Both,All ages,Acute hepatitis C,Number,2016,42316.92968715238,50306.772192414894,36028.81640914221
+Incidence,Botswana,Both,All ages,Acute hepatitis C,Number,2017,2000.1655506633892,2383.4431466331307,1712.3971945622288
+Incidence,India,Both,All ages,Acute hepatitis C,Number,2016,557380.935119382,651488.4406112216,485416.2729411235
+Incidence,Niger,Both,All ages,Acute hepatitis C,Number,2016,42045.604212263184,50385.85689497885,35077.58274690226
+Incidence,Qatar,Both,All ages,Acute hepatitis C,Number,2016,2024.1998689407812,2432.431239916859,1696.789281860847
+Incidence,Croatia,Both,All ages,Acute hepatitis C,Number,2017,1510.165820440731,1774.9611666280555,1283.7738102736444
+Incidence,Denmark,Both,All ages,Acute hepatitis C,Number,2016,2342.098608295382,2749.9443719508304,1984.7808218284147
+Incidence,Fiji,Both,All ages,Acute hepatitis C,Number,2017,299.4844745687832,348.5106686507556,258.62821581231236
+Incidence,Vanuatu,Both,All ages,Acute hepatitis C,Number,2016,96.77024548311583,112.7475313463545,84.4158009978962
+Incidence,Bahamas,Both,All ages,Acute hepatitis C,Number,2017,250.5870631494947,302.7554767631914,215.0064543600767
+Incidence,United Kingdom,Both,All ages,Acute hepatitis C,Number,2017,34336.88964050204,40781.626195389974,29063.970873693546
+Incidence,Jamaica,Both,All ages,Acute hepatitis C,Number,2016,1785.234818782154,2131.927858978193,1548.5656159713244
+Incidence,Japan,Both,All ages,Acute hepatitis C,Number,2016,84338.41598452636,103880.404202421,69965.20373979997
+Incidence,El Salvador,Both,All ages,Acute hepatitis C,Number,2016,6391.455979064053,7429.353117436397,5578.740968440619
+Incidence,Nicaragua,Both,All ages,Acute hepatitis C,Number,2017,8613.913264014836,10108.994923670902,7520.773892050328
+Incidence,Somalia,Both,All ages,Acute hepatitis C,Number,2016,25582.29610863056,30662.405688432173,21809.204322527043
+Incidence,Comoros,Both,All ages,Acute hepatitis C,Number,2016,660.0875929437879,780.7930582503449,572.4817263729282
+Incidence,Cameroon,Both,All ages,Acute hepatitis C,Number,2016,42818.21296057334,51518.07673455038,36581.34089924504
+Incidence,Portugal,Both,All ages,Acute hepatitis C,Number,2016,5055.843698875542,6069.831691265084,4311.8395794262815
+Incidence,Australia,Both,All ages,Acute hepatitis C,Number,2017,17593.13262383025,20620.273885344006,15034.501940944649
+Incidence,American Samoa,Both,All ages,Acute hepatitis C,Number,2016,8.689890804010753,10.007097393634181,7.699705775452019
+Incidence,Nigeria,Both,All ages,Acute hepatitis C,Number,2016,335616.2330357777,405062.6365180283,284922.3976397312
+Incidence,Guam,Both,All ages,Acute hepatitis C,Number,2017,35.5020488232105,40.44647407068292,31.53233081492926
+Incidence,Sierra Leone,Both,All ages,Acute hepatitis C,Number,2017,11775.84479458794,14109.330966545172,10000.405730194245
+Incidence,Latvia,Both,All ages,Acute hepatitis C,Number,2017,1146.6749631498506,1345.0375583519588,986.6358221605576
+Incidence,Cambodia,Both,All ages,Acute hepatitis C,Number,2017,31960.58216673596,36428.1162028609,27881.729155008263
+Incidence,Czechia,Both,All ages,Acute hepatitis C,Number,2017,3333.931362843125,3938.2739987119703,2805.041744677047
+Incidence,Iraq,Both,All ages,Acute hepatitis C,Number,2017,28220.62585259399,33018.142161297,24408.352122623957
+Incidence,Puerto Rico,Both,All ages,Acute hepatitis C,Number,2016,2650.104639058839,3135.823450192699,2253.635797202676
+Incidence,Iceland,Both,All ages,Acute hepatitis C,Number,2017,109.91522095612298,129.3188333373162,92.86183389152312
+Incidence,Thailand,Both,All ages,Acute hepatitis C,Number,2016,28471.970951983927,32327.74028274846,25116.26194749091
+Incidence,Bahrain,Both,All ages,Acute hepatitis C,Number,2016,1246.922286970452,1477.2535110177414,1057.1535929132597
+Incidence,Saint Kitts and Nevis,Both,All ages,Acute hepatitis C,Number,2016,43.4232791208181,51.380023047508374,37.3978847751843
+Incidence,Slovenia,Both,All ages,Acute hepatitis C,Number,2016,908.8439254154403,1067.5981807094402,777.3470217907335
+Incidence,Trinidad and Tobago,Both,All ages,Acute hepatitis C,Number,2017,876.9374046792657,1039.5277843791514,756.0577434596911
+Incidence,Barbados,Both,All ages,Acute hepatitis C,Number,2017,189.52924670471108,225.68620767005007,162.04733842276508
+Incidence,Albania,Both,All ages,Acute hepatitis C,Number,2016,1087.055618570284,1268.3802740632202,939.1845954791694
+Incidence,Nepal,Both,All ages,Acute hepatitis C,Number,2016,9269.340821074233,10772.402567525358,8117.829054574457
+Incidence,Côte d'Ivoire,Both,All ages,Acute hepatitis C,Number,2017,36839.371672629386,44135.8950018309,31467.477417212544
+Incidence,Guatemala,Both,All ages,Acute hepatitis C,Number,2016,23753.833423991302,27176.136266701447,20962.281249303825
+Incidence,United Arab Emirates,Both,All ages,Acute hepatitis C,Number,2017,6767.820589032492,8510.316585401317,5400.814609045772
+Incidence,Azerbaijan,Both,All ages,Acute hepatitis C,Number,2017,12245.946043045846,14461.80857413302,10668.856916072911
+Incidence,Democratic People's Republic of Korea,Both,All ages,Acute hepatitis C,Number,2016,10886.990200066324,12511.073753604098,9618.02757050432
+Incidence,Finland,Both,All ages,Acute hepatitis C,Number,2016,2635.8082065171725,3079.6816480160387,2274.4651217566984
+Incidence,Kiribati,Both,All ages,Acute hepatitis C,Number,2017,74.12064519684438,86.82337922240225,62.869564812290626
+Incidence,Pakistan,Both,All ages,Acute hepatitis C,Number,2016,239291.289578703,279836.3067043098,208024.75150168277
+Incidence,Timor-Leste,Both,All ages,Acute hepatitis C,Number,2016,945.0427197247376,1103.5682212959375,812.1310410027032
+Incidence,Republic of Korea,Both,All ages,Acute hepatitis C,Number,2016,19889.596470003104,23517.41919608392,16982.770600850716
+Incidence,Spain,Both,All ages,Acute hepatitis C,Number,2016,24442.75654388986,29090.276142802537,21024.57040095429
+Incidence,Kenya,Both,All ages,Acute hepatitis C,Number,2017,36555.35550487741,43840.63016581362,31585.725438490885
+Incidence,Hungary,Both,All ages,Acute hepatitis C,Number,2017,3948.213503673184,4682.093520489093,3317.656260981852
+Incidence,Panama,Both,All ages,Acute hepatitis C,Number,2017,2952.902898688646,3467.012370321084,2577.4751991969256
+Incidence,Bermuda,Both,All ages,Acute hepatitis C,Number,2016,36.78474158242035,43.857075606521335,31.12775635783575
+Incidence,Saint Lucia,Both,All ages,Acute hepatitis C,Number,2016,128.04382173450458,153.60518745348634,109.9104989806972
+Incidence,Angola,Both,All ages,Acute hepatitis C,Number,2017,60558.1795018664,71516.43272868214,52015.592014779235
+Incidence,Georgia,Both,All ages,Acute hepatitis C,Number,2017,4175.2994252759445,4850.594084304956,3599.0010177961053
+Incidence,United Republic of Tanzania,Both,All ages,Acute hepatitis C,Number,2016,52410.83513734774,62007.72804736954,45206.817550353364
+Incidence,United States Virgin Islands,Both,All ages,Acute hepatitis C,Number,2017,80.31270117288491,95.65563871929282,68.68732242131095
+Incidence,Lithuania,Both,All ages,Acute hepatitis C,Number,2017,1990.7824625931205,2320.077572457582,1723.511367697939
+Incidence,Saudi Arabia,Both,All ages,Acute hepatitis C,Number,2016,53862.53709279194,64818.44118878843,46075.204152062455
+Incidence,Germany,Both,All ages,Acute hepatitis C,Number,2016,34831.45567148261,41217.523102776584,29517.405083207854
+Incidence,Uganda,Both,All ages,Acute hepatitis C,Number,2016,43982.44306845959,51749.20299096724,37510.052855454545
+Incidence,Syrian Arab Republic,Both,All ages,Acute hepatitis C,Number,2016,21513.494373700076,25347.32442157989,18612.968492668908
+Incidence,Djibouti,Both,All ages,Acute hepatitis C,Number,2016,1020.0078046893522,1208.250968561975,881.0566733029871
+Incidence,Togo,Both,All ages,Acute hepatitis C,Number,2017,10971.056931980862,13141.486492481148,9351.944497092694
+Incidence,New Zealand,Both,All ages,Acute hepatitis C,Number,2017,1814.632049002312,2166.3770201031593,1516.5966724601365
+Incidence,Indonesia,Both,All ages,Acute hepatitis C,Number,2017,146372.03440117702,172679.32941245454,127655.44042260808
+Incidence,Lesotho,Both,All ages,Acute hepatitis C,Number,2017,2192.112740570762,2636.3650685903694,1893.786229503195
+Incidence,Gambia,Both,All ages,Acute hepatitis C,Number,2017,2882.33647765008,3437.2437128895813,2484.1285835406543
+Incidence,Honduras,Both,All ages,Acute hepatitis C,Number,2016,13514.699658508345,15845.283751072333,11778.333219686423
+Incidence,Belize,Both,All ages,Acute hepatitis C,Number,2017,340.70325707627745,405.25926068262334,296.6068414169672
+Incidence,Central African Republic,Both,All ages,Acute hepatitis C,Number,2017,10553.188337029838,12587.361141232452,9164.938762475338
+Incidence,Yemen,Both,All ages,Acute hepatitis C,Number,2017,18183.973475179875,20795.74689184469,16224.338023288015
+Incidence,Senegal,Both,All ages,Acute hepatitis C,Number,2016,13842.799527692861,16449.596990909056,11889.575303682857
+Incidence,Jordan,Both,All ages,Acute hepatitis C,Number,2017,5253.470224198744,6128.261149494102,4554.024300061552
+Incidence,Cabo Verde,Both,All ages,Acute hepatitis C,Number,2016,653.6528661699385,775.132893301161,567.2808767813129
+Incidence,Bosnia and Herzegovina,Both,All ages,Acute hepatitis C,Number,2016,1521.005675452445,1806.8666726604772,1306.6122258649987
+Incidence,Saint Vincent and the Grenadines,Both,All ages,Acute hepatitis C,Number,2016,83.85371625274566,99.98681458132783,73.49817626312195
+Incidence,Venezuela (Bolivarian Republic of),Both,All ages,Acute hepatitis C,Number,2017,22696.73034756509,27227.93213372353,19732.227120846
+Incidence,Iran (Islamic Republic of),Both,All ages,Acute hepatitis C,Number,2016,45922.387747679844,54372.3514301291,39469.47111096677
+Incidence,Ireland,Both,All ages,Acute hepatitis C,Number,2017,1873.1826414295213,2217.416446509032,1584.959458798363
+Incidence,South Africa,Both,All ages,Acute hepatitis C,Number,2017,44216.45871339181,52655.96559611742,37895.46377962978
+Incidence,Argentina,Both,All ages,Acute hepatitis C,Number,2017,14571.333203741911,16791.254592087254,12651.72950366649
+Incidence,Kazakhstan,Both,All ages,Acute hepatitis C,Number,2017,19230.281627556407,22394.53065199765,16840.15298868052
+Incidence,San Marino,Both,All ages,Acute hepatitis C,Number,2016,14.65931901019236,17.51356269465095,12.357472896284571
+Incidence,Kuwait,Both,All ages,Acute hepatitis C,Number,2017,2658.6817166987234,3230.7363898872495,2242.3742093368387
+Incidence,North Macedonia,Both,All ages,Acute hepatitis C,Number,2017,836.5335340311756,1005.7849279117132,718.203774925233
+Incidence,Egypt,Both,All ages,Acute hepatitis C,Number,2016,309670.5283664868,349854.9393353068,274504.0597859927
+Incidence,Viet Nam,Both,All ages,Acute hepatitis C,Number,2016,58592.75049599981,66858.8470278201,51983.875920370345
+Incidence,Guinea,Both,All ages,Acute hepatitis C,Number,2017,22984.493741973973,27517.4447855508,19376.431205521785
+Incidence,Bolivia (Plurinational State of),Both,All ages,Acute hepatitis C,Number,2017,6752.077756354971,7967.670635813567,5849.945373196472
+Incidence,Cook Islands,Both,All ages,Acute hepatitis C,Number,2016,4.348761218635765,4.976655196948856,3.8383739467019655
+Incidence,France,Both,All ages,Acute hepatitis C,Number,2016,30283.98108699189,35841.29739692898,25986.694405265644
+Incidence,Namibia,Both,All ages,Acute hepatitis C,Number,2017,1950.1541257356437,2321.3329461848407,1682.0576365227935
+Incidence,Madagascar,Both,All ages,Acute hepatitis C,Number,2017,18562.561755506726,21805.230578762774,16131.596290323669
+Incidence,Sweden,Both,All ages,Acute hepatitis C,Number,2016,3990.3755237700097,4798.963903689324,3290.301881929263
+Incidence,Russian Federation,Both,All ages,Acute hepatitis C,Number,2017,105672.37675484894,124606.76222102215,90252.3951864431
+Incidence,Bulgaria,Both,All ages,Acute hepatitis C,Number,2016,2764.626762674142,3219.251263423188,2384.3452446733118
+Incidence,Chile,Both,All ages,Acute hepatitis C,Number,2017,7105.135332371892,8162.132354583875,6198.147494568671
+Incidence,Greece,Both,All ages,Acute hepatitis C,Number,2016,3368.5866127098006,4113.337140685283,2815.215150125359
+Incidence,Sierra Leone,Both,All ages,Acute hepatitis C,Number,2016,11580.156737789903,13692.917049784197,9846.873425707732
+Incidence,Singapore,Both,All ages,Acute hepatitis C,Number,2016,1977.1161551635785,2359.5771938751245,1671.9063727130813
+Incidence,Mexico,Both,All ages,Acute hepatitis C,Number,2016,98637.17525454402,118532.45743646941,83876.40962948387
+Incidence,Taiwan (Province of China),Both,All ages,Acute hepatitis C,Number,2016,9234.807171727132,10366.125407945907,8211.972918887666
+Incidence,Sao Tome and Principe,Both,All ages,Acute hepatitis C,Number,2016,259.51392179403393,312.1941914274362,222.892659636976
+Incidence,Republic of Moldova,Both,All ages,Acute hepatitis C,Number,2017,3008.726391236245,3546.660262991033,2583.154524638093
+Incidence,Antigua and Barbuda,Both,All ages,Acute hepatitis C,Number,2016,58.46152509126028,69.52750315385563,50.25818428212019
+Incidence,Belarus,Both,All ages,Acute hepatitis C,Number,2016,6518.454578591156,7687.8109953220865,5694.459209162159
+Incidence,Tunisia,Both,All ages,Acute hepatitis C,Number,2016,8215.522330794147,9715.052251245901,7047.87742312901
+Incidence,Micronesia (Federated States of),Both,All ages,Acute hepatitis C,Number,2017,44.83319478508958,52.05373067090184,38.70567404567964
+Incidence,Montenegro,Both,All ages,Acute hepatitis C,Number,2017,218.0036471511218,259.9644541514516,187.41664368994225
+Incidence,Lao People's Democratic Republic,Both,All ages,Acute hepatitis C,Number,2017,7614.409497296303,8949.50857330436,6526.622447575255
+Incidence,Suriname,Both,All ages,Acute hepatitis C,Number,2016,451.6993724445951,534.8640774076036,394.76493691306047
+Incidence,South Sudan,Both,All ages,Acute hepatitis C,Number,2017,8650.45898340584,10330.57168662998,7412.140463533616
+Incidence,Armenia,Both,All ages,Acute hepatitis C,Number,2016,3637.6019117891196,4203.86947378461,3201.6423337675774
+Incidence,Zambia,Both,All ages,Acute hepatitis C,Number,2016,17818.572136812698,20832.508664308894,15461.497180532502
+Incidence,Italy,Both,All ages,Acute hepatitis C,Number,2017,50766.09089729783,61581.054727148854,41757.92961761942
+Incidence,Marshall Islands,Both,All ages,Acute hepatitis C,Number,2017,18.016647094714504,21.05108358575636,15.605518104481854
+Incidence,Tokelau,Both,All ages,Acute hepatitis C,Number,2016,0.3798668305324707,0.4319294644225737,0.3337122052828552
+Incidence,Cuba,Both,All ages,Acute hepatitis C,Number,2017,7397.145824190972,8750.725931848388,6289.682616098369
+Incidence,Ethiopia,Both,All ages,Acute hepatitis C,Number,2016,112128.15526794946,133830.20689534687,96655.26342967358
+Incidence,Switzerland,Both,All ages,Acute hepatitis C,Number,2016,3712.202461466633,4348.508450805146,3155.573155281423
+Incidence,Andorra,Both,All ages,Acute hepatitis C,Number,2017,40.12370702292862,48.344873462033455,33.680431134589945
+Incidence,Iraq,Both,All ages,Acute hepatitis C,Number,2016,28722.240115975128,33645.05062658759,25032.440713024673
+Incidence,Cambodia,Both,All ages,Acute hepatitis C,Number,2016,31677.852858220802,35705.366082586326,27967.131277681965
+Incidence,Turkey,Both,All ages,Acute hepatitis C,Number,2016,32587.832382090037,35811.13388259343,29674.897324807476
+Incidence,Israel,Both,All ages,Acute hepatitis C,Number,2017,3507.483297155478,4073.0968753664815,3019.8512310076403
+Incidence,Eritrea,Both,All ages,Acute hepatitis C,Number,2016,6967.638099324536,8238.912530890426,6018.588693368803
+Incidence,Monaco,Both,All ages,Acute hepatitis C,Number,2017,21.85366240403555,26.59653481285209,17.992499827004814
+Incidence,Ecuador,Both,All ages,Acute hepatitis C,Number,2017,8398.926595129366,9888.498361559188,7270.622260154808
+Incidence,Afghanistan,Both,All ages,Acute hepatitis C,Number,2017,44894.853059756824,53156.40776628909,39169.9138708067
+Incidence,Chad,Both,All ages,Acute hepatitis C,Number,2016,34653.608775312845,41723.01692919526,29164.563866906774
+Incidence,Bahamas,Both,All ages,Acute hepatitis C,Number,2016,248.86557768054655,298.4033374540704,215.12275430989706
+Incidence,Lebanon,Both,All ages,Acute hepatitis C,Number,2017,2215.7916475161974,2585.8479971952493,1926.585511213855
+Incidence,Greenland,Both,All ages,Acute hepatitis C,Number,2016,25.217585531353762,29.540847862270848,21.865753021037147
+Incidence,Dominica,Both,All ages,Acute hepatitis C,Number,2017,43.71640523362566,52.027004125117706,37.56929776929493
+Incidence,Ghana,Both,All ages,Acute hepatitis C,Number,2017,53328.839881052896,63928.65247189625,45913.28460567443
+Incidence,Congo,Both,All ages,Acute hepatitis C,Number,2017,9126.043983703246,11005.58463009955,7914.773489418265
+Incidence,Ukraine,Both,All ages,Acute hepatitis C,Number,2017,35216.275419726,41874.33311230808,30244.506026565654
+Incidence,Papua New Guinea,Both,All ages,Acute hepatitis C,Number,2017,4987.03109216651,5836.51087152587,4212.770233263681
+Incidence,Peru,Both,All ages,Acute hepatitis C,Number,2017,15809.478993768274,18947.018895478435,13654.297214196464
+Incidence,Uruguay,Both,All ages,Acute hepatitis C,Number,2017,1068.1501845096097,1232.299540905919,925.6947368510369
+Incidence,Australia,Both,All ages,Acute hepatitis C,Number,2016,17156.871450170634,19973.763213813803,14912.109464629744
+Incidence,Guinea-Bissau,Both,All ages,Acute hepatitis C,Number,2017,2364.27248460416,2824.461669150033,2015.8879338955014
+Incidence,Democratic Republic of the Congo,Both,All ages,Acute hepatitis C,Number,2017,176777.6586848805,210706.88619462104,150968.52048795516
+Incidence,Croatia,Both,All ages,Acute hepatitis C,Number,2016,1509.2281680478595,1761.9160040996144,1293.369141868134
+Incidence,Nauru,Both,All ages,Acute hepatitis C,Number,2017,3.3676912598810516,3.9675500510153148,2.896458945289437
+Incidence,Estonia,Both,All ages,Acute hepatitis C,Number,2016,834.9161597408594,975.798799733521,721.5591623881198
+Incidence,United Arab Emirates,Both,All ages,Acute hepatitis C,Number,2016,6551.260552681803,8198.248050314416,5224.254401230512
+Incidence,Brazil,Both,All ages,Acute hepatitis C,Number,2017,213946.04731006146,253868.38174844248,182357.93223882132
+Incidence,Tuvalu,Both,All ages,Acute hepatitis C,Number,2016,3.20715074313777,3.691719456173546,2.842708936887365
+Incidence,Lithuania,Both,All ages,Acute hepatitis C,Number,2016,2008.7730172465951,2329.307126981432,1742.3572384518607
+Incidence,Togo,Both,All ages,Acute hepatitis C,Number,2016,10860.376620285973,12981.145038841314,9325.781967408186
+Incidence,Kyrgyzstan,Both,All ages,Acute hepatitis C,Number,2017,10319.438178686543,11922.413410085015,8981.334444255657
+Incidence,Georgia,Both,All ages,Acute hepatitis C,Number,2016,4191.861200364085,4870.023258901595,3648.5116148915095
+Incidence,Indonesia,Both,All ages,Acute hepatitis C,Number,2016,147648.85327491182,173129.11869827987,129832.51133559298
+Incidence,Kenya,Both,All ages,Acute hepatitis C,Number,2016,35711.39281091926,43029.190482815546,30773.973423416264
+Incidence,Malawi,Both,All ages,Acute hepatitis C,Number,2017,18705.19446232482,22315.310189902702,16117.704482222922
+Incidence,Mozambique,Both,All ages,Acute hepatitis C,Number,2017,28754.260195682575,34288.711547005034,24619.78604438364
+Incidence,Jordan,Both,All ages,Acute hepatitis C,Number,2016,4407.147834675379,5143.59371258946,3844.979992185762
+Incidence,Equatorial Guinea,Both,All ages,Acute hepatitis C,Number,2017,1926.739063023006,2319.4691355347522,1658.9718290951932
+Incidence,Azerbaijan,Both,All ages,Acute hepatitis C,Number,2016,12062.82250302568,14000.532923756255,10581.80556825983
+Incidence,Côte d'Ivoire,Both,All ages,Acute hepatitis C,Number,2016,36574.699479501825,43862.123316773395,31187.777745319847
+Incidence,Trinidad and Tobago,Both,All ages,Acute hepatitis C,Number,2016,872.7472430282213,1034.6526057721226,754.3848844125441
+Incidence,Austria,Both,All ages,Acute hepatitis C,Number,2017,4112.757999454938,4923.950456098618,3495.3537979604866
+Incidence,Iceland,Both,All ages,Acute hepatitis C,Number,2016,106.73131454535833,125.76864626030738,91.07829962394129
+Incidence,Barbados,Both,All ages,Acute hepatitis C,Number,2016,187.94906697229084,224.3787083348654,159.56512543884037
+Incidence,Luxembourg,Both,All ages,Acute hepatitis C,Number,2017,253.24866693620254,301.1594230229087,212.35851214202518
+Incidence,Tajikistan,Both,All ages,Acute hepatitis C,Number,2017,16567.34557522856,19248.97378424787,14392.407862618684
+Incidence,Latvia,Both,All ages,Acute hepatitis C,Number,2016,1156.409496008526,1373.822284239241,1001.6578532691483
+Incidence,Gambia,Both,All ages,Acute hepatitis C,Number,2016,2837.860139174709,3389.165418073077,2442.595069776326
+Incidence,Solomon Islands,Both,All ages,Acute hepatitis C,Number,2017,152.61315338310524,176.36312916695127,133.10086001270503
+Incidence,Nicaragua,Both,All ages,Acute hepatitis C,Number,2016,8506.123877597585,9962.029179462863,7436.511740730114
+Incidence,Bangladesh,Both,All ages,Acute hepatitis C,Number,2017,48873.49904057863,57010.16630502077,42776.56108868841
+Incidence,Niue,Both,All ages,Acute hepatitis C,Number,2017,0.4456547342081716,0.511310316256545,0.39437116127122945
+Incidence,Guinea,Both,All ages,Acute hepatitis C,Number,2016,22578.63115456441,26974.361874185128,19262.653255025143
+Incidence,Guam,Both,All ages,Acute hepatitis C,Number,2016,35.2899283182301,40.06659905243289,31.32444301087058
+Incidence,Lesotho,Both,All ages,Acute hepatitis C,Number,2016,2147.996985938605,2555.762023973665,1870.902114043892
+Incidence,Czechia,Both,All ages,Acute hepatitis C,Number,2016,3300.5795818752217,3832.8362382874257,2836.496149666807
+Incidence,New Zealand,Both,All ages,Acute hepatitis C,Number,2016,1780.7717250807843,2117.2456440904107,1493.64374878622
+Incidence,Republic of Moldova,Both,All ages,Acute hepatitis C,Number,2016,3079.870105470379,3650.3078213901513,2650.4349308480473
+Incidence,Canada,Both,All ages,Acute hepatitis C,Number,2017,15184.069678848065,17550.98839786406,12952.458975214184
+Incidence,Yemen,Both,All ages,Acute hepatitis C,Number,2016,18089.50197624679,20316.89835465736,16221.507723782986
+Incidence,Hungary,Both,All ages,Acute hepatitis C,Number,2016,3983.7541422839317,4702.913971495801,3386.215356853526
+Incidence,Romania,Both,All ages,Acute hepatitis C,Number,2017,10472.453710990676,12366.633169170958,8944.790523828931
+Incidence,Kiribati,Both,All ages,Acute hepatitis C,Number,2016,73.35571178744624,84.89046499015757,63.15788676253624
+Incidence,Fiji,Both,All ages,Acute hepatitis C,Number,2016,297.1933627882579,343.4583471790711,258.8255851861679
+Incidence,Malaysia,Both,All ages,Acute hepatitis C,Number,2017,20176.84064142023,23644.448215655302,17526.932785252593
+Incidence,Lao People's Democratic Republic,Both,All ages,Acute hepatitis C,Number,2016,7540.785173646934,8784.62670875101,6554.1685946127855
+Incidence,Libya,Both,All ages,Acute hepatitis C,Number,2017,9406.999311215031,11304.251092749993,8072.213637209953
+Incidence,Kuwait,Both,All ages,Acute hepatitis C,Number,2016,2538.4806715487493,3010.8428763737784,2161.2938062668445
+Incidence,Kazakhstan,Both,All ages,Acute hepatitis C,Number,2016,19196.155081562483,22109.051468659272,16985.046168659155
+Incidence,Panama,Both,All ages,Acute hepatitis C,Number,2016,2887.007630092696,3374.907593233408,2539.0706980856517
+Incidence,Central African Republic,Both,All ages,Acute hepatitis C,Number,2016,10369.01160724346,12291.402875286009,9007.068320543547
+Incidence,Colombia,Both,All ages,Acute hepatitis C,Number,2017,33999.33054652503,40622.0306858002,29414.548484338193
+Incidence,Morocco,Both,All ages,Acute hepatitis C,Number,2017,43592.48972666852,52341.833783326016,37560.00783411814
+Incidence,Angola,Both,All ages,Acute hepatitis C,Number,2016,59316.38345846652,70279.02127786346,51160.21322006161
+Incidence,Dominican Republic,Both,All ages,Acute hepatitis C,Number,2017,9484.737860021838,11290.541225975592,8242.77362369065
+Incidence,Grenada,Both,All ages,Acute hepatitis C,Number,2017,82.69767720244961,98.88128308768886,71.72293887542072
+Incidence,Poland,Both,All ages,Acute hepatitis C,Number,2017,14978.662670458401,17994.630960112023,12673.999198732638
+Incidence,Belize,Both,All ages,Acute hepatitis C,Number,2016,333.3366959422345,397.3124926353849,291.73855401959986
+Incidence,Democratic People's Republic of Korea,Both,All ages,Acute hepatitis C,Number,2017,10832.67627636891,12423.363111395072,9525.570352010513
+Incidence,Philippines,Both,All ages,Acute hepatitis C,Number,2017,53502.54037472444,63487.49070385607,46342.52166041148
+Incidence,Oman,Both,All ages,Acute hepatitis C,Number,2017,3709.0436833248805,4472.692428954083,3141.0222334857763
+Incidence,Malta,Both,All ages,Acute hepatitis C,Number,2017,174.27269492978652,207.00707098179174,146.7168530323247
+Incidence,Guinea-Bissau,Both,All ages,Acute hepatitis C,Number,2016,2356.233727669389,2793.1836890511668,2023.495890030829
+Incidence,Paraguay,Both,All ages,Acute hepatitis C,Number,2017,5819.045276807202,6972.047743448796,5011.531973169712
+Incidence,Ghana,Both,All ages,Acute hepatitis C,Number,2016,52715.22899601957,62895.18321594019,45383.80878211167
+Incidence,Marshall Islands,Both,All ages,Acute hepatitis C,Number,2016,18.104248702283314,21.057930443551523,15.77703458824625
+Incidence,United States Virgin Islands,Both,All ages,Acute hepatitis C,Number,2016,80.29345700722146,96.14469292848254,69.03886507345787
+Incidence,North Macedonia,Both,All ages,Acute hepatitis C,Number,2016,828.7232404127044,977.6957486498734,716.1726318982444
+Incidence,Argentina,Both,All ages,Acute hepatitis C,Number,2016,14290.560098293874,16289.347017249547,12591.971089207038
+Incidence,Mauritius,Both,All ages,Acute hepatitis C,Number,2017,508.2639275454548,601.1495004814669,441.70023909077554
+Incidence,Serbia,Both,All ages,Acute hepatitis C,Number,2017,3611.8833669495675,4242.760093040634,3072.0417170535025
+Incidence,Burundi,Both,All ages,Acute hepatitis C,Number,2017,19968.530278741742,23945.184030947454,16880.31091957722
+Incidence,Palestine,Both,All ages,Acute hepatitis C,Number,2017,4479.16032238742,5280.7942959512075,3940.703847733041
+Incidence,Malaysia,Both,All ages,Acute hepatitis C,Number,2016,19832.21543130088,23270.940092526642,17189.081046010135
+Incidence,Guyana,Both,All ages,Acute hepatitis C,Number,2017,785.3423887145459,934.3208416280144,681.9259992540103
+Incidence,Kyrgyzstan,Both,All ages,Acute hepatitis C,Number,2016,10271.6682225383,11957.595242645188,8994.467020704673
+Incidence,Qatar,Both,All ages,Acute hepatitis C,Number,2017,2096.089685841838,2545.1127931743117,1747.3635655725247
+Incidence,Micronesia (Federated States of),Both,All ages,Acute hepatitis C,Number,2016,45.01346618514325,52.27877985012539,39.46402761337547
+Incidence,Lebanon,Both,All ages,Acute hepatitis C,Number,2016,2160.4487783446566,2498.964535576645,1892.119354917084
+Incidence,Tonga,Both,All ages,Acute hepatitis C,Number,2017,40.09737484808792,45.89529307113314,35.36870652105641
+Incidence,Taiwan (Province of China),Both,All ages,Acute hepatitis C,Number,2017,9076.035761875703,10269.517606976811,8038.956087633084
+Incidence,Costa Rica,Both,All ages,Acute hepatitis C,Number,2017,4276.592233598794,4964.005035123762,3730.5635333667647
+Incidence,Bhutan,Both,All ages,Acute hepatitis C,Number,2017,342.28759597888774,398.45548058953676,296.97203953105435
+Incidence,Maldives,Both,All ages,Acute hepatitis C,Number,2016,210.62503950768516,243.05031352248355,184.7008131627388
+Incidence,Belgium,Both,All ages,Acute hepatitis C,Number,2017,5357.921910392494,6324.325400237305,4493.5183021045605
+Incidence,Mongolia,Both,All ages,Acute hepatitis C,Number,2017,12389.419565994045,14992.064755598067,10510.091093535337
+Incidence,Venezuela (Bolivarian Republic of),Both,All ages,Acute hepatitis C,Number,2016,23521.8812095885,28071.732868302,20693.297266634418
+Incidence,China,Both,All ages,Acute hepatitis C,Number,2017,458276.70305169653,530197.2231772651,397028.555004294
+Incidence,Ukraine,Both,All ages,Acute hepatitis C,Number,2018,34883.78522426338,41585.57725068041,29848.491926293696
+Incidence,Gabon,Both,All ages,Acute hepatitis C,Number,2017,3387.8176715187615,3968.1036507846356,2950.649037501571
+Incidence,Nauru,Both,All ages,Acute hepatitis C,Number,2016,3.3904569435602516,3.9506035430387785,2.9214848145844106
+Incidence,Mongolia,Both,All ages,Acute hepatitis C,Number,2016,12300.347626484048,14972.059960374789,10476.616988266353
+Incidence,Dominican Republic,Both,All ages,Acute hepatitis C,Number,2018,9605.621417263194,11425.07735746668,8416.113886286406
+Incidence,Democratic Republic of the Congo,Both,All ages,Acute hepatitis C,Number,2016,174363.90053813282,206535.91374302513,150842.71041113764
+Incidence,Burkina Faso,Both,All ages,Acute hepatitis C,Number,2017,42692.28156812415,50710.45019559451,35863.76621646734
+Incidence,Liberia,Both,All ages,Acute hepatitis C,Number,2018,6836.651435762999,8222.649276359856,5860.250125111846
+Incidence,South Sudan,Both,All ages,Acute hepatitis C,Number,2016,8623.208267486982,10231.257483996558,7434.37733807974
+Incidence,Montenegro,Both,All ages,Acute hepatitis C,Number,2016,217.09711735067958,257.68882855810017,186.9587867634916
+Incidence,Italy,Both,All ages,Acute hepatitis C,Number,2016,50045.224007359844,60664.275022154245,41326.37563571922
+Incidence,Tajikistan,Both,All ages,Acute hepatitis C,Number,2018,16786.407444513898,19503.28486069889,14600.069963343605
+Incidence,Malawi,Both,All ages,Acute hepatitis C,Number,2016,18354.945594149558,21630.951259266996,15851.552586490616
+Incidence,Maldives,Both,All ages,Acute hepatitis C,Number,2018,219.729933697819,257.18586622731937,191.4671834942964
+Incidence,Cuba,Both,All ages,Acute hepatitis C,Number,2016,7354.846927199138,8776.157270710974,6257.668175767988
+Incidence,Algeria,Both,All ages,Acute hepatitis C,Number,2017,38367.79421849893,45286.06088640375,33034.168761636894
+Incidence,Vanuatu,Both,All ages,Acute hepatitis C,Number,2017,97.52582264377558,114.91457071339671,84.31571038155214
+Incidence,Turkmenistan,Both,All ages,Acute hepatitis C,Number,2017,8090.439127848236,9387.456641471923,7079.2306583970185
+Incidence,Congo,Both,All ages,Acute hepatitis C,Number,2016,9037.520784890485,10702.912432054442,7875.000272369678
+Incidence,Morocco,Both,All ages,Acute hepatitis C,Number,2018,43939.87643244362,52458.03960633237,37844.66583463628
+Incidence,Bolivia (Plurinational State of),Both,All ages,Acute hepatitis C,Number,2016,6677.027396611318,7857.211534126985,5819.735130119679
+Incidence,Paraguay,Both,All ages,Acute hepatitis C,Number,2018,5903.273619235879,7062.759127634004,5123.814556567976
+Incidence,Liberia,Both,All ages,Acute hepatitis C,Number,2017,6769.699725921198,8145.47732402296,5777.143117754889
+Incidence,Uzbekistan,Both,All ages,Acute hepatitis C,Number,2017,56998.74873182274,65910.2380624329,49885.34195257581
+Incidence,Comoros,Both,All ages,Acute hepatitis C,Number,2017,670.2855248502023,793.2963463581133,582.1216331652362
+Incidence,Libya,Both,All ages,Acute hepatitis C,Number,2018,9953.00709890217,11923.438914513792,8539.328011669199
+Incidence,Mozambique,Both,All ages,Acute hepatitis C,Number,2016,27862.36968702758,33288.95392712267,23877.41584325669
+Incidence,Albania,Both,All ages,Acute hepatitis C,Number,2019,1102.2961957079497,1290.3850926582497,946.175019586749
+Incidence,Saudi Arabia,Both,All ages,Acute hepatitis C,Number,2017,55136.907528223026,65858.0718320726,47095.10587685185
+Incidence,Belarus,Both,All ages,Acute hepatitis C,Number,2019,6408.113430773301,7594.581585884824,5568.156552074831
+Incidence,Mali,Both,All ages,Acute hepatitis C,Number,2017,39980.640257543026,47697.36974851847,33674.33773619823
+Incidence,Eswatini,Both,All ages,Acute hepatitis C,Number,2018,1108.0162834724088,1305.7265984364274,956.5682937161316
+Incidence,Namibia,Both,All ages,Acute hepatitis C,Number,2016,1903.5526898064866,2262.7497831007604,1643.6628252345383
+Incidence,Poland,Both,All ages,Acute hepatitis C,Number,2018,15062.9018287089,18056.113427425982,12747.365115424851
+Incidence,Niue,Both,All ages,Acute hepatitis C,Number,2016,0.4476337203680604,0.5128447973185437,0.39707939821353805
+Incidence,Haiti,Both,All ages,Acute hepatitis C,Number,2017,14190.717558275981,16705.367808979336,12194.054441649561
+Incidence,Myanmar,Both,All ages,Acute hepatitis C,Number,2016,39572.396019486485,44786.61142383932,35071.37963718339
+Incidence,Equatorial Guinea,Both,All ages,Acute hepatitis C,Number,2018,1967.5387830104899,2373.1307133396795,1693.690647513221
+Incidence,Uruguay,Both,All ages,Acute hepatitis C,Number,2018,1076.6606383177525,1249.3661230358005,935.2385293324623
+Incidence,Papua New Guinea,Both,All ages,Acute hepatitis C,Number,2018,5112.2006609898,6025.258057111263,4343.068921822981
+Incidence,Mozambique,Both,All ages,Acute hepatitis C,Number,2018,29497.902637660176,35120.79720010075,25375.823569847922
+Incidence,Papua New Guinea,Both,All ages,Acute hepatitis C,Number,2016,4844.8396575601755,5686.297307789372,4139.979092206845
+Incidence,Rwanda,Both,All ages,Acute hepatitis C,Number,2016,13074.819884476141,15251.501368503006,11420.17655318115
+Incidence,Japan,Both,All ages,Acute hepatitis C,Number,2017,84839.47577456206,105058.85348785407,69564.29204194623
+Incidence,Afghanistan,Both,All ages,Acute hepatitis C,Number,2018,46471.20985545404,54722.81387769038,40337.625490906044
+Incidence,India,Both,All ages,Acute hepatitis C,Number,2017,572876.7256315427,670943.9688125211,498709.02958398295
+Incidence,Mali,Both,All ages,Acute hepatitis C,Number,2018,41262.84234387355,49111.2708608746,34913.036564163966
+Incidence,Libya,Both,All ages,Acute hepatitis C,Number,2016,8692.11627705121,10247.799225820803,7495.066647650614
+Incidence,Zimbabwe,Both,All ages,Acute hepatitis C,Number,2018,15503.566037507417,18348.683064686367,13403.51874525182
+Incidence,Eswatini,Both,All ages,Acute hepatitis C,Number,2016,1096.8393994547926,1294.0263472751394,952.7523468175257
+Incidence,Equatorial Guinea,Both,All ages,Acute hepatitis C,Number,2016,1888.0107459366989,2277.207504556817,1624.1429748716416
+Incidence,United Kingdom,Both,All ages,Acute hepatitis C,Number,2016,38712.85112531987,45839.877551382946,32870.14320929437
+Incidence,Northern Mariana Islands,Both,All ages,Acute hepatitis C,Number,2018,9.818212544791463,11.655169694867489,8.5437151445792
+Incidence,Botswana,Both,All ages,Acute hepatitis C,Number,2016,1948.7239979647968,2325.2943045698926,1680.2892979649414
+Incidence,Bahrain,Both,All ages,Acute hepatitis C,Number,2017,1278.424518499136,1528.1245845979424,1071.0981251305705
+Incidence,Ireland,Both,All ages,Acute hepatitis C,Number,2016,1839.5766033915904,2167.1551043785876,1584.0746935666668
+Incidence,Dominica,Both,All ages,Acute hepatitis C,Number,2016,43.82474098198563,51.94100961148983,37.82055243772016
+Incidence,Timor-Leste,Both,All ages,Acute hepatitis C,Number,2019,994.826868193744,1164.6932419820541,855.6284049815195
+Incidence,Niger,Both,All ages,Acute hepatitis C,Number,2017,43620.848761583686,52029.96026534429,36322.56554903712
+Incidence,Samoa,Both,All ages,Acute hepatitis C,Number,2018,33.344968357299564,38.45836284570416,29.39247347776677
+Incidence,Gabon,Both,All ages,Acute hepatitis C,Number,2018,3418.3845937088317,4049.7106442415875,2966.671094344956
+Incidence,Sri Lanka,Both,All ages,Acute hepatitis C,Number,2017,6517.039411515091,7553.62179324475,5764.399534415371
+Incidence,Slovakia,Both,All ages,Acute hepatitis C,Number,2017,2087.83804179036,2460.4788089906747,1786.7894085454222
+Incidence,Norway,Both,All ages,Acute hepatitis C,Number,2017,2376.6836190612325,2865.80379601206,1981.2390122651773
+Incidence,Solomon Islands,Both,All ages,Acute hepatitis C,Number,2018,154.31252176242782,177.4588646902467,135.4098553912619
+Incidence,Bangladesh,Both,All ages,Acute hepatitis C,Number,2018,49392.48211808449,57306.32861399504,43438.497139944746
+Incidence,Romania,Both,All ages,Acute hepatitis C,Number,2018,10389.440471475664,12299.943417097673,8961.429449503237
+Incidence,Netherlands,Both,All ages,Acute hepatitis C,Number,2018,4769.515287726947,5650.2591312499235,4054.246809010106
+Incidence,Northern Mariana Islands,Both,All ages,Acute hepatitis C,Number,2016,10.182245840336709,12.03627850790987,8.879968385271914
+Incidence,Turkmenistan,Both,All ages,Acute hepatitis C,Number,2018,8155.425690094971,9378.084313126777,7194.1530836997745
+Incidence,Timor-Leste,Both,All ages,Acute hepatitis C,Number,2017,967.0190758877627,1130.6255588247277,829.200191685238
+Incidence,Samoa,Both,All ages,Acute hepatitis C,Number,2016,32.89861152668515,38.02129234735456,28.95078632459392
+Incidence,Bulgaria,Both,All ages,Acute hepatitis C,Number,2019,2757.1034546276446,3281.27862337308,2337.0625772339104
+Incidence,Liberia,Both,All ages,Acute hepatitis C,Number,2016,6745.886548476745,8042.053493854817,5762.873629541159
+Incidence,Slovenia,Both,All ages,Acute hepatitis C,Number,2017,908.2300984368769,1066.4065892665499,775.372226534881
+Incidence,Colombia,Both,All ages,Acute hepatitis C,Number,2018,34248.256528531805,40700.69452317247,29774.135064851158
+Incidence,Mauritius,Both,All ages,Acute hepatitis C,Number,2016,512.120691652106,596.3816907641551,448.54648124860694
+Incidence,Seychelles,Both,All ages,Acute hepatitis C,Number,2016,52.32511382493127,60.43309764212407,46.67657347110734
+Incidence,Mauritania,Both,All ages,Acute hepatitis C,Number,2018,4984.514721254238,5975.501665101285,4253.067593617529
+Incidence,Myanmar,Both,All ages,Acute hepatitis C,Number,2018,39375.45509268524,44906.137333047474,34915.5707586428
+Incidence,Thailand,Both,All ages,Acute hepatitis C,Number,2017,28361.288553664268,32620.593507697133,24972.641697013034
+Incidence,Austria,Both,All ages,Acute hepatitis C,Number,2018,4169.4171639555225,4938.972508460431,3546.5066361866443
+Incidence,Palestine,Both,All ages,Acute hepatitis C,Number,2018,4546.339823877169,5265.071510012338,4001.0737891549206
+Incidence,Gabon,Both,All ages,Acute hepatitis C,Number,2016,3358.6538918113206,3956.3981680569914,2914.178952969765
+Incidence,Cyprus,Both,All ages,Acute hepatitis C,Number,2017,456.5589212922226,543.4752672007263,385.5857665749015
+Incidence,Grenada,Both,All ages,Acute hepatitis C,Number,2018,82.51919467508151,98.28278013089624,71.62986782176918
+Incidence,Estonia,Both,All ages,Acute hepatitis C,Number,2019,839.0913876340995,988.9351997661736,725.070017053139
+Incidence,Cameroon,Both,All ages,Acute hepatitis C,Number,2017,43504.64521920251,52163.244051508205,37036.78939060843
+Incidence,Viet Nam,Both,All ages,Acute hepatitis C,Number,2019,54563.13978570992,63222.18390077625,48251.77879552202
+Incidence,Rwanda,Both,All ages,Acute hepatitis C,Number,2018,13534.429848853426,15824.35079316892,11824.550419254456
+Incidence,Sudan,Both,All ages,Acute hepatitis C,Number,2018,40379.81964326858,47652.28859513465,34760.75275648945
+Incidence,Somalia,Both,All ages,Acute hepatitis C,Number,2017,26542.95019330895,31753.4768081308,22558.75989013867
+Incidence,Bosnia and Herzegovina,Both,All ages,Acute hepatitis C,Number,2019,1483.1997133998766,1773.7468162011655,1258.060179414102
+Incidence,Zimbabwe,Both,All ages,Acute hepatitis C,Number,2016,15096.012356357629,17732.491687012684,13141.760948933206
+Incidence,Oman,Both,All ages,Acute hepatitis C,Number,2018,3722.418152435586,4489.999390040918,3161.8239447829615
+Incidence,Samoa,Both,All ages,Acute hepatitis C,Number,2017,32.94485953143338,37.9754859536352,29.044891464266275
+Incidence,Canada,Both,All ages,Acute hepatitis C,Number,2018,15302.612419266254,17623.09751863895,13012.985634373139
+Incidence,Armenia,Both,All ages,Acute hepatitis C,Number,2017,3618.5573200086533,4195.970030202916,3150.5767302944487
+Incidence,South Africa,Both,All ages,Acute hepatitis C,Number,2016,43458.741266609024,51675.80906571163,37355.966268454715
+Incidence,Palau,Both,All ages,Acute hepatitis C,Number,2016,4.0752380130411865,4.752660575861217,3.5924958453474307
+Incidence,Democratic People's Republic of Korea,Both,All ages,Acute hepatitis C,Number,2019,10568.9343849454,11999.72561444086,9249.03764937588
+Incidence,Uzbekistan,Both,All ages,Acute hepatitis C,Number,2018,57291.79337765859,66082.0581980869,50206.35172271168
+Incidence,Egypt,Both,All ages,Acute hepatitis C,Number,2017,312132.7979010519,355341.8994673276,277606.54249328835
+Incidence,Uganda,Both,All ages,Acute hepatitis C,Number,2017,44834.26416664404,53174.24763449636,38265.94296955971
+Incidence,Albania,Both,All ages,Acute hepatitis C,Number,2017,1093.4723509462274,1292.4806437452162,941.9943773783795
+Incidence,Netherlands,Both,All ages,Acute hepatitis C,Number,2016,4639.704064327948,5447.699524222428,3950.6633556683346
+Incidence,Ecuador,Both,All ages,Acute hepatitis C,Number,2016,8210.929120305787,9746.442569032677,7168.90998611128
+Incidence,Palau,Both,All ages,Acute hepatitis C,Number,2018,4.043428307795119,4.731073150879106,3.543021063669942
+Incidence,Cabo Verde,Both,All ages,Acute hepatitis C,Number,2017,659.760551912864,787.2717659416703,569.9992983841672
+Incidence,Somalia,Both,All ages,Acute hepatitis C,Number,2018,27450.29205238156,32786.18131607381,23415.287169152052
+Incidence,Brunei Darussalam,Both,All ages,Acute hepatitis C,Number,2018,122.76289325850883,144.95265387069455,105.01892598758005
+Incidence,Luxembourg,Both,All ages,Acute hepatitis C,Number,2016,247.10873902284374,289.96481893211023,210.21822352548946
+Incidence,Greenland,Both,All ages,Acute hepatitis C,Number,2017,25.491236131966797,30.040783848979117,22.071544846255996
+Incidence,Netherlands,Both,All ages,Acute hepatitis C,Number,2017,4697.634658961278,5585.054828303486,3957.2001604386464
+Incidence,Djibouti,Both,All ages,Acute hepatitis C,Number,2017,1044.3811230605272,1239.2442024327224,902.31519295351
+Incidence,Serbia,Both,All ages,Acute hepatitis C,Number,2018,3609.5055948529575,4233.46763372532,3077.6430661097147
+Incidence,Republic of Korea,Both,All ages,Acute hepatitis C,Number,2017,21297.570429505617,25549.57119019,17697.420859379403
+Incidence,Saint Kitts and Nevis,Both,All ages,Acute hepatitis C,Number,2017,43.90821481356333,52.480214274689565,37.578514221635984
+Incidence,Nepal,Both,All ages,Acute hepatitis C,Number,2017,9416.748235839716,10909.149999823427,8225.15029067368
+Incidence,American Samoa,Both,All ages,Acute hepatitis C,Number,2018,8.623523005355858,9.960739322834959,7.656827026087277
+Incidence,Niue,Both,All ages,Acute hepatitis C,Number,2018,0.44609313730626254,0.5102788607017502,0.39464155892494285
+Incidence,Germany,Both,All ages,Acute hepatitis C,Number,2017,35586.55799146009,42742.32760884809,29585.475185083516
+Incidence,Seychelles,Both,All ages,Acute hepatitis C,Number,2018,52.84965516458619,60.692473158864445,46.98859824293328
+Incidence,Armenia,Both,All ages,Acute hepatitis C,Number,2019,3569.4498434463476,4123.238004415431,3113.5488747405007
+Incidence,Philippines,Both,All ages,Acute hepatitis C,Number,2018,53990.57768250233,63869.95009404242,46849.81618552103
+Incidence,American Samoa,Both,All ages,Acute hepatitis C,Number,2017,8.646536918231265,9.991999256902911,7.668849363816021
+Incidence,Luxembourg,Both,All ages,Acute hepatitis C,Number,2018,260.4025450525442,306.997233787145,220.32520784097764
+Incidence,Belgium,Both,All ages,Acute hepatitis C,Number,2016,5286.676355729708,6251.436951704413,4477.328280380401
+Incidence,Mauritania,Both,All ages,Acute hepatitis C,Number,2017,4936.28890937822,5897.503026565232,4212.817235780358
+Incidence,Rwanda,Both,All ages,Acute hepatitis C,Number,2017,13296.072972488919,15609.949878262652,11552.716226513914
+Incidence,United Republic of Tanzania,Both,All ages,Acute hepatitis C,Number,2017,53688.77378057564,63296.40476169443,46173.00814111677
+Incidence,Maldives,Both,All ages,Acute hepatitis C,Number,2017,216.12493528945268,252.33926121729064,187.65355406456862
+Incidence,Romania,Both,All ages,Acute hepatitis C,Number,2016,10544.615955769685,12368.477057453272,9178.506026641066
+Incidence,Bhutan,Both,All ages,Acute hepatitis C,Number,2018,340.22092492711243,396.3994022371566,295.600667294471
+Incidence,Costa Rica,Both,All ages,Acute hepatitis C,Number,2018,4312.409775269118,4982.361458308519,3759.522161361605
+Incidence,El Salvador,Both,All ages,Acute hepatitis C,Number,2017,6472.181944655335,7717.937863161207,5597.8362008175545
+Incidence,France,Both,All ages,Acute hepatitis C,Number,2019,31094.430654478998,36709.10196260226,26593.930301538698
+Incidence,Eswatini,Both,All ages,Acute hepatitis C,Number,2017,1102.766031341422,1308.9867615477162,951.1706840630716
+Incidence,Mexico,Both,All ages,Acute hepatitis C,Number,2017,99909.51370244152,120527.5559018432,84643.06673294521
+Incidence,Mali,Both,All ages,Acute hepatitis C,Number,2016,38699.12589110488,46150.97940416506,32743.89224578998
+Incidence,Dominican Republic,Both,All ages,Acute hepatitis C,Number,2016,9297.718867293122,11085.382636034044,8154.728459001827
+Incidence,Afghanistan,Both,All ages,Acute hepatitis C,Number,2016,43600.86705088335,51166.9554773734,38062.25995318375
+Incidence,Sudan,Both,All ages,Acute hepatitis C,Number,2017,39824.74490159228,46842.46361628535,34197.61962475466
+Incidence,Puerto Rico,Both,All ages,Acute hepatitis C,Number,2018,2529.3120646557772,2992.084875533707,2141.217671873056
+Incidence,United States of America,Both,All ages,Acute hepatitis C,Number,2018,173532.34198902,204639.0021686321,148623.35245882138
+Incidence,Benin,Both,All ages,Acute hepatitis C,Number,2018,24833.53681462915,29674.484186674945,21054.531493777693
+Incidence,Andorra,Both,All ages,Acute hepatitis C,Number,2016,38.745115977618056,46.18846575803122,32.487551311388046
+Incidence,Slovakia,Both,All ages,Acute hepatitis C,Number,2018,2098.9508973897387,2474.8481002354265,1806.1225737697382
+Incidence,Spain,Both,All ages,Acute hepatitis C,Number,2019,24862.608114918174,29143.796062320824,21064.466567100295
+Incidence,Taiwan (Province of China),Both,All ages,Acute hepatitis C,Number,2019,8874.263419347151,10086.879376667981,7787.458944835631
+Incidence,Serbia,Both,All ages,Acute hepatitis C,Number,2016,3614.1093325491242,4259.338647504961,3116.4197454327445
+Incidence,Latvia,Both,All ages,Acute hepatitis C,Number,2019,1123.516676557886,1322.0229011402625,963.3998770535045
+Incidence,Cambodia,Both,All ages,Acute hepatitis C,Number,2019,33105.83631008505,38076.801581707914,28374.3017179929
+Incidence,Guyana,Both,All ages,Acute hepatitis C,Number,2018,796.1146903757946,943.5238208876518,694.6029835444887
+Incidence,Morocco,Both,All ages,Acute hepatitis C,Number,2016,42338.931419345645,49967.98879766284,36732.103786453605
+Incidence,Malta,Both,All ages,Acute hepatitis C,Number,2016,170.72477869879458,201.4727353462951,145.19316986981957
+Incidence,Sri Lanka,Both,All ages,Acute hepatitis C,Number,2018,6525.80708522897,7510.0302030780285,5784.284585394948
+Incidence,Algeria,Both,All ages,Acute hepatitis C,Number,2018,39150.884402508185,46148.502383139006,33724.23676147608
+Incidence,Jamaica,Both,All ages,Acute hepatitis C,Number,2017,1797.1213811639216,2177.072748613686,1554.2166191509532
+Incidence,Zambia,Both,All ages,Acute hepatitis C,Number,2017,18228.389982457913,21451.942566016172,15733.04474164529
+Incidence,Viet Nam,Both,All ages,Acute hepatitis C,Number,2017,58811.26108506514,67171.36772086215,51877.85363698832
+Incidence,Portugal,Both,All ages,Acute hepatitis C,Number,2018,5119.8806637469625,5999.142735894396,4342.098590809428
+Incidence,Sweden,Both,All ages,Acute hepatitis C,Number,2019,4178.06977733319,5093.270809468069,3431.525494254007
+Incidence,Singapore,Both,All ages,Acute hepatitis C,Number,2017,2035.7270455034113,2464.104896098745,1694.4232274618012
+Incidence,Norway,Both,All ages,Acute hepatitis C,Number,2018,2400.395023859833,2888.8194028176777,1993.9755664894346
+Incidence,Bosnia and Herzegovina,Both,All ages,Acute hepatitis C,Number,2017,1513.2170035153376,1802.1676200670242,1288.0964258859422
+Incidence,Belgium,Both,All ages,Acute hepatitis C,Number,2018,5413.66325416665,6353.733920893047,4603.2535865474365
+Incidence,Denmark,Both,All ages,Acute hepatitis C,Number,2018,2396.513489692526,2819.5540168853604,2041.1855590051082
+Incidence,Eritrea,Both,All ages,Acute hepatitis C,Number,2017,7104.394601744957,8407.990517330994,6109.331494589394
+Incidence,Chad,Both,All ages,Acute hepatitis C,Number,2017,36205.033628051315,44035.48606849795,30409.717582400543
+Incidence,United Republic of Tanzania,Both,All ages,Acute hepatitis C,Number,2018,54946.09663547057,65342.77486264775,47316.51830487392
+Incidence,Iceland,Both,All ages,Acute hepatitis C,Number,2019,113.03076904960591,133.4450404925024,96.1807495198791
+Incidence,San Marino,Both,All ages,Acute hepatitis C,Number,2017,14.956301936881054,18.00575289011484,12.492196453498442
+Incidence,Croatia,Both,All ages,Acute hepatitis C,Number,2019,1505.5517537880123,1764.3924537363275,1274.8770114185222
+Incidence,Qatar,Both,All ages,Acute hepatitis C,Number,2018,2190.4017494918435,2641.875235620261,1835.0177876759253
+Incidence,Tonga,Both,All ages,Acute hepatitis C,Number,2018,39.75956247676569,45.283471618392355,35.1044871343391
+Incidence,Solomon Islands,Both,All ages,Acute hepatitis C,Number,2016,152.3215094733061,174.52394579672156,133.89783956323063
+Incidence,Paraguay,Both,All ages,Acute hepatitis C,Number,2016,5757.736361401198,6850.172532161265,4993.528704298547
+Incidence,Mauritania,Both,All ages,Acute hepatitis C,Number,2016,4882.843703101216,5851.6678590113015,4160.622203901853
+Incidence,Burundi,Both,All ages,Acute hepatitis C,Number,2018,20661.847833599335,24581.805938542006,17534.97452391875
+Incidence,Tokelau,Both,All ages,Acute hepatitis C,Number,2017,0.3839930190142676,0.44116312521874107,0.3365815024131922
+Incidence,Azerbaijan,Both,All ages,Acute hepatitis C,Number,2019,12403.45207596507,14778.056369235974,10798.662596213671
+Incidence,Democratic People's Republic of Korea,Both,All ages,Acute hepatitis C,Number,2018,10715.393121946994,12215.08312228132,9418.559565976182
+Incidence,Sao Tome and Principe,Both,All ages,Acute hepatitis C,Number,2017,260.1263726003592,309.58953273201155,222.77027630230978
+Incidence,Malta,Both,All ages,Acute hepatitis C,Number,2018,176.81437403232258,208.9139826599023,148.8753180629436
+Incidence,Georgia,Both,All ages,Acute hepatitis C,Number,2019,4061.163693920933,4711.808383736185,3502.7220213313144
+Incidence,Monaco,Both,All ages,Acute hepatitis C,Number,2016,21.565103274512506,25.937070214419727,17.993621291649003
+Incidence,Austria,Both,All ages,Acute hepatitis C,Number,2016,4059.5181322098524,4814.828727178681,3439.473433312232
+Incidence,Denmark,Both,All ages,Acute hepatitis C,Number,2017,2370.681349566764,2769.02308993899,2002.747810048837
+Incidence,Saint Kitts and Nevis,Both,All ages,Acute hepatitis C,Number,2018,44.323564480268864,52.39768981922025,38.245617809341525
+Incidence,Northern Mariana Islands,Both,All ages,Acute hepatitis C,Number,2017,9.990093178530723,11.795244234932857,8.705124533469593
+Incidence,Bermuda,Both,All ages,Acute hepatitis C,Number,2017,36.984987873692575,44.298413087918426,31.025039935836052
+Incidence,Spain,Both,All ages,Acute hepatitis C,Number,2018,24685.525838105197,29031.758948869414,21106.16840192111
+Incidence,Russian Federation,Both,All ages,Acute hepatitis C,Number,2016,105245.75590235126,124411.00175315488,90053.04350343287
+Incidence,Guatemala,Both,All ages,Acute hepatitis C,Number,2017,24143.92484629219,27648.97841018301,21157.600409472332
+Incidence,Saint Lucia,Both,All ages,Acute hepatitis C,Number,2017,128.73542523984594,153.7845937748058,111.27336662586508
+Incidence,Nigeria,Both,All ages,Acute hepatitis C,Number,2017,340259.3385164359,413304.17555185023,288888.1358291894
+Incidence,Bulgaria,Both,All ages,Acute hepatitis C,Number,2017,2785.98585096023,3250.1343407935515,2364.4364095646415
+Incidence,Pakistan,Both,All ages,Acute hepatitis C,Number,2018,218093.31334406938,255561.0278392237,188883.23580155155
+Incidence,New Zealand,Both,All ages,Acute hepatitis C,Number,2019,1848.9478435253895,2207.1982980183043,1542.7081168567188
+Incidence,Seychelles,Both,All ages,Acute hepatitis C,Number,2017,52.70389664668818,60.82547089315662,46.82317930397453
+Incidence,Israel,Both,All ages,Acute hepatitis C,Number,2016,3394.014875696743,3924.586077093378,2968.866818635887
+Incidence,Brunei Darussalam,Both,All ages,Acute hepatitis C,Number,2017,119.41102632615484,140.42111588953054,101.88800631552326
+Incidence,Haiti,Both,All ages,Acute hepatitis C,Number,2018,14399.625290641663,17060.463250516535,12432.87264647559
+Incidence,Zimbabwe,Both,All ages,Acute hepatitis C,Number,2017,15342.972405933042,18199.846222949283,13272.783858170777
+Incidence,Tajikistan,Both,All ages,Acute hepatitis C,Number,2016,16165.566599721336,18590.643933950996,14088.171482631069
+Incidence,Madagascar,Both,All ages,Acute hepatitis C,Number,2016,18238.45040882411,21336.195430197815,15914.477598540949
+Incidence,Burkina Faso,Both,All ages,Acute hepatitis C,Number,2018,43625.079695350876,52360.54042782852,36698.6260349166
+Incidence,Saudi Arabia,Both,All ages,Acute hepatitis C,Number,2018,56527.48893590931,67973.66328048757,48233.731489877806
+Incidence,Myanmar,Both,All ages,Acute hepatitis C,Number,2017,39480.41134394577,44719.80922693585,34780.2896003886
+Incidence,Japan,Both,All ages,Acute hepatitis C,Number,2018,85361.05422316134,105537.28861062713,69940.00808586292
+Incidence,Bangladesh,Both,All ages,Acute hepatitis C,Number,2016,48457.710587023284,56213.73558625858,42601.37150382441
+Incidence,Sweden,Both,All ages,Acute hepatitis C,Number,2017,4063.5719500857253,4916.395652260139,3360.9619394523393
+Incidence,Thailand,Both,All ages,Acute hepatitis C,Number,2018,28273.24694449407,32525.652551930492,24922.752479500024
+Incidence,Republic of Korea,Both,All ages,Acute hepatitis C,Number,2018,21946.561320287296,26343.96079641365,18366.778660348267
+Incidence,Kiribati,Both,All ages,Acute hepatitis C,Number,2019,74.66930074557318,87.59370731966074,64.17658173232478
+Incidence,Czechia,Both,All ages,Acute hepatitis C,Number,2019,3383.9742074992223,3925.4280080319277,2898.7448724364517
+Incidence,Niger,Both,All ages,Acute hepatitis C,Number,2018,45207.76097538464,54785.21524319202,37901.433600374156
+Incidence,Ireland,Both,All ages,Acute hepatitis C,Number,2019,1928.9933907348018,2240.7766767022476,1634.522004622034
+Incidence,Comoros,Both,All ages,Acute hepatitis C,Number,2018,677.0895386118734,799.1217582641509,589.2214095129135
+Incidence,Tuvalu,Both,All ages,Acute hepatitis C,Number,2017,3.2229891022882837,3.7070712926149425,2.846239147671421
+Incidence,Cabo Verde,Both,All ages,Acute hepatitis C,Number,2018,664.5558407234358,793.0513396566441,575.0625748435955
+Incidence,Kazakhstan,Both,All ages,Acute hepatitis C,Number,2019,19566.39886870863,22762.21914238747,17116.650899368626
+Incidence,Albania,Both,All ages,Acute hepatitis C,Number,2018,1097.3904681509623,1287.1985010078506,947.7708289527415
+Incidence,Finland,Both,All ages,Acute hepatitis C,Number,2018,2672.9415579452525,3123.8304389636182,2302.9509026086607
+Incidence,Marshall Islands,Both,All ages,Acute hepatitis C,Number,2019,17.96801028957388,20.962552092588897,15.747052200816942
+Incidence,Vanuatu,Both,All ages,Acute hepatitis C,Number,2018,98.85752804392467,115.33165682940809,86.16851448266729
+Incidence,Bermuda,Both,All ages,Acute hepatitis C,Number,2018,37.00889928008143,44.35816431261853,31.165820126132058
+Incidence,Israel,Both,All ages,Acute hepatitis C,Number,2019,3642.3057730351843,4318.245606440996,3145.0213381096887
+Incidence,Bahrain,Both,All ages,Acute hepatitis C,Number,2018,1307.5142339761035,1577.7809873009476,1099.165071508336
+Incidence,China,Both,All ages,Acute hepatitis C,Number,2018,472099.4974869875,548316.901397338,409213.28774380527
+Incidence,Chile,Both,All ages,Acute hepatitis C,Number,2016,6934.575117633177,7862.304882924519,6121.925885591425
+Incidence,El Salvador,Both,All ages,Acute hepatitis C,Number,2018,6492.169030451603,7637.272163505117,5693.489335765572
+Incidence,Switzerland,Both,All ages,Acute hepatitis C,Number,2017,3817.092961697691,4485.202287157268,3215.588913957687
+Incidence,San Marino,Both,All ages,Acute hepatitis C,Number,2018,15.129468579769618,18.075291731569965,12.712602394353935
+Incidence,United States of America,Both,All ages,Acute hepatitis C,Number,2017,172752.71761995094,204293.37169934282,147952.67109630542
+Incidence,Greenland,Both,All ages,Acute hepatitis C,Number,2018,25.512568668633097,29.95291879252846,22.259312744026793
+Incidence,Palestine,Both,All ages,Acute hepatitis C,Number,2016,4390.111233051866,5174.4337306669195,3838.016480004473
+Incidence,Germany,Both,All ages,Acute hepatitis C,Number,2018,36046.91490930185,43374.7930392712,30396.221630060438
+Incidence,Senegal,Both,All ages,Acute hepatitis C,Number,2017,14013.50022873003,16617.409175626028,12021.699597832257
+Incidence,Honduras,Both,All ages,Acute hepatitis C,Number,2018,14069.900820132032,16633.950916064623,12254.891635488533
+Incidence,Lithuania,Both,All ages,Acute hepatitis C,Number,2018,1966.9420645521475,2280.134888844715,1696.1982253625167
+Incidence,Saint Vincent and the Grenadines,Both,All ages,Acute hepatitis C,Number,2018,84.45924523340243,100.67469366641862,73.54352324957851
+Incidence,Greece,Both,All ages,Acute hepatitis C,Number,2018,3415.882411401282,4111.144156171774,2825.42917365569
+Incidence,Singapore,Both,All ages,Acute hepatitis C,Number,2018,2102.379514949333,2510.040434036823,1764.8092072053596
+Incidence,Cyprus,Both,All ages,Acute hepatitis C,Number,2018,467.8202036097048,552.2818611194551,396.92250610205326
+Incidence,Belarus,Both,All ages,Acute hepatitis C,Number,2017,6451.696489827381,7625.209339513784,5616.637241359582
+Incidence,Fiji,Both,All ages,Acute hepatitis C,Number,2019,298.20431921515916,344.63331501805885,259.1586494525249
+Incidence,Hungary,Both,All ages,Acute hepatitis C,Number,2019,3941.623683854638,4656.112938646051,3384.7341592207663
+Incidence,Palau,Both,All ages,Acute hepatitis C,Number,2017,4.054190802723755,4.747049877551384,3.5265491617482754
+Incidence,Uruguay,Both,All ages,Acute hepatitis C,Number,2019,1088.3789469363833,1276.654678754046,940.2596695517511
+Incidence,Timor-Leste,Both,All ages,Acute hepatitis C,Number,2018,981.9470926541745,1146.6787751388215,842.216710007944
+Incidence,Slovenia,Both,All ages,Acute hepatitis C,Number,2018,913.4074181644663,1072.0453966636567,776.6072766053135
+Incidence,Chile,Both,All ages,Acute hepatitis C,Number,2019,7358.204265821932,8356.484263572824,6472.153146581837
+Incidence,Republic of Moldova,Both,All ages,Acute hepatitis C,Number,2018,2973.7790952563955,3514.3077725820094,2556.801947986384
+Incidence,Puerto Rico,Both,All ages,Acute hepatitis C,Number,2017,2583.660804808852,3057.8642762629574,2188.913168939867
+Incidence,Antigua and Barbuda,Both,All ages,Acute hepatitis C,Number,2017,58.73627485898096,69.61705526080507,50.128165843492155
+Incidence,Lao People's Democratic Republic,Both,All ages,Acute hepatitis C,Number,2019,7667.225191720986,8900.611826188693,6614.366643849649
+Incidence,Uganda,Both,All ages,Acute hepatitis C,Number,2018,45610.2677677717,53951.64504086469,38997.51232259371
+Incidence,France,Both,All ages,Acute hepatitis C,Number,2018,30749.755291837333,36224.63428107643,26333.973978565286
+Incidence,Turkmenistan,Both,All ages,Acute hepatitis C,Number,2016,7998.141982553702,9172.648105804552,7006.501794895487
+Incidence,United Kingdom,Both,All ages,Acute hepatitis C,Number,2019,34867.843279509885,41452.54472034264,29494.01200545826
+Incidence,Cook Islands,Both,All ages,Acute hepatitis C,Number,2017,4.350369774611324,4.997155370788073,3.8050479715196803
+Incidence,Australia,Both,All ages,Acute hepatitis C,Number,2019,17867.168858444566,21012.882546406017,15318.691030662561
+Incidence,Taiwan (Province of China),Both,All ages,Acute hepatitis C,Number,2018,8962.481230834497,10119.470257169107,7925.6453807993985
+Incidence,Guatemala,Both,All ages,Acute hepatitis C,Number,2018,24573.37848845802,28214.913964080017,21537.447027519815
+Incidence,Hungary,Both,All ages,Acute hepatitis C,Number,2018,3939.085788417047,4640.152591601224,3344.3423050064825
+Incidence,Indonesia,Both,All ages,Acute hepatitis C,Number,2018,146289.82944530156,172441.07069673768,127567.34068219912
+Incidence,Portugal,Both,All ages,Acute hepatitis C,Number,2017,5102.147852635447,6015.237984628296,4326.305630631906
+Incidence,Ukraine,Both,All ages,Acute hepatitis C,Number,2019,34377.81117186741,41043.50664041189,29306.411277719126
+Incidence,Nicaragua,Both,All ages,Acute hepatitis C,Number,2018,8668.277444703494,10130.896477774879,7605.19106323722
+Incidence,Cook Islands,Both,All ages,Acute hepatitis C,Number,2018,4.361154531704538,5.004314157567277,3.844210282423991
+Incidence,Poland,Both,All ages,Acute hepatitis C,Number,2016,14641.76369045475,17461.969427359283,12438.918102691488
+Incidence,Russian Federation,Both,All ages,Acute hepatitis C,Number,2019,105649.65859703525,125561.54348842327,90398.44358480112
+Incidence,Guam,Both,All ages,Acute hepatitis C,Number,2018,35.770008901934254,40.77198946953675,31.83977669360799
+Incidence,Switzerland,Both,All ages,Acute hepatitis C,Number,2018,3884.411327619046,4560.202100796246,3296.921943102218
+Incidence,Cameroon,Both,All ages,Acute hepatitis C,Number,2018,44145.004847454904,52746.108813160135,37508.464845679875
+Incidence,Ukraine,Both,All ages,Acute hepatitis C,Number,2016,35151.71161319633,41628.05066081063,30077.904521611206
+Incidence,Trinidad and Tobago,Both,All ages,Acute hepatitis C,Number,2018,879.0129015647419,1044.263812620577,755.5286309252547
+Incidence,Chad,Both,All ages,Acute hepatitis C,Number,2018,37775.70328917293,45742.39326805115,31632.548186161872
+Incidence,Spain,Both,All ages,Acute hepatitis C,Number,2017,24544.335705884067,29249.977224982,20928.933102698153
+Incidence,Suriname,Both,All ages,Acute hepatitis C,Number,2018,457.37023435999043,544.5254053146242,398.4334251441897
+Incidence,Ethiopia,Both,All ages,Acute hepatitis C,Number,2018,116293.81284554047,139752.95725635966,100187.81485284957
+Incidence,Mexico,Both,All ages,Acute hepatitis C,Number,2018,101179.60389865187,121727.11783074583,85655.77933819481
+Incidence,Nepal,Both,All ages,Acute hepatitis C,Number,2018,9492.114263974141,11029.922679846508,8317.551856987306
+Incidence,Panama,Both,All ages,Acute hepatitis C,Number,2018,3003.462500920227,3497.963721408633,2633.478327993464
+Incidence,Djibouti,Both,All ages,Acute hepatitis C,Number,2018,1067.6363857803706,1268.7160077774497,926.4258496797872
+Incidence,Iran (Islamic Republic of),Both,All ages,Acute hepatitis C,Number,2018,58096.90861215605,69197.18760618879,49469.471604765386
+Incidence,Syrian Arab Republic,Both,All ages,Acute hepatitis C,Number,2017,21352.994049393095,25203.68708466166,18302.065618733155
+Incidence,Kenya,Both,All ages,Acute hepatitis C,Number,2018,37292.81140012273,44727.98146441858,32252.459063961152
+Incidence,Bosnia and Herzegovina,Both,All ages,Acute hepatitis C,Number,2018,1499.029654248267,1781.6765671364915,1273.6077733547668
+Incidence,Estonia,Both,All ages,Acute hepatitis C,Number,2017,838.339917878182,981.196397444234,728.9346136683157
+Incidence,Finland,Both,All ages,Acute hepatitis C,Number,2017,2655.8817867588687,3097.3734439617447,2282.147372247896
+Incidence,Indonesia,Both,All ages,Acute hepatitis C,Number,2019,146660.8747110562,172896.46951189422,127905.63714999732
+Incidence,Luxembourg,Both,All ages,Acute hepatitis C,Number,2019,268.23969535445286,316.38935390816175,226.98050787006324
+Incidence,Jamaica,Both,All ages,Acute hepatitis C,Number,2018,1803.8445459598108,2161.118467326558,1561.04470575003
+Incidence,Peru,Both,All ages,Acute hepatitis C,Number,2016,15611.047735828455,18531.389366654286,13589.911488643469
+Incidence,China,Both,All ages,Acute hepatitis C,Number,2019,478122.6636738173,555179.7296044175,414758.70748918265
+Incidence,Côte d'Ivoire,Both,All ages,Acute hepatitis C,Number,2018,37281.04059106804,44695.09294842676,31866.01068472108
+Incidence,Sweden,Both,All ages,Acute hepatitis C,Number,2018,4118.206118656851,4976.037311314651,3394.976285631425
+Incidence,Viet Nam,Both,All ages,Acute hepatitis C,Number,2018,57445.850938464195,65985.04280470035,50847.77207281539
+Incidence,Uruguay,Both,All ages,Acute hepatitis C,Number,2016,1063.6616223032397,1239.3817929133058,919.1662608967447
+Incidence,Brazil,Both,All ages,Acute hepatitis C,Number,2016,221035.46266975586,262666.46550948714,189475.5569133838
+Incidence,Iran (Islamic Republic of),Both,All ages,Acute hepatitis C,Number,2017,54493.368933472906,64810.169578072266,46274.1348757909
+Incidence,Turkey,Both,All ages,Acute hepatitis C,Number,2018,39101.59507585554,45245.39133687127,34115.83580238561
+Incidence,Sao Tome and Principe,Both,All ages,Acute hepatitis C,Number,2018,261.33392941011056,311.88317671929036,223.88733082670572
+Incidence,France,Both,All ages,Acute hepatitis C,Number,2017,30461.02871307024,36277.4501936104,25751.176686738432
+Incidence,Tunisia,Both,All ages,Acute hepatitis C,Number,2017,8390.473869732661,9938.427076304155,7143.133710620198
+Incidence,North Macedonia,Both,All ages,Acute hepatitis C,Number,2018,839.1641328236889,1005.9154738918478,717.7969395329806
+Incidence,Armenia,Both,All ages,Acute hepatitis C,Number,2018,3595.932115497122,4155.39990958215,3149.480560287229
+Incidence,Malta,Both,All ages,Acute hepatitis C,Number,2019,179.43159169711595,216.87185605219486,149.44428815014052
+Incidence,South Africa,Both,All ages,Acute hepatitis C,Number,2018,44658.71746808534,53149.683843633335,38374.777389585164
+Incidence,Micronesia (Federated States of),Both,All ages,Acute hepatitis C,Number,2019,43.717520018413595,50.68154650617928,38.03972712064299
+Incidence,Micronesia (Federated States of),Both,All ages,Acute hepatitis C,Number,2018,44.32178243868325,51.36872046327542,38.67874507470278
+Incidence,Bolivia (Plurinational State of),Both,All ages,Acute hepatitis C,Number,2018,6848.67394806071,8129.57059379215,5944.172309697029
+Incidence,Canada,Both,All ages,Acute hepatitis C,Number,2019,15237.46932000475,17614.01945733326,12916.211166440795
+Incidence,Republic of Korea,Both,All ages,Acute hepatitis C,Number,2019,22366.05842812858,26833.755496041213,18573.357636199406
+Incidence,Barbados,Both,All ages,Acute hepatitis C,Number,2018,190.52994556470034,225.9087896086773,162.10437239691603
+Incidence,Papua New Guinea,Both,All ages,Acute hepatitis C,Number,2019,5226.409400694687,6167.232627557415,4416.378497984197
+Incidence,Lithuania,Both,All ages,Acute hepatitis C,Number,2019,1937.5188030695488,2251.634452106304,1665.935677339131
+Incidence,Poland,Both,All ages,Acute hepatitis C,Number,2019,15099.890110611741,18058.346597865035,12768.118430047412
+Incidence,Eritrea,Both,All ages,Acute hepatitis C,Number,2018,7235.667721606342,8533.669265611956,6259.621799193175
+Incidence,Belgium,Both,All ages,Acute hepatitis C,Number,2019,5470.159147927819,6496.37377473083,4647.002278371689
+Incidence,Zambia,Both,All ages,Acute hepatitis C,Number,2018,18667.408116209466,22045.512985371806,16165.757040800361
+Incidence,Dominica,Both,All ages,Acute hepatitis C,Number,2018,43.6167139275946,52.06342518009334,37.57552770794014
+Incidence,North Macedonia,Both,All ages,Acute hepatitis C,Number,2019,838.7699503323272,1021.101132717484,714.7834352872233
+Incidence,Democratic Republic of the Congo,Both,All ages,Acute hepatitis C,Number,2018,179012.24741095013,212676.60156587858,153663.51670831942
+Incidence,Kuwait,Both,All ages,Acute hepatitis C,Number,2018,2774.092134675813,3331.718357734914,2331.9865110154774
+Incidence,Andorra,Both,All ages,Acute hepatitis C,Number,2019,42.243316248955594,51.03711271837265,35.2659257841134
+Incidence,Egypt,Both,All ages,Acute hepatitis C,Number,2018,315013.75375822675,357520.83316854056,280196.31557623774
+Incidence,Japan,Both,All ages,Acute hepatitis C,Number,2019,86141.5875187836,106699.59280630398,70266.6289845193
+Incidence,Belize,Both,All ages,Acute hepatitis C,Number,2018,347.02434976559414,410.6139475116394,302.9453115011862
+Incidence,Tokelau,Both,All ages,Acute hepatitis C,Number,2018,0.3889137985302624,0.44158035345790525,0.3416139567058639
+Incidence,Kyrgyzstan,Both,All ages,Acute hepatitis C,Number,2018,10402.671181403748,12022.11748853455,9149.000944698235
+Incidence,Australia,Both,All ages,Acute hepatitis C,Number,2018,17794.779438869566,20682.76701131141,15305.666340182848
+Incidence,Azerbaijan,Both,All ages,Acute hepatitis C,Number,2018,12319.615661541533,14512.793228832425,10776.301978784702
+Incidence,Benin,Both,All ages,Acute hepatitis C,Number,2017,24602.939131820658,29331.45579097548,20806.940381872384
+Incidence,Republic of Moldova,Both,All ages,Acute hepatitis C,Number,2019,2952.361317402664,3472.0987155547427,2529.730720982985
+Incidence,Malaysia,Both,All ages,Acute hepatitis C,Number,2018,20484.173372673766,23876.492555913537,17937.49329273898
+Incidence,Kyrgyzstan,Both,All ages,Acute hepatitis C,Number,2019,10489.528858593796,12361.977899641666,9158.769762583725
+Incidence,Lebanon,Both,All ages,Acute hepatitis C,Number,2018,2596.2194383593237,3055.5162380031234,2249.0091451776293
+Incidence,Austria,Both,All ages,Acute hepatitis C,Number,2019,4236.504115721062,5048.644501766209,3569.548320402331
+Incidence,Philippines,Both,All ages,Acute hepatitis C,Number,2019,54255.680687940956,64085.06015978271,47055.249010671934
+Incidence,Cyprus,Both,All ages,Acute hepatitis C,Number,2019,477.06551016641123,567.712374657392,402.42423174405815
+Incidence,Guinea,Both,All ages,Acute hepatitis C,Number,2018,23414.805191208747,27877.474755726907,19887.353505327806
+Incidence,Pakistan,Both,All ages,Acute hepatitis C,Number,2017,216785.90639887808,255231.78737660314,187722.3243410138
+Incidence,Samoa,Both,All ages,Acute hepatitis C,Number,2019,33.86971251115067,39.13006001657537,29.873426587880022
+Incidence,Fiji,Both,All ages,Acute hepatitis C,Number,2018,299.3394151455726,348.17410276410817,258.49051411818783
+Incidence,South Sudan,Both,All ages,Acute hepatitis C,Number,2018,8876.769510572743,10647.367060821256,7667.9852538766445
+Incidence,Ecuador,Both,All ages,Acute hepatitis C,Number,2018,8537.44049652667,9987.778212583866,7429.473377078688
+Incidence,India,Both,All ages,Acute hepatitis C,Number,2018,582039.5316704364,682787.6381060234,505524.85579397273
+Incidence,Angola,Both,All ages,Acute hepatitis C,Number,2018,61708.56813240083,73648.83955430875,53214.95519332847
+Incidence,Slovakia,Both,All ages,Acute hepatitis C,Number,2019,2113.368311545563,2474.841996397913,1813.3865992204294
+Incidence,Mongolia,Both,All ages,Acute hepatitis C,Number,2018,12516.199312054337,15017.317630857526,10621.671663979152
+Incidence,Grenada,Both,All ages,Acute hepatitis C,Number,2016,82.71286703432811,98.01001662643507,72.03282819607867
+Incidence,United Arab Emirates,Both,All ages,Acute hepatitis C,Number,2018,6971.426438635505,8792.090557796928,5568.874342957033
+Incidence,Syrian Arab Republic,Both,All ages,Acute hepatitis C,Number,2018,21456.642643406794,25388.77332230557,18411.229935028652
+Incidence,Malaysia,Both,All ages,Acute hepatitis C,Number,2019,20754.556885419704,24147.966708868338,18147.51619757558
+Incidence,Iceland,Both,All ages,Acute hepatitis C,Number,2018,111.71723930928269,130.30957884741161,95.26232376500312
+Incidence,Guinea-Bissau,Both,All ages,Acute hepatitis C,Number,2018,2388.171616831455,2861.1099034745007,2049.867614841126
+Incidence,Nigeria,Both,All ages,Acute hepatitis C,Number,2018,346634.1305205334,420685.0770158688,294416.2882104272
+Incidence,Monaco,Both,All ages,Acute hepatitis C,Number,2018,22.05430430939488,26.752525184163172,18.091883436903707
+Incidence,Venezuela (Bolivarian Republic of),Both,All ages,Acute hepatitis C,Number,2018,22371.92113953905,26703.364595930438,19485.545235454956
+Incidence,Vanuatu,Both,All ages,Acute hepatitis C,Number,2019,100.44971068919273,116.35107653127959,87.25437828022872
+Incidence,Botswana,Both,All ages,Acute hepatitis C,Number,2018,2028.7093326565503,2420.665262703488,1743.5679764574327
+Incidence,Cuba,Both,All ages,Acute hepatitis C,Number,2018,7382.287686082145,8802.563443376217,6283.4387149924405
+Incidence,Tuvalu,Both,All ages,Acute hepatitis C,Number,2018,3.242167767893665,3.72330108537036,2.8738241422068826
+Incidence,United Kingdom,Both,All ages,Acute hepatitis C,Number,2018,34490.99630013412,40924.50098713846,29154.517473722226
+Incidence,Slovenia,Both,All ages,Acute hepatitis C,Number,2019,921.4139805529655,1086.2813287557647,780.8052239340142
+Incidence,Saint Lucia,Both,All ages,Acute hepatitis C,Number,2018,129.2332746605142,153.86735366541535,111.13310009193873
+Incidence,Canada,Both,All ages,Acute hepatitis C,Number,2016,14740.00831927625,17062.80857640814,12601.761433120148
+Incidence,Antigua and Barbuda,Both,All ages,Acute hepatitis C,Number,2018,59.00090353013446,70.07943843959096,50.4034633910009
+Incidence,Mongolia,Both,All ages,Acute hepatitis C,Number,2019,12627.760916032865,15198.21585321144,10672.347291433978
+Incidence,Singapore,Both,All ages,Acute hepatitis C,Number,2019,2177.8227200467186,2587.560216262265,1816.4114874783497
+Incidence,Saint Vincent and the Grenadines,Both,All ages,Acute hepatitis C,Number,2017,84.34364349280628,101.30444595029594,73.57627802461755
+Incidence,Belarus,Both,All ages,Acute hepatitis C,Number,2018,6425.105517754337,7576.5624857434905,5605.910095169096
+Incidence,Italy,Both,All ages,Acute hepatitis C,Number,2019,51197.16249838577,62456.01463750626,42279.699080868115
+Incidence,Yemen,Both,All ages,Acute hepatitis C,Number,2018,18822.484970673508,21580.660734282934,16671.44538679876
+Incidence,Madagascar,Both,All ages,Acute hepatitis C,Number,2018,18966.483292505087,22422.164886775485,16508.42244944536
+Incidence,Argentina,Both,All ages,Acute hepatitis C,Number,2018,14762.656226898142,16991.491630614102,12932.901150007123
+Incidence,Ireland,Both,All ages,Acute hepatitis C,Number,2018,1901.047282116393,2225.636291081859,1618.1942094071057
+Incidence,Maldives,Both,All ages,Acute hepatitis C,Number,2019,222.52541990334473,262.00283444722095,191.99019734157167
+Incidence,Montenegro,Both,All ages,Acute hepatitis C,Number,2018,218.15322782972936,258.98037293072747,186.80631220656022
+Incidence,Italy,Both,All ages,Acute hepatitis C,Number,2018,51036.07229976131,62183.991495708215,42077.2655797417
+Incidence,Saudi Arabia,Both,All ages,Acute hepatitis C,Number,2019,57952.65530042948,70117.64093598379,49297.88475512791
+Incidence,Guatemala,Both,All ages,Acute hepatitis C,Number,2019,25052.954163174367,29005.37995332031,21856.082314185525
+Incidence,Saint Lucia,Both,All ages,Acute hepatitis C,Number,2019,129.87137351342557,154.67295523915584,110.49666859311117
+Incidence,Denmark,Both,All ages,Acute hepatitis C,Number,2019,2422.7849764491534,2897.8958675894573,2061.526099300323
+Incidence,Brazil,Both,All ages,Acute hepatitis C,Number,2018,215117.9973921965,255360.92046099977,183358.80318024388
+Incidence,Andorra,Both,All ages,Acute hepatitis C,Number,2018,41.25985320465404,49.73571101191,34.68259170268229
+Incidence,Israel,Both,All ages,Acute hepatitis C,Number,2018,3584.197579758749,4177.856218092953,3099.320594848917
+Incidence,Syrian Arab Republic,Both,All ages,Acute hepatitis C,Number,2019,21655.12480918655,25882.54750754524,18507.708889745794
+Incidence,Uganda,Both,All ages,Acute hepatitis C,Number,2019,46307.86915913026,55155.944621979455,39472.900345212984
+Incidence,Myanmar,Both,All ages,Acute hepatitis C,Number,2019,39258.197262913796,45482.492401023155,34758.40781246402
+Incidence,Bahrain,Both,All ages,Acute hepatitis C,Number,2019,1337.8749780575488,1634.5591019006713,1117.2399183120328
+Incidence,Djibouti,Both,All ages,Acute hepatitis C,Number,2019,1089.8913761973442,1293.2788215963392,945.6773927036827
+Incidence,Philippines,Both,All ages,Acute hepatitis C,Number,2016,52678.660829431,62204.035122150344,45647.02699058417
+Incidence,Brunei Darussalam,Both,All ages,Acute hepatitis C,Number,2019,126.38856346925208,149.41504968135465,108.1689034166762
+Incidence,Chile,Both,All ages,Acute hepatitis C,Number,2018,7241.203617338134,8294.93970011578,6352.554320451761
+Incidence,Finland,Both,All ages,Acute hepatitis C,Number,2019,2687.060294287134,3181.198401430127,2277.3193222040272
+Incidence,Pakistan,Both,All ages,Acute hepatitis C,Number,2019,221383.02993457354,260103.17950585275,191602.27529466018
+Incidence,Tunisia,Both,All ages,Acute hepatitis C,Number,2019,8672.881602641733,10215.672444905405,7398.194775023818
+Incidence,Antigua and Barbuda,Both,All ages,Acute hepatitis C,Number,2019,59.35299516647565,70.94847041711465,50.49081278379502
+Incidence,Honduras,Both,All ages,Acute hepatitis C,Number,2019,14343.194314155087,16823.718638277875,12454.37834207873
+Incidence,Zambia,Both,All ages,Acute hepatitis C,Number,2019,19122.264590605446,22657.610160865315,16489.15808795074
+Incidence,Eritrea,Both,All ages,Acute hepatitis C,Number,2019,7359.652244494248,8609.99061054345,6383.0136556223015
+Incidence,Bhutan,Both,All ages,Acute hepatitis C,Number,2016,343.7861830987551,401.70539123658773,300.19001992437444
+Incidence,Colombia,Both,All ages,Acute hepatitis C,Number,2016,33594.973696150344,39808.46519620223,29275.97323141361
+Incidence,Saint Vincent and the Grenadines,Both,All ages,Acute hepatitis C,Number,2019,84.56297473239164,99.66216561774894,72.81903552037804
+Incidence,Netherlands,Both,All ages,Acute hepatitis C,Number,2019,4851.7417595696315,5800.05002168767,4109.039929842791
+Incidence,Russian Federation,Both,All ages,Acute hepatitis C,Number,2018,105768.36376917138,124982.3118423927,90303.00542545323
+Incidence,Cambodia,Both,All ages,Acute hepatitis C,Number,2018,32418.313452867034,36816.03870952009,28276.926783467312
+Incidence,United States of America,Both,All ages,Acute hepatitis C,Number,2019,173042.8684102349,203717.66964555107,148389.62434782236
+Incidence,Guyana,Both,All ages,Acute hepatitis C,Number,2016,765.5907235474008,905.0766005413124,668.2037181003083
+Incidence,Bulgaria,Both,All ages,Acute hepatitis C,Number,2018,2776.521176110884,3255.6046340920484,2379.9382854219443
+Incidence,Germany,Both,All ages,Acute hepatitis C,Number,2019,36447.71869789123,44037.42131927716,30752.66168848954
+Incidence,Egypt,Both,All ages,Acute hepatitis C,Number,2019,317335.3841410862,362085.4734311,279302.2008070793
+Incidence,Estonia,Both,All ages,Acute hepatitis C,Number,2018,839.2399901081648,985.3323634150231,729.3951601729075
+Incidence,Iran (Islamic Republic of),Both,All ages,Acute hepatitis C,Number,2019,60318.6532000907,72006.5603891032,51168.59556403915
+Incidence,Botswana,Both,All ages,Acute hepatitis C,Number,2019,2043.775648092255,2447.6796740778195,1763.5016058681038
+Incidence,Bahamas,Both,All ages,Acute hepatitis C,Number,2019,251.58323919556034,304.00854275631673,216.3023921907488
+Incidence,Bahamas,Both,All ages,Acute hepatitis C,Number,2018,251.31131199544564,302.2929462193371,217.00752037974124
+Incidence,Tunisia,Both,All ages,Acute hepatitis C,Number,2018,8533.97302001404,10049.337465935134,7265.618777144282
+Incidence,Oman,Both,All ages,Acute hepatitis C,Number,2016,3613.268453259674,4280.904459362463,3098.394101456366
+Incidence,Suriname,Both,All ages,Acute hepatitis C,Number,2019,458.1106842956046,539.6429987180748,399.40953716813743
+Incidence,Suriname,Both,All ages,Acute hepatitis C,Number,2017,455.698325451924,547.679706854981,394.42338918311435
+Incidence,Turkey,Both,All ages,Acute hepatitis C,Number,2019,47089.42910386986,55424.36277902489,40418.74896016458
+Incidence,Senegal,Both,All ages,Acute hepatitis C,Number,2018,14187.521078698417,16729.747351242677,12186.25632641205
+Incidence,Barbados,Both,All ages,Acute hepatitis C,Number,2019,191.31997814410553,227.41129510686253,162.6680442613532
+Incidence,Turkey,Both,All ages,Acute hepatitis C,Number,2017,34354.04097164467,39027.768268529806,30228.270002039208
+Incidence,Ethiopia,Both,All ages,Acute hepatitis C,Number,2017,114096.95848849347,136406.15956804832,98434.01526497258
+Incidence,Madagascar,Both,All ages,Acute hepatitis C,Number,2019,19398.566259361844,23000.54252226478,16736.51858913216
+Incidence,Nicaragua,Both,All ages,Acute hepatitis C,Number,2019,8694.80852471057,10180.326549071084,7609.925224251749
+Incidence,Trinidad and Tobago,Both,All ages,Acute hepatitis C,Number,2019,881.1402616621496,1052.752651681677,753.9936574490491
+Incidence,Portugal,Both,All ages,Acute hepatitis C,Number,2019,5119.622588166708,6113.565320811392,4344.724196852231
+Incidence,Greece,Both,All ages,Acute hepatitis C,Number,2019,3420.9423680656405,4128.980254713934,2798.5056821942394
+Incidence,United Arab Emirates,Both,All ages,Acute hepatitis C,Number,2019,7171.718074322885,9175.180117068658,5723.810052288755
+Incidence,Angola,Both,All ages,Acute hepatitis C,Number,2019,62680.41136214082,75374.56573437556,54232.037823156126
+Incidence,Croatia,Both,All ages,Acute hepatitis C,Number,2018,1508.9933228063715,1763.7865491994871,1282.749569440803
+Incidence,Ethiopia,Both,All ages,Acute hepatitis C,Number,2019,118460.61118961393,142513.75214711286,102240.14089176132
+Incidence,Peru,Both,All ages,Acute hepatitis C,Number,2019,16177.039639866889,19115.672687297032,13966.33893078285
+Incidence,Lesotho,Both,All ages,Acute hepatitis C,Number,2019,2201.208970972011,2594.2527029731496,1908.0864736770905
+Incidence,Belize,Both,All ages,Acute hepatitis C,Number,2019,352.86380757814464,417.75394274152205,306.3724221926223
+Incidence,Sierra Leone,Both,All ages,Acute hepatitis C,Number,2018,12004.54357140547,14252.186093016808,10248.3601059927
+Incidence,Mexico,Both,All ages,Acute hepatitis C,Number,2019,102683.24260852656,123268.14304578121,86981.41547328333
+Incidence,Latvia,Both,All ages,Acute hepatitis C,Number,2018,1136.5420488332113,1331.8167276123008,981.5688534962264
+Incidence,Peru,Both,All ages,Acute hepatitis C,Number,2018,16011.045582862984,19088.312667470585,13850.617158214383
+Incidence,Malawi,Both,All ages,Acute hepatitis C,Number,2019,19450.869202020236,22918.445673157323,16873.146046456757
+Incidence,Grenada,Both,All ages,Acute hepatitis C,Number,2019,82.3769728817147,97.87883759035165,71.17384993353409
+Incidence,Brazil,Both,All ages,Acute hepatitis C,Number,2019,218954.93703331746,260175.04828076914,186513.0748261493
+Incidence,Kuwait,Both,All ages,Acute hepatitis C,Number,2019,2884.1279889434654,3411.251529433628,2398.500576220068
+Incidence,Panama,Both,All ages,Acute hepatitis C,Number,2019,3044.7806799663026,3556.1781063251296,2642.7592654080463
+Incidence,Honduras,Both,All ages,Acute hepatitis C,Number,2017,13798.799582602032,16370.191654742941,12022.70504624958
+Incidence,Iraq,Both,All ages,Acute hepatitis C,Number,2019,29178.833299324793,34731.91630441321,25162.488037632986
+Incidence,Namibia,Both,All ages,Acute hepatitis C,Number,2019,1999.1924811772117,2409.046035819541,1713.2030825022885
+Incidence,Yemen,Both,All ages,Acute hepatitis C,Number,2019,19979.227138549246,23127.264864616318,17443.000479499682
+Incidence,Switzerland,Both,All ages,Acute hepatitis C,Number,2019,3940.8464687264945,4673.5247101756595,3327.200865933296
+Incidence,Mauritius,Both,All ages,Acute hepatitis C,Number,2019,504.7114378588539,585.4482257360423,442.03359024805434
+Incidence,Kenya,Both,All ages,Acute hepatitis C,Number,2019,37988.69399617338,45539.35559252325,32852.156633245446
+Incidence,Central African Republic,Both,All ages,Acute hepatitis C,Number,2019,11001.744276380043,13103.508132446545,9439.115670652816
+Incidence,Guyana,Both,All ages,Acute hepatitis C,Number,2019,798.1014250714297,951.9603844951719,697.8433662334537
+Incidence,Cuba,Both,All ages,Acute hepatitis C,Number,2019,7345.406623265512,8836.33169335372,6206.790283028684
+Incidence,Colombia,Both,All ages,Acute hepatitis C,Number,2019,34335.68670288308,40605.28899258179,29866.797149407917
+Incidence,New Zealand,Both,All ages,Acute hepatitis C,Number,2018,1835.7599717112105,2202.829262515213,1529.802171179228
+Incidence,Lebanon,Both,All ages,Acute hepatitis C,Number,2019,3376.7241274636267,3992.1818048158893,2889.797245581209
+Incidence,El Salvador,Both,All ages,Acute hepatitis C,Number,2019,6491.750263991652,7631.019643408291,5707.974757131747
+Incidence,Togo,Both,All ages,Acute hepatitis C,Number,2018,11098.277342638512,13279.857604200986,9502.18812394426
+Incidence,Bhutan,Both,All ages,Acute hepatitis C,Number,2019,337.9046807857123,394.8684029808448,292.78592861352104
+Incidence,Lao People's Democratic Republic,Both,All ages,Acute hepatitis C,Number,2018,7648.123076593417,8858.722441798058,6618.718687022533
+Incidence,Nauru,Both,All ages,Acute hepatitis C,Number,2018,3.3598146124117574,3.9644645740318745,2.8928764844099155
+Incidence,Georgia,Both,All ages,Acute hepatitis C,Number,2018,4127.861270568034,4803.07844700312,3571.1321147938143
+Incidence,Iraq,Both,All ages,Acute hepatitis C,Number,2018,28686.302090042802,33719.99771475238,25044.706293909247
+Incidence,Libya,Both,All ages,Acute hepatitis C,Number,2019,10483.230858500347,12627.348751465788,8961.06852459601
+Incidence,Jordan,Both,All ages,Acute hepatitis C,Number,2019,7068.23096918503,8297.831913486985,6121.644437423767
+Incidence,Haiti,Both,All ages,Acute hepatitis C,Number,2019,14586.236052327315,17357.94657822495,12577.724527904384
+Incidence,Costa Rica,Both,All ages,Acute hepatitis C,Number,2019,4348.2303748412905,5118.654795456814,3738.8665667474484
+Incidence,Gambia,Both,All ages,Acute hepatitis C,Number,2018,2941.526341926887,3531.5941780188036,2512.5574943263437
+Incidence,United States Virgin Islands,Both,All ages,Acute hepatitis C,Number,2018,80.06591561382095,95.46446161304266,68.181365305833
+Incidence,Czechia,Both,All ages,Acute hepatitis C,Number,2018,3359.6369855059256,3898.830678716144,2853.8699982381754
+Incidence,Democratic Republic of the Congo,Both,All ages,Acute hepatitis C,Number,2019,181012.5234009065,215871.7607645961,154953.38402479852
+Incidence,Congo,Both,All ages,Acute hepatitis C,Number,2019,9378.340139722693,11259.968890382781,8147.215022421482
+Incidence,Algeria,Both,All ages,Acute hepatitis C,Number,2019,39773.843537333654,47069.39751549059,34122.42680161406
+Incidence,India,Both,All ages,Acute hepatitis C,Number,2019,590000.0002862304,694183.6455983534,512122.06039211026
+Incidence,Nepal,Both,All ages,Acute hepatitis C,Number,2019,9527.789325301434,11116.849787067618,8315.416261800408
+Incidence,Montenegro,Both,All ages,Acute hepatitis C,Number,2019,218.19190321122235,260.16026124033567,185.4923705048979
+Incidence,Malawi,Both,All ages,Acute hepatitis C,Number,2018,19073.745304427466,22411.4454559245,16538.358794593078
+Incidence,Kazakhstan,Both,All ages,Acute hepatitis C,Number,2018,19388.500222554383,22446.979191939423,16987.11694233698
+Incidence,Lesotho,Both,All ages,Acute hepatitis C,Number,2018,2204.631211606351,2641.2100926333706,1907.0020823306206
+Incidence,Kiribati,Both,All ages,Acute hepatitis C,Number,2018,74.52029688560995,86.68945290902133,63.91520535832151
+Incidence,Jordan,Both,All ages,Acute hepatitis C,Number,2018,6098.971727950114,7125.044525504935,5298.060524751172
+Incidence,Ghana,Both,All ages,Acute hepatitis C,Number,2018,54029.66420594344,64766.09978461292,46374.107185138935
+Incidence,Bolivia (Plurinational State of),Both,All ages,Acute hepatitis C,Number,2019,6947.33299556503,8301.88073139655,6010.649299684626
+Incidence,Equatorial Guinea,Both,All ages,Acute hepatitis C,Number,2019,2007.7148659003592,2418.4407174657604,1725.9238957488137
+Incidence,Venezuela (Bolivarian Republic of),Both,All ages,Acute hepatitis C,Number,2019,22538.57862658474,26892.31641043759,19494.555918796894
+Incidence,Mozambique,Both,All ages,Acute hepatitis C,Number,2019,30231.101138004495,36194.78946517145,26128.862549211546
+Incidence,Afghanistan,Both,All ages,Acute hepatitis C,Number,2019,48470.93911343507,57669.860790917366,41862.155694948335
+Incidence,Gabon,Both,All ages,Acute hepatitis C,Number,2019,3445.298788822391,4093.0701864912908,2969.724284518819
+Incidence,Solomon Islands,Both,All ages,Acute hepatitis C,Number,2019,156.64578239437222,179.97068516412097,137.4207822990334
+Incidence,Central African Republic,Both,All ages,Acute hepatitis C,Number,2018,10766.713886812962,12864.672443593576,9320.776784719606
+Incidence,Tajikistan,Both,All ages,Acute hepatitis C,Number,2019,16877.106266807677,19702.19751535865,14636.090195201075
+Incidence,Namibia,Both,All ages,Acute hepatitis C,Number,2018,1978.447831551931,2367.7735760208984,1703.6030909757758
+Incidence,Marshall Islands,Both,All ages,Acute hepatitis C,Number,2018,17.979776930802583,20.917153746563653,15.733457480728994
+Incidence,Mauritius,Both,All ages,Acute hepatitis C,Number,2018,506.0303682753488,592.1856733131916,443.61085729704024
+Incidence,Argentina,Both,All ages,Acute hepatitis C,Number,2019,14908.675613780539,17146.783526728774,12984.813127979301
+Incidence,Rwanda,Both,All ages,Acute hepatitis C,Number,2019,13796.591757329601,16112.30110510924,12082.784810573487
+Incidence,Ecuador,Both,All ages,Acute hepatitis C,Number,2019,8631.214718772519,10019.338229612482,7511.985717276415
+Incidence,Bangladesh,Both,All ages,Acute hepatitis C,Number,2019,49837.31940891537,58227.35672786675,43910.52773877585
+Incidence,Jamaica,Both,All ages,Acute hepatitis C,Number,2019,1813.0224915545787,2167.926396602896,1565.297333999955
+Incidence,Tonga,Both,All ages,Acute hepatitis C,Number,2019,39.51966419186121,44.86194914454575,34.898416938471115
+Incidence,Eswatini,Both,All ages,Acute hepatitis C,Number,2019,1111.5459712465158,1302.326742847581,961.1167634092632
+Incidence,Turkmenistan,Both,All ages,Acute hepatitis C,Number,2019,8208.831032328013,9373.944055488273,7157.3227457891
+Incidence,Dominica,Both,All ages,Acute hepatitis C,Number,2019,43.58370655592041,51.86533281483094,37.52029226622645
+Incidence,Seychelles,Both,All ages,Acute hepatitis C,Number,2019,52.8413814936176,60.760646660013784,46.732824080300404
+Incidence,Congo,Both,All ages,Acute hepatitis C,Number,2018,9253.739254396267,11095.092179241821,8039.818782322714
+Incidence,Zimbabwe,Both,All ages,Acute hepatitis C,Number,2019,15606.870572155702,18533.50273906365,13497.881369994064
+Incidence,Uzbekistan,Both,All ages,Acute hepatitis C,Number,2019,57694.563225610276,66603.02776086386,50333.44488593078
+Incidence,Romania,Both,All ages,Acute hepatitis C,Number,2019,10278.92409839036,12119.81671339687,8876.843809385842
+Incidence,Dominican Republic,Both,All ages,Acute hepatitis C,Number,2019,9694.97696124378,11375.78198678492,8476.941384270729
+Incidence,Sri Lanka,Both,All ages,Acute hepatitis C,Number,2019,6512.074984145451,7505.692995313492,5747.861626235205
+Incidence,Paraguay,Both,All ages,Acute hepatitis C,Number,2019,6013.15210879855,7184.772900390938,5195.721295640758
+Incidence,Morocco,Both,All ages,Acute hepatitis C,Number,2019,43883.93420946839,52122.25849231042,37754.99519761243
+Incidence,Oman,Both,All ages,Acute hepatitis C,Number,2019,3760.919232893197,4465.686157696072,3191.8894082750526
+Incidence,Thailand,Both,All ages,Acute hepatitis C,Number,2019,28168.52576814125,32692.291374927405,24737.231437839597
+Incidence,Serbia,Both,All ages,Acute hepatitis C,Number,2019,3608.7322318402576,4240.326409206566,3056.6546583186737
+Incidence,Palestine,Both,All ages,Acute hepatitis C,Number,2019,4602.594514930365,5379.077265490668,4020.6208647112617
+Incidence,Qatar,Both,All ages,Acute hepatitis C,Number,2019,2293.693564437555,2824.751865741745,1918.1675712000517
+Incidence,Benin,Both,All ages,Acute hepatitis C,Number,2019,25031.46234277451,29999.009940536893,21145.6785129731
+Incidence,South Africa,Both,All ages,Acute hepatitis C,Number,2019,44991.13335453203,53419.151559965634,38563.61625479338
+Incidence,Norway,Both,All ages,Acute hepatitis C,Number,2019,2399.5430104820625,2878.8450312818986,1988.969195399065
+Incidence,Burundi,Both,All ages,Acute hepatitis C,Number,2019,21206.69901288831,25303.11097680545,17958.20489080515
+Incidence,Comoros,Both,All ages,Acute hepatitis C,Number,2019,682.3746809352571,804.3224664742696,595.2280483388462
+Incidence,Somalia,Both,All ages,Acute hepatitis C,Number,2019,28362.71737536626,33736.63821868455,24142.269130570858
+Incidence,Cabo Verde,Both,All ages,Acute hepatitis C,Number,2019,669.0836615132035,798.7071710026042,578.0647161475811
+Incidence,United Republic of Tanzania,Both,All ages,Acute hepatitis C,Number,2019,56240.97915068741,67310.45868642505,48063.6739378064
+Incidence,Chad,Both,All ages,Acute hepatitis C,Number,2019,39474.66831009175,47818.4989524923,32938.405347869775
+Incidence,Burkina Faso,Both,All ages,Acute hepatitis C,Number,2019,44736.74105846518,53890.996871212024,37490.931619761825
+Incidence,Côte d'Ivoire,Both,All ages,Acute hepatitis C,Number,2019,37788.352537879764,45137.76724825081,32231.617721197417
+Incidence,Niger,Both,All ages,Acute hepatitis C,Number,2019,46831.031449353715,57025.48786443799,39186.723989816775
+Incidence,Cameroon,Both,All ages,Acute hepatitis C,Number,2019,44721.8862949167,53736.23873549801,37706.84682735128
+Incidence,Sao Tome and Principe,Both,All ages,Acute hepatitis C,Number,2019,262.74826840354814,315.0581303056621,225.96155851269117
+Incidence,San Marino,Both,All ages,Acute hepatitis C,Number,2019,15.257574844077823,18.122572873691592,12.71354068158358
+Incidence,Senegal,Both,All ages,Acute hepatitis C,Number,2019,14348.491949284704,16880.672172782863,12314.12326012152
+Incidence,Tokelau,Both,All ages,Acute hepatitis C,Number,2019,0.39447815234151035,0.45059608038693955,0.34629293113859383
+Incidence,Bermuda,Both,All ages,Acute hepatitis C,Number,2019,36.999143039337255,44.96288066193751,30.694090499458262
+Incidence,Gambia,Both,All ages,Acute hepatitis C,Number,2019,3012.8222190112415,3657.7706769423994,2558.110179439055
+Incidence,Sierra Leone,Both,All ages,Acute hepatitis C,Number,2019,12242.034906821424,14703.862733610336,10372.578093795939
+Incidence,Tuvalu,Both,All ages,Acute hepatitis C,Number,2019,3.2626727111341616,3.746738695269841,2.887380276966878
+Incidence,Cook Islands,Both,All ages,Acute hepatitis C,Number,2019,4.381399915507219,5.039291801151533,3.8566979552834884
+Incidence,Ghana,Both,All ages,Acute hepatitis C,Number,2019,54694.957974041565,66044.48293012087,46895.86503200511
+Incidence,Greenland,Both,All ages,Acute hepatitis C,Number,2019,25.374287107953712,29.461978444214832,22.030670928857855
+Incidence,Togo,Both,All ages,Acute hepatitis C,Number,2019,11229.485903074563,13477.473564694352,9612.305378098514
+Incidence,Guam,Both,All ages,Acute hepatitis C,Number,2019,36.07150993453584,41.18911144520905,32.08229088232296
+Incidence,South Sudan,Both,All ages,Acute hepatitis C,Number,2019,9051.320283159792,10895.12586207463,7817.575602539804
+Incidence,Monaco,Both,All ages,Acute hepatitis C,Number,2019,22.25330350213273,26.776189187259632,18.169331787482047
+Incidence,Sudan,Both,All ages,Acute hepatitis C,Number,2019,40859.81288327742,48458.33260220494,35018.20348860055
+Incidence,United States Virgin Islands,Both,All ages,Acute hepatitis C,Number,2019,79.78644624702632,95.29579789772067,67.44598019480433
+Incidence,Guinea,Both,All ages,Acute hepatitis C,Number,2019,23815.980045190998,28531.64234396078,20298.343683378847
+Incidence,Nauru,Both,All ages,Acute hepatitis C,Number,2019,3.359207225289736,3.9642599148371915,2.8959510932764014
+Incidence,American Samoa,Both,All ages,Acute hepatitis C,Number,2019,8.61418662020476,9.93354881153456,7.638255267937369
+Incidence,Niue,Both,All ages,Acute hepatitis C,Number,2019,0.44768675519941237,0.5149883738762012,0.39753965078825326
+Incidence,Liberia,Both,All ages,Acute hepatitis C,Number,2019,6923.774728879569,8373.691811041535,5898.470373932512
+Incidence,Guinea-Bissau,Both,All ages,Acute hepatitis C,Number,2019,2415.6261182683324,2900.09187645299,2063.496729144257
+Incidence,Northern Mariana Islands,Both,All ages,Acute hepatitis C,Number,2019,9.67207348121054,11.526474797103784,8.398043181320078
+Incidence,Mali,Both,All ages,Acute hepatitis C,Number,2019,42528.81498013517,50494.51138700988,36050.786128958476
+Incidence,Nigeria,Both,All ages,Acute hepatitis C,Number,2019,353805.78147470905,429018.9372665886,301162.13557329495
+Incidence,Palau,Both,All ages,Acute hepatitis C,Number,2019,4.040698776370193,4.715880909711748,3.5142989707497776
+Incidence,Mauritania,Both,All ages,Acute hepatitis C,Number,2019,5029.605760600662,6041.0522389347925,4310.630996682305
+Incidence,Puerto Rico,Both,All ages,Acute hepatitis C,Number,2019,2509.1635606714617,2993.722802978824,2104.840169859455
+Incidence,Saint Kitts and Nevis,Both,All ages,Acute hepatitis C,Number,2019,44.73870421643619,53.22417567825855,38.45138632939531
