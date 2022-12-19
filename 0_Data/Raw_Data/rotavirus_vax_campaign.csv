@@ -1,0 +1,194 @@
+﻿AFRO,Benind,LIC,Eligible,Non-Introducer
+,Burkina Faso,LIC,Eligible,Introducer
+,Burundi,LIC,Eligible,Introducer
+,Central African Republicd,LIC,Eligible,Non-Introducer
+,Chad,LIC,Eligible,Non-Introducer
+,Comoros,LIC,Eligible,Non-Introducer
+,Democratic Republic of Congo,LIC,Eligible,Non-Introducer
+,Eritrea,LIC,Eligible,Introducer
+,Ethiopia,LIC,Eligible,Introducer
+,Gambia,LIC,Eligible,Introducer
+,Guinead,LIC,Eligible,Non-Introducer
+,Guinea Bissau,LIC,Eligible,Introducer
+,Liberia,LIC,Eligible,Introducer
+,Madagascar,LIC,Eligible,Introducer
+,Malawi,LIC,Eligible,Introducer
+,Mali,LIC,Eligible,Introducer
+,Mozambiquee,LIC,Eligible,Introducer
+,Niger,LIC,Eligible,Introducer
+,Rwanda,LIC,Eligible,Introducer
+,Senegal,LIC,Eligible,Introducer
+,Sierra Leone,LIC,Eligible,Introducer
+,South Sudan,LIC,Eligible,Non-Introducer
+,Tanzania,LIC,Eligible,Introducer
+,Togo,LIC,Eligible,Introducer
+,Ugandad,LIC,Eligible,Non-Introducer
+,Zimbabwe,LIC,Eligible,Introducer
+,Angola,LMIC,Transitioning,Introducer
+,Cabo Verde,LMIC,—,Non-Introducer
+,Cameroon,LMIC,Eligible,Introducer
+,Congo,LMIC,Transitioning,Introducer
+,Côte d'Ivoired,LMIC,Eligible,Non-Introducer
+,Ghana,LMIC,Eligible,Introducer
+,Kenya,LMIC,Eligible,Introducer
+,Lesothod,LMIC,Eligible,Non-Introducer
+,Mauritania,LMIC,Eligible,Introducer
+,Nigeriad,LMIC,Eligible,Non-Introducer
+,São Tomé and Príncipe,LMIC,Eligible,Introducer
+,Swaziland,LMIC,—,Introducer
+,Zambia,LMIC,Eligible,Introducer
+,Algeria,UMIC,—,Non-Introducer
+,Botswana,UMIC,—,Introducer
+,Equatorial Guinea,UMIC,—,Non-Introducer
+,Gabon,UMIC,—,Non-Introducer
+,Mauritius,UMIC,—,Introducer
+,Namibia,UMIC,—,Introducer
+,South Africa,UMIC,—,Introducer
+,Seychellesd,HIC,—,Non-Introducer
+AMRO,Haiti,LIC,Eligible,Introducer
+,Bolivia,LMIC,Transitioning,Introducer
+,El Salvador,LMIC,—,Introducer
+,Guatemala,LMIC,—,Introducer
+,Honduras,LMIC,Graduating,Introducer
+,Nicaragua,LMIC,Transitioning,Introducer
+,Argentina,UMIC,—,Introducer
+,Belized,UMIC,—,Non-Introducer
+,Brazil,UMIC,—,Introducer
+,Colombia,UMIC,—,Introducer
+,Costa Rica,UMIC,—,Non-Introducer
+,Cuba,UMIC,Transitioning,Non-Introducer
+,Dominica,UMIC,—,Non-Introducer
+,Dominican Republic,UMIC,—,Introducer
+,Ecuador,UMIC,—,Introducer
+,Grenada,UMIC,—,Non-Introducer
+,Guyana,UMIC,Transitioning,Introducer
+,Jamaica,UMIC,—,Non-Introducer
+,Mexico,UMIC,—,Introducer
+,Panama,UMIC,—,Introducer
+,Paraguay,UMIC,—,Introducer
+,Peru,UMIC,—,Introducer
+,Saint Lucia,UMIC,—,Non-Introducer
+,Saint Vincent and the Grenadines,UMIC,—,Non-Introducer
+,Suriname,UMIC,—,Non-Introducer
+,Venezuela,UMIC,—,Introducer
+,Antigua and Barbuda,HIC,—,Non-Introducer
+,Bahamasd,HIC,—,Non-Introducer
+,Barbados,HIC,—,Non-Introducer
+,Canadad,HIC,—,Non-Introducer
+,Chile,HIC,—,Non-Introducer
+,Saint Kitts and Nevis,HIC,—,Non-Introducer
+,Trinidad and Tobago,HIC,—,Non-Introducer
+,United States,HIC,—,Introducer
+,Uruguay,HIC,—,Non-Introducer
+EMRO,Afghanistand,LIC,Eligible,Non-Introducer
+,Somalia,LIC,Eligible,Non-Introducer
+,Djibouti,LMIC,Eligible,Introducer
+,Egypt,LMIC,—,Non-Introducer
+,Jordan,LMIC,—,Introducer
+,Morocco,LMIC,—,Introducer
+,Pakistand,LMIC,Eligible,Non-Introducer
+,Sudan,LMIC,Eligible,Introducer
+,Syria,LMIC,—,Non-Introducer
+,Tunisia,LMIC,—,Non-Introducer
+,Yemen,LMIC,Eligible,Introducer
+,Iran,UMIC,—,Non-Introducer
+,Iraq,UMIC,—,Introducer
+,Lebanon,UMIC,—,Non-Introducer
+,Libya,UMIC,—,Introducer
+,Bahrain,HIC,—,Introducer
+,Kuwait,HIC,—,Non-Introducer
+,Oman,HIC,—,Non-Introducer
+,Qatar,HIC,—,Introducer
+,Saudi Arabia,HIC,—,Introducer
+,United Arab Emirates,HIC,—,Introducer
+EURO,Armenia,LMIC,Transitioning,Introducer
+,Georgia,LMIC,Transitioning,Introducer
+,Kyrgyzstan,LMIC,Eligible,Non-Introducer
+,Moldova,LMIC,Transitioning,Introducer
+,Tajikistan,LMIC,Eligible,Introducer
+,Ukraine,LMIC,Graduating,Non-Introducer
+,Uzbekistan,LMIC,Transitioning,Introducer
+,Albania,UMIC,—,Non-Introducer
+,Azerbaijan,UMIC,Transitioning,Non-Introducer
+,Belarus,UMIC,—,Non-Introducer
+,Bosnia Herzegovina,UMIC,—,Non-Introducer
+,Bulgaria,UMIC,—,Non-Introducer
+,Croatia,UMIC,—,Non-Introducer
+,Kazakhstan,UMIC,—,Non-Introducer
+,Macedonia,UMIC,—,Non-Introducer
+,Montenegro,UMIC,—,Non-Introducer
+,Romaniad,UMIC,—,Non-Introducer
+,Russiad,UMIC,—,Non-Introducer
+,Serbia,UMIC,—,Non-Introducer
+,Turkey,UMIC,—,Non-Introducer
+,Turkmenistan,UMIC,—,Non-Introducer
+,Andorra,HIC,—,Non-Introducer
+,Austria,HIC,—,Introducer
+,Belgium,HIC,—,Introducer
+,Cyprus,HIC,—,Non-Introducer
+,Czech Republic,HIC,—,Non-Introducer
+,Denmark,HIC,—,Non-Introducer
+,Estonia,HIC,—,Introducer
+,Finland,HIC,—,Introducer
+,France,HIC,—,Non-Introducer
+,Germany,HIC,—,Introducer
+,Greece,HIC,—,Introducer
+,Hungary,HIC,—,Non-Introducer
+,Iceland,HIC,—,Non-Introducer
+,Irelande,HIC,—,Introducer
+,Israel,HIC,—,Introducer
+,Italyd,HIC,—,Non-Introducer
+,Latvia,HIC,—,Introducer
+,Lithuania,HIC,—,Non-Introducer
+,Luxembourg,HIC,—,Introducer
+,Malta,HIC,—,Non-Introducer
+,Monaco,HIC,—,Non-Introducer
+,Netherlands,HIC,—,Non-Introducer
+,Norwaye,HIC,—,Introducer
+,Polandd,HIC,—,Non-Introducer
+,Portugal,HIC,—,Non-Introducer
+,San Marino,HIC,—,Non-Introducer
+,Slovakia,HIC,—,Non-Introducer
+,Slovenia,HIC,—,Non-Introducer
+,Spain,HIC,—,Non-Introducer
+,Swedend,HIC,—,Non-Introducer
+,Switzerland,HIC,—,Non-Introducer
+,United Kingdom,HIC,—,Introducer
+SEARO,DPR Korea,LIC,Eligible,Non-Introducer
+,Nepal,LIC,Eligible,Non-Introducer
+,Bangladesh,LMIC,Eligible,Non-Introducer
+,Bhutan,LMIC,Graduating,Non-Introducer
+,Indiad,LMIC,Eligible,Non-Introducer
+,Indonesia,LMIC,Transitioning,Non-Introducer
+,Myanmar,LMIC,Eligible,Non-Introducer
+,Sri Lanka,LMIC,Graduating,Non-Introducer
+,Timor-Leste,LMIC,Transitioning,Non-Introducer
+,Maldives,UMIC,—,Non-Introducer
+,Thailandd,UMIC,—,Non-Introducer
+WPRO,Cambodia,LMIC,Eligible,Non-Introducer
+,Kiribati,LMIC,Transitioning,Introducer
+,Lao PDR,LMIC,Eligible,Non-Introducer
+,Micronesia,LMIC,—,Introducer
+,Mongolia,LMIC,Graduating,Non-Introducer
+,Papua New Guinea,LMIC,Transitioning,Non-Introducer
+,Philippinesd,LMIC,—,Non-Introducer
+,Solomon Islands,LMIC,Eligible,Non-Introducer
+,Vanuatu,LMIC,—,Non-Introducer
+,Vietnam,LMIC,Transitioning,Non-Introducer
+,China,UMIC,—,Non-Introducer
+,Fiji,UMIC,—,Introducer
+,Malaysia,UMIC,—,Non-Introducer
+,Marshall Islands,UMIC,—,Introducer
+,Nauru,UMIC,—,Non-Introducer
+,Niue,UMIC,—,Non-Introducer
+,Samoa,UMIC,—,Non-Introducer
+,Tonga,UMIC,—,Non-Introducer
+,Tuvalu,UMIC,—,Non-Introducer
+,Australia,HIC,—,Introducer
+,Brunei Darussalam,HIC,—,Non-Introducer
+,Cook Islands,HIC,—,Non-Introducer
+,Japan,HIC,—,Non-Introducer
+,Korea,HIC,—,Non-Introducer
+,New Zealand,HIC,—,Introducer
+,Palau,HIC,—,Introducer
+,Singapored,HIC,—,Non-Introducer
