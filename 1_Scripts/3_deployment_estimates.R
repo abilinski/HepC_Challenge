@@ -6,7 +6,7 @@ source(here::here("1_Scripts", "0_preliminary_data.R"))
 
 ####***************************** HPV **************************************####
 df = all_data %>% filter(yr==2019)
-View(df) # R: go through countries w/NA population / remove or fill them in manually
+View(df) # need to exclude: Cook Islands, Niuie, French Guiana, Tokelau, Taiwan
 
 #### weighted by population
 
@@ -19,12 +19,18 @@ HPV_perc_global_pop = df %>% group_by(`HPV Vaccine Program`) %>%
   filter(`HPV Vaccine Program`=="Yes") %>% dplyr::select(perc)
 
 # percentage uptake
-# df %>%  filter(`HPV Vaccine Program`=="Yes") %>% filter(is.na(`Percent Vaccinated HPV`))
-# R: Do we know if there is anything special about these?
+# QUESTION: what's going on w/countries w/campaign but missing data?
+ missingentries<- df %>%  filter(`HPV Vaccine Program`=="Yes") %>% filter(is.na(`Percent Vaccinated HPV`))
+ View(missingentries)
+
 # Let's a bit of sensitivity analysis -- if we fill in...?
-#df %>%  filter(`HPV Vaccine Program`=="Yes") %>% group_by(is.na(`Percent Vaccinated HPV`)) %>% 
-#  summarize(pop = sum(population, na.rm = T)) %>%
-#  mutate(perc = pop/sum(pop))
+#df %>%  
+  #filter(`HPV Vaccine Program`=="Yes") %>% 
+  #group_by(is.na(`Percent Vaccinated HPV`)) %>% 
+  #summarize(pop = sum(population, na.rm = T)) %>%
+  #mutate(perc = pop/sum(pop))
+
+  
 HPV_perc_uptake = df %>% filter(`HPV Vaccine Program`=="Yes") %>%
   filter(!is.na(`Percent Vaccinated HPV`)) %>%
   mutate(pop_weight = population/sum(population, na.rm = T)) %>%
