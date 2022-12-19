@@ -68,6 +68,7 @@ hepb_vax_clean<- hepb_vax %>%
 
 #hepb incidence (2010-2019 data) - IR per 100,000
 hepb_incidence<-read.csv(here("0_Data/Raw_Data", "hepb_incidence.csv"))
+View(hepb_incidence)
 
 hepb_incidence_clean <- hepb_incidence %>%
   select(location_name, year, val) %>%
@@ -126,6 +127,17 @@ rotavirus_vax_clean<- rotavirus_vax %>%
   rename("rotavirus_vax%"="COVERAGE") 
 
 #Rotavirus incidence rate - am going to work on this on Sunday!
+rotavirus_incidence<-read.csv(here("0_Data/Raw_Data", "rotavirus_incidence.csv"))
+View(rotavirus_incidence)
+
+rotavirus_incidence_clean <- rotavirus_incidence %>%
+  select(Location, Incidence.per.1.000..95..UI., Cases..95..UI.) %>%
+  rename("country"="Location") %>%
+  rename("rotavirus_IR_per1000"="Incidence.per.1.000..95..UI.") %>%
+  rename("rotavirus_incident_cases"="Cases..95..UI.") %>%
+  mutate("yr"=2016) %>%
+  subset(country!="") %>%
+  mutate(country=countrycode(country, "country.name", "country.name"))
 
 ##########
 #population of each country: note- there are more "countries" here than in other datasets above
@@ -170,7 +182,7 @@ View(population_clean_long)
 ##########
 #COMBINE INTO ONE DATA FRAME
 #this doesn't link mortality/incidence data well b/c it's for the yr 2020, and there aren't many 2020 measurements
-all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_tx_clean, hepc_incidence_clean, rotavirus_vax_clean, population_clean_long)
+all_list<-list(hpv_campaign_clean,hpv_vax_clean, hpv_incidence_clean, hpv_mortality_clean, hepb_vax_clean, hepb_incidence_clean, hepc_diag_tx_clean, hepc_incidence_clean, rotavirus_incidence_clean, rotavirus_vax_clean, population_clean_long)
 
 all_data <- all_list %>%
   reduce(full_join, by=c("country","yr"))
