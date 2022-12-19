@@ -17,7 +17,6 @@ hpv_campaign_clean<-hpv_campaign %>%
   rename("HPV Vaccine Program"="Display.Value") %>%
   rename("yr"="YEAR") %>%
   arrange(country, yr)
-View(hpv_campaign_clean)
 
 #hpv vaccination rates
 hpv_vax<-read.csv(here("0_Data/Raw_Data","hpv.csv"))
@@ -68,7 +67,6 @@ hepb_vax_clean<- hepb_vax %>%
 
 #hepb incidence (2010-2019 data) - IR per 100,000
 hepb_incidence<-read.csv(here("0_Data/Raw_Data", "hepb_incidence.csv"))
-View(hepb_incidence)
 
 hepb_incidence_clean <- hepb_incidence %>%
   select(location_name, year, val) %>%
@@ -91,7 +89,6 @@ hepc_incidence_clean <- hepc_incidence %>%
 
 #HepC incidence number (2016 through 2019)
 hepc_incidence_number<-read.csv(here("0_Data/Raw_Data", "HepC_incidenceNumber.csv"))
-View(hepc_incidence_number)
 
 hepc_incidence_number_clean <- hepc_incidence_number %>%
   select(location, year, val) %>%
@@ -124,11 +121,12 @@ rotavirus_vax_clean<- rotavirus_vax %>%
   select(NAME, YEAR, COVERAGE) %>%
   rename("country"="NAME") %>%
   rename ("yr"="YEAR") %>%
-  rename("rotavirus_vax%"="COVERAGE") 
+  rename("rotavirus_vax%"="COVERAGE") %>%
+  mutate(country=countrycode(country, "country.name", "country.name"))  %>%
+  subset(country!="NA")
 
 #Rotavirus incidence rate - am going to work on this on Sunday!
 rotavirus_incidence<-read.csv(here("0_Data/Raw_Data", "rotavirus_incidence.csv"))
-View(rotavirus_incidence)
 
 rotavirus_incidence_clean <- rotavirus_incidence %>%
   select(Location, Incidence.per.1.000..95..UI., Cases..95..UI.) %>%
@@ -139,10 +137,10 @@ rotavirus_incidence_clean <- rotavirus_incidence %>%
   subset(country!="") %>%
   mutate(country=countrycode(country, "country.name", "country.name"))
 
+
 ##########
 #population of each country: note- there are more "countries" here than in other datasets above
 population_per_country<-read.csv(here("0_Data/Raw_Data", "population_per_country.csv"))
-
 
 #definitely not the most efficient way...
 population_clean<- population_per_country %>%
@@ -177,7 +175,6 @@ population_clean_long<-pivot_longer(population_clean, cols="2000":"2020",names_t
   mutate(yr = as.numeric(yr)) %>%
   select(country, yr, population)
 
-View(population_clean_long)
 
 ##########
 #COMBINE INTO ONE DATA FRAME
@@ -189,11 +186,5 @@ all_data <- all_list %>%
 
 #QUESTIONS TO LOOK INTO:
 
-View(all_data) # why are there lots of NAs with 99% hep b vax?
-View(table(all_data$country, all_data$yr)) # what's up with France?
-
-all_data_france<- all_data %>%
-  filter(yr=="2020") %>%
-  filter(country=="France")
-
-View(all_data_france)
+View(all_data)  #there's one entirely NA column in 2019. Not sure where this is from
+View(table(all_data$country, all_data$yr)) # France issue fixed
