@@ -6,7 +6,7 @@ source(here::here("1_Scripts", "0_preliminary_data.R"))
 
 ####***************************** HPV **************************************####
 df = all_data %>% filter(yr==2019)
-View(df) # need to exclude: Cook Islands, Niuie, French Guiana, Tokelau, Taiwan
+View(df) # R: go through countries w/NA population / remove or fill them in manually
 
 #### weighted by population
 
@@ -19,18 +19,12 @@ HPV_perc_global_pop = df %>% group_by(`HPV Vaccine Program`) %>%
   filter(`HPV Vaccine Program`=="Yes") %>% dplyr::select(perc)
 
 # percentage uptake
-# QUESTION: what's going on w/countries w/campaign but missing data?
- missingentries<- df %>%  filter(`HPV Vaccine Program`=="Yes") %>% filter(is.na(`Percent Vaccinated HPV`))
- View(missingentries)
-
+# df %>%  filter(`HPV Vaccine Program`=="Yes") %>% filter(is.na(`Percent Vaccinated HPV`))
+# R: Do we know if there is anything special about these?
 # Let's a bit of sensitivity analysis -- if we fill in...?
-#df %>%  
-  #filter(`HPV Vaccine Program`=="Yes") %>% 
-  #group_by(is.na(`Percent Vaccinated HPV`)) %>% 
-  #summarize(pop = sum(population, na.rm = T)) %>%
-  #mutate(perc = pop/sum(pop))
-
-  
+#df %>%  filter(`HPV Vaccine Program`=="Yes") %>% group_by(is.na(`Percent Vaccinated HPV`)) %>% 
+#  summarize(pop = sum(population, na.rm = T)) %>%
+#  mutate(perc = pop/sum(pop))
 HPV_perc_uptake = df %>% filter(`HPV Vaccine Program`=="Yes") %>%
   filter(!is.na(`Percent Vaccinated HPV`)) %>%
   mutate(pop_weight = population/sum(population, na.rm = T)) %>%
@@ -85,32 +79,34 @@ hcv = all_data %>% filter(!is.na(`Annual # Initiated HepC Treatment`)) %>%
 
 ####*************************** FIGURE 3 ***********************************####
 
+HPV_level = HPV_perc_global_pop_BURDEN*HPV_perc_uptake_BURDEN
+HBV_level = HBV_perc_uptake_burden
+
 # format data for a plot
 df_plot = expand_grid(eff = seq(.5, .9, by = .2),
                  years = c(1, 2.5, 5),
                  inc = c(1000000, 500000),
-                 dep = seq(0.05, 1, by = .05)) %>%
+                 dep = c(seq(0.05, 1, by = .05), as.numeric(HPV_level)/100, as.numeric(HBV_level)/100)) %>%
   mutate(infs_averted = years*eff*inc*dep,
-         inc_fac = ifelse(inc==1e6, "Incidence (200/m): \n Projected", "Incidence (100/m): \n Scaled-up prevention & treatment"),
+         inc_fac = ifelse(inc==1e6, "Annual incidence (200/m): \n Projected", "Incidence (100/m): \n Scaled-up prevention & treatment"),
          year_fac = paste("Years saved:", years),
-         inc_fac = factor(inc_fac, levels = c("Incidence (200/m): \n Projected", "Incidence (100/m): \n Scaled-up prevention & treatment")))
+         inc_fac = factor(inc_fac, levels = c("Annual incidence (200/m): \n Projected", "Incidence (100/m): \n Scaled-up prevention & treatment")))
+
+df_plot2 = df_plot %>% filter(dep %in% c(HPV_level/100, HBV_level/100)) %>%
+  mutate(lab = ifelse(dep==as.numeric(HPV_level)/100, "HPV", "HBV"))
+
 
 # make plot
-ggplot(df_plot, aes(x = dep, y = infs_averted/1000, group = eff, col = factor(eff))) + geom_line() +
+ggplot(df_plot, aes(x = dep, y = infs_averted/1000000, group = eff, col = factor(eff))) + geom_line() +
   facet_grid(inc_fac~year_fac) + labs(x = "Percentage of global population vaccinated",
-                                   y = "Infections averted (1,000s)") +
+                                   y = "Infections averted (m)") +
   scale_color_manual(name = "Vaccine efficacy", values = pal) + 
   theme(panel.grid.minor = element_blank(),
-        panel.background = element_blank()) + 
-  geom_vline(xintercept = as.numeric(HPV_perc_global_pop_BURDEN*HPV_perc_uptake_BURDEN)/100,
-             lty = 2, col = "grey") + 
-  geom_text(x = as.numeric(HPV_perc_global_pop_BURDEN*HPV_perc_uptake_BURDEN)/100, y = 4000, label = "HPV",
-            col = "black") + 
-  geom_vline(xintercept = as.numeric(HBV_perc_uptake_burden)/100,
-             lty = 3, col = "grey") +
-  geom_text(x = as.numeric(HBV_perc_uptake_burden)/100, y = 4000, label = "HBV",
-            col = "black") 
-
+        panel.background = element_blank()) +
+  geom_point(data = df_plot2, aes(x = dep, y = infs_averted/1000000, group = eff, col = factor(eff))) + 
+  geom_text(data = df_plot2 %>% filter(eff==.9), aes(x = dep, y = infs_averted/1000000+.5, label = lab), col = "black")
+  
+  
 # save
 ggsave(filename = here("2_Figures", "figure3.png"), width = 9, height = 6)
 
