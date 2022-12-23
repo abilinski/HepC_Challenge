@@ -1,5 +1,5 @@
 #Data: Different Diseases/Burdens/Treatment
-#This file will create one dataset for HPV, HepB, HCV, Rotavirus
+#This file creates one dataset for HPV, HepB, HCV, rotavirus
 
 # set up: 
 here::i_am("1_Scripts/0_preliminary_data.R")
