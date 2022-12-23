@@ -1,5 +1,5 @@
 #Data: Different Diseases/Burdens/Treatment
-#This file will create one dataset for HPV, HepB, HCV
+#This file will create one dataset for HPV, HepB, HCV, Rotavirus
 
 # set up: 
 here::i_am("1_Scripts/0_preliminary_data.R")
@@ -153,14 +153,13 @@ rotavirus_vax<- read.csv(here("0_Data/Raw_Data", "rotavirus_vaccinated.csv"))
 
 rotavirus_vax_clean<- rotavirus_vax %>%
   subset(COVERAGE_CATEGORY!="ADMIN" & COVERAGE_CATEGORY!="OFFICIAL") %>%
-  select(NAME, YEAR, COVERAGE) %>%
-  rename("country"="NAME") %>%
+  mutate(CODE=countrycode(CODE, "iso3c", "country.name"))  %>%
+  select(YEAR, COVERAGE, CODE) %>%
+  rename("country"="CODE") %>%
   rename ("yr"="YEAR") %>%
   rename("rotavirus_vax%"="COVERAGE") %>%
-  mutate(country=countrycode(country, "country.name", "country.name"))  %>%
   subset(country!="NA") %>%
   mutate(yr=as.numeric(yr))
-
 
 #Rotavirus incidence rate - am going to work on this on Sunday!
 rotavirus_incidence<-read.csv(here("0_Data/Raw_Data", "rotavirus_incidence.csv"))
@@ -172,13 +171,10 @@ rotavirus_incidence_clean <- rotavirus_incidence %>%
   rename("rotavirus_incident_cases"="Cases..95..UI.") %>%
   mutate("yr"=2016) %>%
   subset(country!="") %>%
-  add_row(country="United Kingdom", rotavirus_incident_cases="586,884", yr=2016) %>% #not what I should've done probably..
+  add_row(country="United Kingdom", rotavirus_IR_per1000="144.9", rotavirus_incident_cases="586,884", yr=2016) %>% 
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   mutate(yr=as.numeric(yr))
 
-  
-#Won't have UK Data for IR: b/c don't know population under 5 in those countries
-  
 #Rotavirus vaccination campaign
 rotavirus_vax_campaign<- read.csv(here("0_Data/Raw_Data", "rotavirus_vax_campaign.csv"))
 
