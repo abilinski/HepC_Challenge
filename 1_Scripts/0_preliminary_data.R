@@ -168,7 +168,9 @@ rotavirus_incidence_clean <- rotavirus_incidence %>%
   select(Location, Incidence.per.1.000..95..UI., Cases..95..UI.) %>%
   rename("country"="Location") %>%
   rename("rotavirus_IR_per1000"="Incidence.per.1.000..95..UI.") %>%
+  mutate(rotavirus_IR_per1000=as.numeric(gsub("," ,"",rotavirus_IR_per1000))) %>%
   rename("rotavirus_incident_cases"="Cases..95..UI.") %>%
+  mutate(rotavirus_incident_cases =as.numeric(gsub("," ,"",rotavirus_incident_cases))) %>%
   mutate("yr"=2016) %>%
   subset(country!="") %>%
   add_row(country="United Kingdom", rotavirus_IR_per1000="144.9", rotavirus_incident_cases="586,884", yr=2016) %>% 
@@ -291,3 +293,4 @@ preliminary_data = all_data %>%
            country!="New Caledonia" & country!="French Polynesia" & country!="Sint Maarten" & country!="Turks & Caicos Islands" &
            country!="British Virgin Islands" & country !="Channel Islands" & country!="Kosovo" & !grepl("Cura", country)) 
   
+View(preliminary_data)
