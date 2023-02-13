@@ -18,7 +18,7 @@ e = c(.5, .7, .9)
 # deployment
 d = seq(.1, .9, by = .1)
 
-# deployment
+# incidence of annual infections
 i = c(1000000, 500000)
 
 # combine parameters
@@ -55,6 +55,10 @@ for(i in 1:nrow(df)){
 df$benefit = df$expected_years_saved*df$d*df$e*df$i
 df$ratio = df$benefit/df$infs
 View(df)
+
+#export df to csv
+write.csv(df, "/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/3_App/data.csv", row.names=FALSE)
+
 
 pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
