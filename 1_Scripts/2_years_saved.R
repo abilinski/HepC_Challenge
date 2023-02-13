@@ -10,7 +10,7 @@ p = c(seq(.05, .4, by = .05), .11)
 t = 1:5
 
 # years saved if successful
-y = c(2.5, 5, 10)
+y = c(2.5, 5, 7.5, 10)
 
 # efficacy
 e = c(.5, .7, .9)
