@@ -8,13 +8,17 @@
 
 # source model code
 here::i_am("3_App/app.R")
-source(here("3_App", "2_years_saved.R"))
+#source(here("3_App", "data.csv"))
 
-#instead of sourcing this code, could I just export the df to a csv? Called app_data
-#app_data<- read.csv("file name here", stringsAsFactors=FALSE)
+#how can I do this w/using the here? I thought I should be able to just write "data.csv" b/c saved in 3_App folder
+#but that didn't work
+
+app_data<- read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/3_App/data.csv", stringsAsFactors=FALSE)
+
 
 # libraries
 library(shiny)
+
 library(shinythemes)
 library(shinyjs)
 library(plotly)
@@ -41,17 +45,17 @@ ui <- fluidPage(
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
-                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=9, value=.23, step = 0.05),                               
-                 sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.05),  
+                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),                               
+                 sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.2),  
                  
                  h4("Trial information"),
                  h5("These sliders describe challenge trial inputs."),
                  sliderInput("t", "Number of trials", min=1, max=5, value=3, step = 1), 
-                 sliderInput("p", "Per candidate probability of success", min=.05, max=.4, value=.11, step = 0.05),
-                # sliderInput("??", "Sample size of trial", min=0, max=.95, value=.75, step = 0.05), 
+                 sliderInput("p", "Per candidate probability of success", min=.05, max=.4, value=.05, step = 0.05),
+                 sliderInput("y", "Years saved if successful", min=2.5, max=10, value=2.5, step = 2.5), #STUCK b/c no 7.5 in data
                  
                  h4("Disease information"),
-                # sliderInput("?", "Incidence at rollout year"), min=1.5, max=3.5, value=2.5, step = 0.1),  
+                 sliderInput("i", "Incidence of annual infections", min=500000, max=1000000, value=500000, step=500000),  
                 # sliderInput("?", "% of trial participants who become infected after exposure), min=.4, max=1.5, value=0.9, step = 0.1),    
                  
                #  radioButtons("xaxis", "X-axis variable:", choiceNames= choiceNames, 
@@ -76,7 +80,8 @@ ui <- fluidPage(
       textOutput("trial_infections"),
       textOutput("infections_averted_undiscounted"),
       textOutput("infections_averted_discounted"),
-      textOutput("br_ratio")
+      textOutput("br_ratio"),
+      tableOutput("results")
   #  )
  # )
 )))
@@ -87,17 +92,24 @@ server <- function(input, output, session) {
     app_data %>%
       filter(p == input$p,
              t == input$t,
-             e == input$y,
-             d == input$d
-             #i == input$i don't have this assigned
-             )
+             e == input$e,
+             d == input$d,
+             i == input$i,
+             y == input$y
+             ) %>%
+      pull(infs) #this will only print output of table w/infs
   })
   
-  #OUTPUT: Take that filtered row from dataset
+
+   
+#OUTPUT: Take that filtered row from dataset, print output:
+  
+  #this is infs
   output$trial_infections<-renderText({
     paste("The expected number of trial infections is", input$t) #incorrect
   })
   
+  #this isn't in the dataframe yet, comment this out
   output$infections_averted_undiscounted<-renderText({
     paste("The expected infections averted (undiscounted) is", input$t) #incorrect
   })
@@ -109,25 +121,13 @@ server <- function(input, output, session) {
   output$br_ratio <- renderText({
     paste("The benefit-risk ratio is",filtered$br_ratio) #is this how I write it?
   })
-
+  
+  output$results<-renderTable ({
+    paste("The expected number of future infections averted is", filtered() )
+  })
+}
 
   
-  #IF I FOLLOWED THE CONTACT TRACING APP CODE:
-  #INPUTS: other idea
-  #observeEvent(input$file, { #confused what file should be referring to. No slider called file
-    #if file isn't empty:
-   # if(!is.null(inFile)){
-      #load inputs
-    #  uploaded_inputs<-read.csv(inFile$datapath)
-      #update each input
-      
-   # }
-  #})
-#}
-  #MAKE INPUT TABLE
-  #MODEL
-  #WRITE TEXT
-#}
 
 # Run the application 
 shinyApp(ui = ui, server = server)
