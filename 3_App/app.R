@@ -8,17 +8,11 @@
 
 # source model code
 here::i_am("3_App/app.R")
-#source(here("3_App", "data.csv"))
-
-#how can I do this w/using the here? I thought I should be able to just write "data.csv" b/c saved in 3_App folder
-#but that didn't work
-
-app_data<- read.csv("/Users/rachelslimovitch/Documents/22-23/Brown/Sem1/AB Research/HepC_Challenge/3_App/data.csv", stringsAsFactors=FALSE)
+app_data<- read.csv(here("3_App","data.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
 library(shiny)
-
 library(shinythemes)
 library(shinyjs)
 library(plotly)
@@ -78,10 +72,10 @@ ui <- fluidPage(
     # Show the output
     mainPanel(
       textOutput("trial_infections"),
-      textOutput("infections_averted_undiscounted"),
+    #  textOutput("infections_averted_undiscounted"),
       textOutput("infections_averted_discounted"),
-      textOutput("br_ratio"),
-      tableOutput("results")
+      textOutput("years_saved"),
+      textOutput("br_ratio")
   #  )
  # )
 )))
@@ -96,8 +90,7 @@ server <- function(input, output, session) {
              d == input$d,
              i == input$i,
              y == input$y
-             ) %>%
-      pull(infs) #this will only print output of table w/infs
+             ) 
   })
   
 
@@ -106,25 +99,26 @@ server <- function(input, output, session) {
   
   #this is infs
   output$trial_infections<-renderText({
-    paste("The expected number of trial infections is", input$t) #incorrect
+    paste("The expected number of trial infections is", round(filtered()$infs, digits=2))
   })
   
-  #this isn't in the dataframe yet, comment this out
-  output$infections_averted_undiscounted<-renderText({
-    paste("The expected infections averted (undiscounted) is", input$t) #incorrect
-  })
+  #infections averted undiscounted isn't in the dataframe- commented this out for now
+  #output$infections_averted_undiscounted<-renderText({
+   # paste("The expected infections averted (undiscounted) is", input$t) 
+  #})
   
   output$infections_averted_discounted<-renderText({
-    paste("The expected infections averted (discounted) is", filtered$infs) #is this how I write it?
+    paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2)) #is this how I write it?
+  })
+  
+  output$years_saved<-renderText({
+    paste("The expected number of years saved by a challenge trial is", round(filtered()$expected_years_saved, digits=2))
   })
   
   output$br_ratio <- renderText({
-    paste("The benefit-risk ratio is",filtered$br_ratio) #is this how I write it?
+    paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2)) 
   })
   
-  output$results<-renderTable ({
-    paste("The expected number of future infections averted is", filtered() )
-  })
 }
 
   
