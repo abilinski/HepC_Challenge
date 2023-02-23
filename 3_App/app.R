@@ -1,7 +1,11 @@
 #************************************* Shiny App Code *************************************#
-# Note: this won't work right now                                                          #
-# Built it out to connect to a csv file that is df in 2_years_saved.R                      #
-#                                                                                          #
+# Updated w/correct values                                                                 #
+# missing undiscounted rate,
+
+#CURRENT ISSUE: trying to have a drop down where users can select vaccine uptake: like HPV, like rotavirus, etc.,
+#and then other means that a slider will appear for user to select another value.
+
+#But running into errors here- not sure conditional can override. 
 #******************************************************************************************#
 
 ### SETUP ###
@@ -39,7 +43,33 @@ ui <- fluidPage(
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
-                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),                               
+                 
+                 #for vaccine uptake: what if I had a radio button with a conditional panel?
+                 #if other is selected, then slider will appear
+                 #0.14 for HPV, 0.23 for rotavirus, 0.9 for HBV
+                 
+                 #     c("HPV weighted uptake" = 0.14,
+                 #"Rotavirus weighted uptake"=0.23,
+                 #"HPV weighted uptake"=0.9,
+                 #"Other value"="a"))
+                 
+                 #Note: will need to do d<-as.integer(input$d) in the server
+                 radioButtons("d", 
+                              label= "Vaccine Uptake fraction",
+                              choiceValues=list(0.14, 0.23, 0.9), #is error b/c there are only 3 here?
+                              choiceNames=list("HPV","Rotavirus", "HPV", "Other"),
+                              selected = character(0),
+                              
+                        
+                 conditionalPanel(
+                   condition= "input.d=='Other' ",
+                   sliderInput("d",
+                               label = "Vaccine Uptake fraction",
+                               min=.1, max=0.9, value=0.1, step=0.1)
+                 ),
+                 
+                 
+                 #sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),                               
                  sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.2),  
                  
                  h4("Trial information"),
@@ -51,20 +81,6 @@ ui <- fluidPage(
                  h4("Disease information"),
                  sliderInput("i", "Incidence of annual infections", min=500000, max=1000000, value=500000, step=500000),  
                 # sliderInput("?", "% of trial participants who become infected after exposure), min=.4, max=1.5, value=0.9, step = 0.1),    
-                 
-               #  radioButtons("xaxis", "X-axis variable:", choiceNames= choiceNames, 
-                #              choiceValues = choiceValues,
-                 #             selected = NULL,
-                  #            inline = FALSE, width = NULL),
-                 
-                 # save and download
-               #  actionButton("restore_all", "Restore original inputs"),
-              #   downloadButton(outputId = "download_Inputs", 
-               #                 label = 'Download inputs',
-                #                class= "mybutton"),
-                # downloadButton(outputId = "download_Data", 
-                 #               label = 'Download estimates',
-                  #              class= "mybutton")
                  
         )),
         
@@ -78,7 +94,7 @@ ui <- fluidPage(
       textOutput("br_ratio")
   #  )
  # )
-)))
+))))
 
 # Define server logic required to output values
 server <- function(input, output, session) {
@@ -93,13 +109,14 @@ server <- function(input, output, session) {
              ) 
   })
   
+  d<-as.integer(input$d) #added b/c of conditional
 
    
 #OUTPUT: Take that filtered row from dataset, print output:
   
   #this is infs
   output$trial_infections<-renderText({
-    paste("The expected number of trial infections is", round(filtered()$infs, digits=2))
+    paste("The expected number of trial infections is", round(filtered()$infs, digits=2), ".")
   })
   
   #infections averted undiscounted isn't in the dataframe- commented this out for now
@@ -108,15 +125,15 @@ server <- function(input, output, session) {
   #})
   
   output$infections_averted_discounted<-renderText({
-    paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2)) #is this how I write it?
+    paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2), ".") #is this how I write it?
   })
   
   output$years_saved<-renderText({
-    paste("The expected number of years saved by a challenge trial is", round(filtered()$expected_years_saved, digits=2))
+    paste("The expected number of years saved by a challenge trial is", round(filtered()$expected_years_saved, digits=2), ".")
   })
   
   output$br_ratio <- renderText({
-    paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2)) 
+    paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2), ".") 
   })
   
 }
