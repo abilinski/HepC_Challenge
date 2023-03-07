@@ -1,11 +1,10 @@
 #************************************* Shiny App Code *************************************#
-# Updated w/correct values                                                                 #
-# missing undiscounted rate,
+# Updated w/correct values                                                                 
 
-#CURRENT ISSUE: trying to have a drop down where users can select vaccine uptake: like HPV, like rotavirus, etc.,
-#and then other means that a slider will appear for user to select another value.
+#double check that my values are correct for HPV, HBV, rotavirus
+#in CSV: does vaccine uptake go up by 0.01 or 0.1?
+#make sure my slider works when nothing is entered 
 
-#But running into errors here- not sure conditional can override. 
 #******************************************************************************************#
 
 ### SETUP ###
@@ -43,33 +42,10 @@ ui <- fluidPage(
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
+                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),         
                  
-                 #for vaccine uptake: what if I had a radio button with a conditional panel?
-                 #if other is selected, then slider will appear
-                 #0.14 for HPV, 0.23 for rotavirus, 0.9 for HBV
-                 
-                 #     c("HPV weighted uptake" = 0.14,
-                 #"Rotavirus weighted uptake"=0.23,
-                 #"HPV weighted uptake"=0.9,
-                 #"Other value"="a"))
-                 
-                 #Note: will need to do d<-as.integer(input$d) in the server
-                 radioButtons("d", 
-                              label= "Vaccine Uptake fraction",
-                              choiceValues=list(0.14, 0.23, 0.9), #is error b/c there are only 3 here?
-                              choiceNames=list("HPV","Rotavirus", "HPV", "Other"),
-                              selected = character(0),
-                              
-                        
-                 conditionalPanel(
-                   condition= "input.d=='Other' ",
-                   sliderInput("d",
-                               label = "Vaccine Uptake fraction",
-                               min=.1, max=0.9, value=0.1, step=0.1)
-                 ),
-                 
-                 
-                 #sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),                               
+                 #radio button:
+                 radioButtons("historic", "Historic Vaccine Uptake", c("Rotavirus", "HPV", "HBV")),
                  sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.2),  
                  
                  h4("Trial information"),
@@ -88,16 +64,30 @@ ui <- fluidPage(
     # Show the output
     mainPanel(
       textOutput("trial_infections"),
-    #  textOutput("infections_averted_undiscounted"),
+    # textOutput("infections_averted_undiscounted"),
       textOutput("infections_averted_discounted"),
       textOutput("years_saved"),
       textOutput("br_ratio")
   #  )
  # )
-))))
+)))
 
 # Define server logic required to output values
 server <- function(input, output, session) {
+  
+  #connect radio button to slider w/historic vaccine uptake 
+  observeEvent(input$historic, {
+    if (input$historic=="Rotavirus") {
+      updateSliderInput(session, "d", value=0.23)
+    }
+    else if (input$historic=="HPV") {
+      updateSliderInput(session,"d", value=0.14)
+    }
+    else {
+      updateSliderInput(session,"d",value=0.9)
+    }
+  })
+  
   filtered<- reactive({
     app_data %>%
       filter(p == input$p,
@@ -109,7 +99,7 @@ server <- function(input, output, session) {
              ) 
   })
   
-  d<-as.integer(input$d) #added b/c of conditional
+  
 
    
 #OUTPUT: Take that filtered row from dataset, print output:
