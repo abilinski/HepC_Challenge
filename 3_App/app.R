@@ -1,9 +1,17 @@
 #************************************* Shiny App Code *************************************#
 # Updated w/correct values                                                                 
 
-#double check that my values are correct for HPV, HBV, rotavirus
-#in CSV: does vaccine uptake go up by 0.01 or 0.1?
-#make sure my slider works when nothing is entered 
+#Question: weighted or unweighted?
+#Weighted: HPV = 0.14, Rotavirus = 0.23, HBV = 0.9
+#unweighted: HPV = 0.14, Rotavirus = 0.17, HBV = 0.9
+
+#question: vaccine uptake is by 0.1, not 0.01 (variable d in 2_years_saved)
+
+#next steps:
+# wait to see if there is a graph we should use- then will add, and will mark on graph where the inputs lie
+# change color output of text? or any other formatting?
+
+#anything else needed?
 
 #******************************************************************************************#
 
@@ -31,6 +39,10 @@ ui <- fluidPage(
   
   # Application title
   titlePanel("Model-based analysis of controlled human infection studies for a hepatitis C vaccine"),
+  
+  #Header
+  tags$head(tags$style("#header { text-align: center; }")), # center the header text
+  h2(id = "header", "Expected outcomes given inputs:"),
   
   # SIDEBAR
   sidebarLayout(
@@ -64,9 +76,15 @@ ui <- fluidPage(
     # Show the output
     mainPanel(
       textOutput("trial_infections"),
+      br(),
+      
     # textOutput("infections_averted_undiscounted"),
       textOutput("infections_averted_discounted"),
+      br(),
+    
       textOutput("years_saved"),
+      br(),
+    
       textOutput("br_ratio")
   #  )
  # )
