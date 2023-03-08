@@ -1,17 +1,7 @@
 #************************************* Shiny App Code *************************************#
-# Updated w/correct values                                                                 
+# Updated w/correct values for vaccine uptake (d)                                                                
+#updated: data2 has vaccine uptake by 0.01
 
-#Question: weighted or unweighted?
-#Weighted: HPV = 0.14, Rotavirus = 0.23, HBV = 0.9
-#unweighted: HPV = 0.14, Rotavirus = 0.17, HBV = 0.9
-
-#question: vaccine uptake is by 0.1, not 0.01 (variable d in 2_years_saved)
-
-#next steps:
-# wait to see if there is a graph we should use- then will add, and will mark on graph where the inputs lie
-# change color output of text? or any other formatting?
-
-#anything else needed?
 
 #******************************************************************************************#
 
@@ -19,7 +9,7 @@
 
 # source model code
 here::i_am("3_App/app.R")
-app_data<- read.csv(here("3_App","data.csv"),stringsAsFactors=FALSE)
+app_data<- read.csv(here("3_App","data2.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
@@ -54,10 +44,10 @@ ui <- fluidPage(
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
-                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),         
+                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.01),         
                  
                  #radio button:
-                 radioButtons("historic", "Historic Vaccine Uptake", c("Rotavirus", "HPV", "HBV")),
+                 radioButtons("historic", "Historic Vaccine Uptake", c("Rotavirus", "HPV", "HBV")), #used unweighted
                  sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.2),  
                  
                  h4("Trial information"),
