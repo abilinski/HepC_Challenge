@@ -171,9 +171,9 @@ rotavirus_incidence_clean <- rotavirus_incidence %>%
   mutate(rotavirus_IR_per1000=as.numeric(gsub("," ,"",rotavirus_IR_per1000))) %>%
   rename("rotavirus_incident_cases"="Cases..95..UI.") %>%
   mutate(rotavirus_incident_cases =as.numeric(gsub("," ,"",rotavirus_incident_cases))) %>%
-  mutate("yr"=2016) %>%
+  mutate("yr"=2019) %>%
   subset(country!="") %>%
-  add_row(country="United Kingdom", rotavirus_IR_per1000="144.9", rotavirus_incident_cases="586,884", yr=2016) %>% 
+  add_row(country="United Kingdom", rotavirus_IR_per1000=as.numeric(144.9), rotavirus_incident_cases=586884, yr=2016) %>% 
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
   mutate(yr=as.numeric(yr))
 
@@ -186,7 +186,7 @@ rotavirus_vax_campaign_clean <- rotavirus_vax_campaign %>%
   rename("rotavirus_vaccination_program"="Non.Introducer") %>%
   mutate(rotavirus_vaccination_program = if_else(rotavirus_vaccination_program=="Introducer", "yes", "no" )) %>%
   mutate(country=countrycode(country, "country.name", "country.name")) %>%
-  mutate("yr"=2016) %>%
+  mutate("yr"=2019) %>%
   mutate(yr=as.numeric(yr))
 
 ##########

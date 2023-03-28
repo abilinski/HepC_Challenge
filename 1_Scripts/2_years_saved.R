@@ -4,7 +4,7 @@ source("global_options.R")
 #### PARAMETERS ####
 
 # probability of success
-p = c(seq(.05, .4, by = .05), .11)
+p = c(seq(.05, 1, by = .05), .06, .11)
 
 # number of tries
 t = 1:5
@@ -19,7 +19,7 @@ e = c(.5, .7, .9)
 d = seq(.1, .9, by = .1)
 
 # deployment
-i = c(1000000, 500000)
+i = c(1350000, 500000)
 
 # combine parameters
 df = expand_grid(p, t, y, e, d, i)
@@ -35,26 +35,22 @@ for(i in 1:nrow(df)){
   # number of tries
   tries = 1:df$t[i]
   val = rep(0, length(tries))
-  val_L = rep(0, length(tries))
   cost = rep(0, length(tries))
   
   # contribution to expectation if successful in j tries
   for(j in tries){
-    val[j] = (1-df$p[i])^(j-1)*df$p[i]*(1-d)^R*(1-(1-d)^(j*df$y[i]))/(d)
-    val_L[j] = min((1-(1-d)^(j*df$y[i]))/(d), 15)*(1-d)^R*(1-df$p[i])^(j-1)*df$p[i]
+    val[j] = (1-d)^R*(1-df$p[i])^(j-1)*df$p[i]*(1-(1-d)^(j*df$y[i]))/(d)
     cost[j] = (1-df$p[i])^(j-1)*df$p[i]*(n*j - 1/2*n*df$e[i])
   }
   
   df$expected_years_saved[i] = sum(val)
-  df$expected_years_saved_L[i] = sum(val_L)
-  df$expected_years_saved_U[i] = sum(val) + (1-df$p[i])^(j)*(1-d)^R*min((1-(1-d)^(j*df$y[i]))/(d), 10)
+  df$expected_years_saved_U[i] = sum(val) + (1-d)^R*(1-df$p[i])^(j)*min((1-(1-d)^(j*df$y[i]))/(d), 10)
   df$infs[i] = sum(cost) + (1-df$p[i])^(j)*j*n
   df$prob_success[i] = 1-(1-df$p[i])^(j)
 }
 
 df$benefit = df$expected_years_saved*df$d*df$e*df$i
 df$ratio = df$benefit/df$infs
-View(df)
 
 pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
@@ -64,26 +60,12 @@ df_plots = df %>% gather(var, value, prob_success,
               expected_years_saved, expected_years_saved_L,
               expected_years_saved_U) %>%
   mutate(var2 = ifelse(var=="prob_success", "Probability vaccine developed",
-                       "Expected years saved"),
+                       "Years saved (base case)"),
          var2 = ifelse(var=="expected_years_saved_U", "Years saved (generous)", var2),
          var2 = ifelse(var=="expected_years_saved_L", "Years saved (conservative)", var2),
-         y_lab = paste("Difference in trial length:", y),
+         y_lab = paste("Difference in trial length: ", y, "y", sep = ""),
          y_lab = factor(y_lab, levels = paste("Difference in trial length: ", c(2.5, 5, 10), "y", sep = "")))
 
-# plot results - Figure 1
-b = ggplot(df_plots %>% filter(var%in%c("expected_years_saved")), 
-       aes(x = p, y = value, col = factor(t), group = t)) + 
-  geom_line() + 
-  scale_color_manual(name = "Maximum number of challenge trials\n(available candidates)", values = pal) + 
-  facet_grid(.~y_lab, scales = "free") + theme_bw() + 
-  ylim(0, NA) + 
-  labs(x = "Probability of success in each trial", y = "",
-       title = "Expected years saved (discounted)") + 
-  theme(panel.grid.minor = element_blank(),
-        panel.grid.major = element_blank(),
-          panel.background = element_blank()) +
-  geom_vline(xintercept = 0.06, lty = 2, col = "grey") + 
-  geom_vline(xintercept = 0.12, lty = 3, col = "grey") 
 
 a = ggplot(df_plots %>% filter(var%in%c("prob_success")), 
        aes(x = p, y = value, col = factor(t), group = t)) + 
@@ -91,17 +73,37 @@ a = ggplot(df_plots %>% filter(var%in%c("prob_success")),
   scale_color_manual(name = "Maximum number of challenge trials\n(available candidates)", values = pal) + 
   theme_bw() + 
   ylim(0, NA) + 
-  labs(x = "Probability of success in each trial", y = "",
-       title = "Probability vaccine developed") + 
+  labs(x = "Probability of success in each trial", y = "Probability of successful vaccine development\n(any successful trial)",
+       title = "") + 
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
         panel.background = element_blank()) +
   geom_vline(xintercept = 0.06, lty = 2, col = "grey") + 
-  geom_vline(xintercept = 0.12, lty = 3, col = "grey") + ylim(0,1)
+  geom_vline(xintercept = 0.11, lty = 3, col = "grey") + ylim(0,1)
 
-ggarrange(a, b, common.legend = T, ncol = 1, legend = "bottom")
 # save results
-ggsave(filename = here("2_Figures", "figure1.png"), width = 10, height = 6)
+ggsave(a, filename = here("2_Figures", "figure_prob.png"), width = 10, height = 3)
+
+
+# plot results - Figure 1
+b = ggplot(df_plots %>% filter(var%in%c("expected_years_saved", "expected_years_saved_U")), 
+           aes(x = p, y = value, col = factor(t), group = t)) + 
+  geom_line() + 
+  scale_color_manual(name = "Maximum number of challenge trials\n(available candidates)", values = pal) + 
+  facet_grid(var2~y_lab, scales = "free") + theme_bw() + 
+  ylim(0, NA) + 
+  labs(x = "Probability of success in each trial", y = "Expected years saved (discounted)",
+       title = "") + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) +
+  geom_vline(xintercept = 0.06, lty = 2, col = "grey") + 
+  geom_vline(xintercept = 0.11, lty = 3, col = "grey") 
+
+b
+
+ggsave(b, filename = here("2_Figures", "figure_ey.png"), width = 10, height = 6)
+
 
 # plot results - Figure S1
 ggplot(df_plots %>% filter(var%in%c("expected_years_saved_U")), 
@@ -123,21 +125,39 @@ ggsave(filename = here("2_Figures", "figure_s1.png"), width = 9, height = 5)
 
 
 #### risks and benefits plot
-ggplot(df %>% filter(e==.7 & i == 1e6 & t %in% c(1,3,5) & p %in% c(.05, .1)) %>%
+ggplot(df %>% filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
          mutate(t_fac = paste("Number of candidates:", t),
-                p_fac = paste("Per-candidate success probability:", p)),
+                p_fac = paste("Per-candidate success probability:", p),
+                p_fac = fct_rev(p_fac)),
        aes(x = d, y = benefit/1e6, group = paste(y, p), col = factor(y))) +
   facet_grid(p_fac~t_fac) + 
   geom_line() +
-  scale_color_manual(name = "Difference in trial length (y)", values = pal) + 
+  scale_color_manual(name = "Difference in\ntrial length (y)", values = pal) + 
   theme(panel.grid.minor = element_blank(),
         panel.background = element_blank()) + 
   labs(x = "Vaccine uptake", y = "Future infections averted (m, discounted)") 
 
+ggsave(filename = here("2_Figures", "figure_ben.png"), width = 9, height = 6)
+
+ggplot(df %>% filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
+         mutate(t_fac = paste("Number of candidates:", t),
+                p_fac = paste("Per-candidate success probability:", p),
+                p_fac = fct_rev(p_fac)),
+       aes(x = d, y = benefit/1e6*500, group = paste(y, p), col = factor(y))) +
+  facet_grid(p_fac~t_fac) + 
+  geom_line() +
+  scale_color_manual(name = "Difference in\ntrial length (y)", values = pal) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.background = element_blank()) + 
+  labs(x = "Vaccine uptake", y = "Costs of achieving future benefits through treatment ($m)") 
+
+ggsave(filename = here("2_Figures", "figure_ben_costs.png"), width = 9, height = 6)
+
+
 #### frontier plot
 
 # get threshold plot
-get_threshold = function(y, threshold, t,p,e,i,v,d = 0.03,n = 100,R = 30){
+get_threshold = function(y, threshold, t,p,e,i,v,d = 0.03,n = 100,R = 30, base = T){
   # number of tries
   tries = 1:t
   val = rep(0, length(tries))
@@ -158,28 +178,45 @@ get_threshold = function(y, threshold, t,p,e,i,v,d = 0.03,n = 100,R = 30){
   prob_success = 1-(1-p)^(j)
   
   benefit = expected_years_saved*v*e*i
-  ratio = benefit/infs
+  benefit2 = expected_years_saved_U*v*e*i
   
-  return(abs(ratio-threshold))
+  ratio = benefit/infs
+  ratio2 = benefit2/infs
+  
+  if(base == T){
+    return(abs(ratio-threshold))
+  }else{
+    return(abs(ratio2-threshold))
+  }
 }
 
-df2 = data.frame(e = .7, i=1000000) %>% 
-  expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500),
+# run
+df2 = expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500),
+              e = c(.7, .9), 
               v = seq(.01, .9, by = .001),
               t = c(1,3,5),
-              p = c(0.06, 0.12),
-              y = NA) %>%
+              p = c(0.06, 0.11),
+              y = NA,
+              d = c(0.03, .000000000001),
+              i=c(1350000, 1350000/2), 
+              base = c(T,F)) %>%
   mutate(t_fac = paste("Number of candidates:", t),
-         p_fac = paste("Per-candidate success probability:", p))
+         p_fac = paste("Per-candidate success probability:", p), 
+         p_fac = fct_rev(p_fac),
+         chk = as.numeric(!base) + as.numeric(e!=.7) + 
+           as.numeric(d!=.03) + as.numeric(i!=1350000)) %>%
+  filter(chk <= 1)
 
 for(i in 1:nrow(df2)) {
   df2$y[i] = optim(par = 5, fn = get_threshold, threshold = df2$threshold[i],
-                   t = df2$t[i], p = df2$p[i], e = df2$e[i],
+                   t = df2$t[i], p = df2$p[i], e = df2$e[i], d = df2$d[i], 
+                   base = df2$base[i],
                    i = df2$i[i], v = df2$v[i], method = "BFGS")$par
 }
 
 
-ggplot(df2, 
+# base plot
+ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & base), 
        aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
   facet_grid(p_fac~t_fac) + 
   ylim(0, 10) + 
@@ -187,17 +224,141 @@ ggplot(df2,
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
-           alpha = .2, fill = "darkgrey") +
-  annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
-           alpha = .4, fill = "darkgrey") +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
   labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
 
 
 ggsave(filename = here("2_Figures", "figure3.png"), width = 9, height = 6)
 
+ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & base) %>%
+         mutate(threshold = comma(threshold*200),
+                threshold = factor(threshold, c("10,000", "20,000", "50,000", "100,000", "200,000", "500,000"))), 
+       aes(x = v, y = y, group = threshold, col = (threshold))) + geom_line() + 
+  facet_grid(p_fac~t_fac) + 
+  ylim(0, 10) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) + 
+  scale_color_manual(name = "Benefit-risk\nthreshold (QALY)", values = pal) +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
+  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
 
 
+ggsave(filename = here("2_Figures", "figure3_QALY.png"), width = 9, height = 6)
+
+# sens plot (no discount)
+ggplot(df2 %>% filter(d < 0.03, e == 0.7, i == 1350000), 
+       aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
+  facet_grid(p_fac~t_fac) + 
+  ylim(0, 10) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) + 
+  scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
+  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+
+ggsave(filename = here("2_Figures", "figure_BRR_no_discount.png"), width = 9, height = 6)
+
+# sens plot (no discount)
+ggplot(df2 %>% filter(d == 0.03, e == 0.9, i == 1350000), 
+       aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
+  facet_grid(p_fac~t_fac) + 
+  ylim(0, 10) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) + 
+  scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
+  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+
+ggsave(filename = here("2_Figures", "figure_BRR_high_eff.png"), width = 9, height = 6)
+
+# sens plot (half rate)
+ggplot(df2 %>% filter(d == 0.03, e == 0.7, i < 1350000), 
+       aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
+  facet_grid(p_fac~t_fac) + 
+  ylim(0, 10) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) + 
+  scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
+  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+
+ggsave(filename = here("2_Figures", "figure_BRR_lower_inc.png"), width = 9, height = 6)
+
+
+# sens plot (half rate)
+ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & !base), 
+       aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
+  facet_grid(p_fac~t_fac) + 
+  ylim(0, 10) + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.background = element_blank()) + 
+  scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
+  #annotate('rect', xmin = 0, xmax = .2, ymin = 0, ymax = 5,
+  #         alpha = .2, fill = "darkgrey") +
+  #annotate('rect', xmin = .2, xmax = .9, ymin = 0, ymax = 5,
+  #         alpha = .4, fill = "darkgrey") +
+  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+
+ggsave(filename = here("2_Figures", "figure_BRR_alt.png"), width = 9, height = 6)
+
+#### *************************** TEXT *************************** ####
+df %>% filter(t %in% c(1,3,5) & p %in% c(.06, .11)) %>% 
+  dplyr::select(p, t, prob_success) %>% unique()
+
+df %>% filter(t %in% c(3) & p %in% c(.06, .11) & i == 1350000 & 
+                y == 5 & e == .7 & d %in% c(.2, .9)) %>% 
+  dplyr::select(p, t, d, benefit, infs, ratio) %>% unique()
+
+df %>% filter(t %in% c(1) & p %in% c(.06, .11) & i == 1350000 & 
+                y == 5 & e == .7 & d %in% c(.2, .9)) %>% 
+  dplyr::select(p, t, d, benefit, infs, ratio) %>% unique()
+
+df %>% filter(t %in% c(5) & p %in% c(.06, .11) & i == 1350000 & 
+                y == 5 & e == .7 & d %in% c(.2, .9)) %>% 
+  dplyr::select(p, t, d, benefit, infs, ratio) %>% unique()
+
+min(df$ratio[df$p==.06])
+max(df$ratio[df$p==.11])
+
+mean(df$ratio[df$p%in%c(.06, .11)] < 50)
+mean(df$ratio[df$p%in%c(.06, .11)] >2500)
+
+quantile(df$ratio[df$p%in%c(.06)], c(.25, .75))
+quantile(df$ratio[df$p%in%c(.11)], c(.25, .75))
+
+quantile(df$ratio[df$p%in%c(0.06, .11)], c(.25, .75))
+
+
+View(df2 %>% filter(t %in% c(3) & p %in% c(.06, .11) & i == 1350000 & 
+                 e == .7 & v %in% c(.2, .9) & base) %>% 
+  group_by(p,t,v,threshold) %>% summarize(y[1]/y[2]))
+  
+
+g = df2 %>% filter(p %in% c(.06, .11) & i == 1350000 & 
+                      e == .7 & v %in% c(.2, .9) & d==.03) %>% 
+       group_by(p,t,v,d,threshold) %>% summarize(diff = y[1]/y[2])
+
+mean(g$diff); median(g$diff)
 
 # deployment
 # time difference
