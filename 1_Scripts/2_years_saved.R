@@ -61,8 +61,8 @@ pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
 # run plots
 df_plots = df %>% gather(var, value, prob_success,
-              expected_years_saved, expected_years_saved_L,
-              expected_years_saved_U) %>%
+              expected_years_saved, expected_years_saved_L, #QUESTION- THIS IS NOT IN THE DATA???? (SHOULD I REMOVED expected_years_saved_L)
+              expected_years_saved_U) %>%  
   mutate(var2 = ifelse(var=="prob_success", "Probability vaccine developed",
                        "Years saved (base case)"),
          var2 = ifelse(var=="expected_years_saved_U", "Years saved (generous)", var2),
