@@ -61,12 +61,11 @@ pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
 # run plots
 df_plots = df %>% gather(var, value, prob_success,
-              expected_years_saved, expected_years_saved_L, #QUESTION- THIS IS NOT IN THE DATA???? (SHOULD I REMOVED expected_years_saved_L)
+              expected_years_saved, 
               expected_years_saved_U) %>%  
   mutate(var2 = ifelse(var=="prob_success", "Probability vaccine developed",
                        "Years saved (base case)"),
          var2 = ifelse(var=="expected_years_saved_U", "Years saved (generous)", var2),
-         var2 = ifelse(var=="expected_years_saved_L", "Years saved (conservative)", var2),
          y_lab = paste("Difference in trial length: ", y, "y", sep = ""),
          y_lab = factor(y_lab, levels = paste("Difference in trial length: ", c(2.5, 5, 10), "y", sep = "")))
 
@@ -165,18 +164,15 @@ get_threshold = function(y, threshold, t,p,e,i,v,d = 0.03,n = 100,R = 30, base =
   # number of tries
   tries = 1:t
   val = rep(0, length(tries))
-  val_L = rep(0, length(tries))
   cost = rep(0, length(tries))
   
   # contribution to expectation if successful in j tries
   for(j in tries){
     val[j] = (1-p)^(j-1)*p*(1-d)^R*(1-(1-d)^(j*y))/(d)
-    val_L[j] = min((1-(1-d)^(j*y))/(d), 15)*(1-d)^R*(1-p)^(j-1)*p
     cost[j] = (1-p)^(j-1)*p*(n*j - 1/2*n*e)
   }
   
   expected_years_saved = sum(val)
-  expected_years_saved_L = sum(val_L)
   expected_years_saved_U = sum(val) + (1-p)^(j)*(1-d)^R*min((1-(1-d)^(j*y))/(d), 10)
   infs = sum(cost) + (1-p)^(j)*j*n
   prob_success = 1-(1-p)^(j)
