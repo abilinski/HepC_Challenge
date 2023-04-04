@@ -9,7 +9,7 @@
 
 # source model code
 here::i_am("3_App/app.R")
-app_data<- read.csv(here("3_App","data.csv"),stringsAsFactors=FALSE)
+app_data<- read.csv(here("3_App","data_final.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
