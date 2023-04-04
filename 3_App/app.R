@@ -9,7 +9,7 @@
 
 # source model code
 here::i_am("3_App/app.R")
-app_data<- read.csv(here("3_App","data2.csv"),stringsAsFactors=FALSE)
+app_data<- read.csv(here("3_App","data.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
@@ -44,7 +44,7 @@ ui <- fluidPage(
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
-                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.01),         
+                 sliderInput("d", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),         
                  
                  #radio button:
                  radioButtons("historic", "Historic Vaccine Uptake", c("Rotavirus", "HPV", "HBV")), #used unweighted
@@ -52,9 +52,11 @@ ui <- fluidPage(
                  
                  h4("Trial information"),
                  h5("These sliders describe challenge trial inputs."),
-                 sliderInput("t", "Number of trials", min=1, max=5, value=3, step = 1), 
-                 sliderInput("p", "Per candidate probability of success", min=.05, max=.4, value=.05, step = 0.05),
-                 sliderInput("y", "Years saved if successful", min=2.5, max=10, value=2.5, step = 2.5), #STUCK b/c no 7.5 in data
+                 sliderInput("t", "Number of trials", min=1, max=5, value=3, step = 2), 
+                 #Should I edit this b/c figure 1 only takes in 0.11 and 0.06?
+                 #sliderInput("p", "Per candidate probability of success", min=.05, max=.4, value=.05, step = 0.05),
+                 sliderInput("p", "Per candidate probability of success", min=.06, max=.11, value=.06, step = 0.05),
+                 sliderInput("y", "Years saved if successful", min=2.5, max=10, value=2.5, step = 2.5), 
                  
                  h4("Disease information"),
                  sliderInput("i", "Incidence of annual infections", min=500000, max=1000000, value=500000, step=500000),  
@@ -68,14 +70,17 @@ ui <- fluidPage(
       textOutput("trial_infections"),
       br(),
       
-    # textOutput("infections_averted_undiscounted"),
       textOutput("infections_averted_discounted"),
       br(),
     
       textOutput("years_saved"),
       br(),
     
-      textOutput("br_ratio")
+      textOutput("br_ratio"),
+      br(),
+      
+      #plot output
+      plotOutput("plot")
   #  )
  # )
 )))
@@ -123,7 +128,7 @@ server <- function(input, output, session) {
   #})
   
   output$infections_averted_discounted<-renderText({
-    paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2), ".") #is this how I write it?
+    paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2), ".") 
   })
   
   output$years_saved<-renderText({
@@ -134,9 +139,59 @@ server <- function(input, output, session) {
     paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2), ".") 
   })
   
+  #For Figure 1: store benefit value
+  #given p, t, e, d, i, y
+  fig1_filtered<-reactive({
+    app_data %>%
+      filter(p == input$p,
+             t == input$t,
+             e == 0.7,
+             d == input$d,
+             i == 1350000,
+             y == input$y
+      )
+  })
+  
+  #benefit value:
+  fig1_benefit<- reactive({
+      fig1_filtered()$benefit
+  })
+  
+  #save benefit value
+  observe({
+    benefit<-fig1_benefit()
+  })
+  
+  #Create Figure 1
+  output$plot<- renderPlot({
+    ggplot(app_data %>% filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
+             mutate(t_fac = paste("Number of candidates:", t),
+                    p_fac = paste("Per-candidate success probability:", p),
+                    p_fac = fct_rev(p_fac)),
+           aes(x = d, y = benefit/1e6, group = paste(y, p), col = factor(y))) +
+      facet_grid(p_fac~t_fac) + 
+      geom_line() +
+      scale_color_manual(name = "Difference in\ntrial length (y)", values = pal) + 
+      theme(panel.grid.minor = element_blank(),
+            panel.background = element_blank()) + 
+      labs(x = "Vaccine uptake", y = "Future infections averted (m, discounted)") +
+      
+      #add point to show user where their inputs are
+      geom_point(data=data.frame(x=input$d, 
+                                 y=fig1_benefit()/1e6, 
+                                 p=input$p, t=input$t,
+                                 ylab = paste("Difference in trial length: ", input$y, "y", sep = "")),
+                 aes(x=x,y=y,group=paste(ylab,p), col=factor(ylab))) 
+    
+      #make sure the point only plots on the correct facet:
+    #  filter(t_fac == paste("Number of candidates:", input$t) &
+     #       p_fac == paste("Per-candidate success probability:", input$p))
+
+  })
+  
 }
 
-  
+
 
 # Run the application 
 shinyApp(ui = ui, server = server)

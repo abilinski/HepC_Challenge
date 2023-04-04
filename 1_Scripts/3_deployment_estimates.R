@@ -7,7 +7,7 @@ source(here::here("1_Scripts", "0_preliminary_data.R"))
 ####***************************** HPV **************************************####
 df = preliminary_data %>% filter(yr==2019) %>%
   mutate(rotavirus_incident_cases = as.numeric(sub(",", "", rotavirus_incident_cases)))
-View(df) # R: go through countries w/NA population / remove or fill them in manually
+View(df) 
 
 #### weighted by population
 
