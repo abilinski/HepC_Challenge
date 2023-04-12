@@ -7,7 +7,7 @@
 
 # source model code
 here::i_am("3_App/app.R")
-app_data<- read.csv(here("3_App","data_final.csv"),stringsAsFactors=FALSE)
+app_data<- read.csv(here::here("3_App","data_final.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
@@ -18,8 +18,7 @@ library(plotly)
 library(RColorBrewer)
 library(tidyverse)
 library(htmltools)
-library(here)
-
+pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
 # Define UI:
 ui <- fluidPage(
@@ -28,11 +27,6 @@ ui <- fluidPage(
   
   # Application title
   titlePanel("Model-based analysis of controlled human infection studies for a hepatitis C vaccine"),
-  
-  #Header
- # tags$head(tags$style("#header { text-align: center; }")), # center the header text
-#  h2(id = "header", "Expected outcomes given inputs:"),
-  
   
   # SIDEBAR
   sidebarLayout(
@@ -60,39 +54,40 @@ ui <- fluidPage(
                  
                  h4("Disease information"),
                  sliderInput("i", "Incidence of annual infections", min=500000, max=1000000, value=500000, step=500000),  
-                # sliderInput("?", "% of trial participants who become infected after exposure), min=.4, max=1.5, value=0.9, step = 0.1),    
+                 # sliderInput("?", "% of trial participants who become infected after exposure), min=.4, max=1.5, value=0.9, step = 0.1),    
                  
         ))),
-        
+    
     
     #Results
     mainPanel(tabsetPanel(type="tabs",
                           
-      #Text output
-      tabPanel("Model Results",
-              htmlOutput("overall_info"),
-              br(),
-              
-              textOutput("trial_infections"),
-              
-              textOutput("infections_averted_discounted"),
-            
-              textOutput("years_saved"),
-            
-              textOutput("br_ratio"),
-              
-              #plot output
-              plotOutput("plot")
-              ),
-    
-    #Documentation
-    tabPanel("Documentation",
-             includeMarkdown("documentation.md"))
-            )
+                          #Text output
+                          tabPanel("Model Results",
+                                   htmlOutput("overall_info"),
+                                   br(),
+                                   
+                                   textOutput("trial_infections"),
+                                   
+                                   textOutput("infections_averted_discounted"),
+                                   
+                                   textOutput("years_saved"),
+                                   
+                                   textOutput("br_ratio"),
+                                   br(),
+                                  
+                                    #plot output
+                                   plotOutput("plot")
+                          ),
+                          
+                          #Documentation
+                          tabPanel("Documentation",
+                                   includeMarkdown("documentation.md"))
+    )
     )),
-
-    hr(),
-    includeMarkdown("footer.md")
+  
+  hr(),
+  includeMarkdown("footer.md")
 )
 
 # Define server logic required to output values
@@ -119,26 +114,20 @@ server <- function(input, output, session) {
              d == input$d,
              i == input$i,
              y == input$y
-             ) 
+      ) 
   })
   
   
-
-   
-#OUTPUT: Take that filtered row from dataset, print output:
+  
+  
+  #OUTPUT: Take that filtered row from dataset, print output:
   
   #overall info:
   output$overall_info <- renderUI({
     HTML("<div style='font-size: 14px;'>
          <strong>What are the risks and benefits of challenge trials for hepatitis C vaccine development?</strong>
-         These are the expected outcomes given the inputs you provided. Altering inputs shows that the benefits of a 
-         challenge trial increase with more vaccine candidates, faster trials, and greater uptake. <br> <br> 
-         <strong>Model approach:</strong>
-         
-         You can adjust parameters with the sliders on the left. You'll see the expected number of trial infections,
-         infections averted(discounted), and years saved are with your given parameters. You'll also see two graphs: <br>
-         1) the incremental future infections averted (discounted) <br>
-         2) the infection benefit-risk frontiers across different parameter values. <br> 
+         Altering inputs shows that the benefits of a challenge trial increase with more vaccine candidates, 
+         faster trials, and greater uptake.  
          <em>For more details, see the documentation tab.</em>")
   })
   
@@ -146,7 +135,7 @@ server <- function(input, output, session) {
   output$trial_infections<-renderText({
     paste("The expected number of trial infections is", round(filtered()$infs, digits=2), ".")
   })
-
+  
   output$infections_averted_discounted<-renderText({
     paste("The expected infections averted (discounted) is", round(filtered()$benefit, digits=2), ".") 
   })
@@ -158,6 +147,7 @@ server <- function(input, output, session) {
   output$br_ratio <- renderText({
     paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2), ".") 
   })
+  
   
   #For Figure 1: store benefit value
   #given p, t, e, d, i, y
@@ -172,12 +162,12 @@ server <- function(input, output, session) {
       )
   })
   
-  #benefit value:
+  #benefit value:  calculates benefit value from filtered data
   fig1_benefit<- reactive({
-      fig1_filtered()$benefit
+    fig1_filtered()$benefit
   })
   
-  #save benefit value
+  #save benefit value in variable called "benefit"
   observe({
     benefit<-fig1_benefit()
   })
@@ -186,11 +176,16 @@ server <- function(input, output, session) {
   #HELP: How do I add a slider to multiply the outputs by 500, and then the plot will show estimated monetary cost instead?
   
   output$plot<- renderPlot({
+    
+    #create a dataframe for the specified output:
+    filtered2<- app_data %>% 
+      filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
+      mutate(t_fac = paste("Number of candidates:", t),
+             p_fac = paste("Per-candidate success probability:", p),
+             p_fac = fct_rev(p_fac))
+    
     #Start with general plot:
-    ggplot(app_data %>% filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
-             mutate(t_fac = paste("Number of candidates:", t),
-                    p_fac = paste("Per-candidate success probability:", p),
-                    p_fac = fct_rev(p_fac)),
+    ggplot(filtered2,
            aes(x = d, y = benefit/1e6, group = paste(y, p), col = factor(y))) +
       facet_grid(p_fac~t_fac) + 
       geom_line() +
@@ -202,22 +197,17 @@ server <- function(input, output, session) {
       theme (plot.title = element_text(hjust = 0.5)) +
       theme(plot.title = element_text(size = 14)) +
       
-      #Pt to show where user entries are:
-      geom_point(data = data.frame(x = input$d,
-                                   y = fig1_benefit()/1e6,
-                                   p_fac = paste("Per-candidate success probability:", input$p),
-                                   t_fac = paste("Number of candidates:", input$t)),
-                 aes(x = x, y = y),
-                 color = "red",
-                 size = 3,
-                 show.legend = FALSE) +
-      facet_grid(p_fac ~ t_fac, 
-                 drop = TRUE) 
+      #Plot a point that corresponds with user value
+      geom_point(data=filtered2 %>% filter(p == input$p & t == input$t), aes(x=input$d, y=fig1_benefit()/1e6),
+                 color="red",
+                 size=3,
+                 show.legend=FALSE)
+                 
   })
-  
   
   #Create Figure 2: 
   #help- struggling to copy in lines for df2 (getting lots of errors)
+  
 }
 
 
