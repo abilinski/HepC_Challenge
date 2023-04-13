@@ -7,7 +7,12 @@
 
 # source model code
 here::i_am("3_App/app.R")
+
+#Data: for figure 1
 app_data<- read.csv(here::here("3_App","data_final.csv"),stringsAsFactors=FALSE)
+
+#Data: for figure 2
+fig2_data<- read.csv(here::here("3_App","data_fig2.csv"),stringsAsFactors=FALSE)
 
 
 # libraries
@@ -19,6 +24,7 @@ library(RColorBrewer)
 library(tidyverse)
 library(htmltools)
 pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
+pal2 = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432", "#311572")
 
 # Define UI:
 ui <- fluidPage(
@@ -46,20 +52,22 @@ ui <- fluidPage(
                  
                  h4("Trial information"),
                  h5("These sliders describe challenge trial inputs."),
-                 sliderInput("t", "Number of trials", min=1, max=5, value=3, step = 2), 
-                 #Should I edit this b/c figure 1 only takes in 0.11 and 0.06?
-                 #sliderInput("p", "Per candidate probability of success", min=.05, max=.4, value=.05, step = 0.05),
-                 sliderInput("p", "Per candidate probability of success", min=.06, max=.11, value=.06, step = 0.05),
-                 sliderInput("y", "Years saved if successful", min=2.5, max=10, value=2.5, step = 2.5), 
+                 sliderInput("t", "Number of trials", min=1, max=10, value=3, step = 1), 
+                 sliderInput("p", "Per candidate probability of success", min=.06, max=.4, value=.06, step = 0.02),
+                 sliderInput("y", "Years saved if successful", min=2.5, max=10, value=2.5, step = 2.5),
                  
+                 #should this go under challenge trial input?
+                 sliderInput("r", "Discount rate", min=.000000000001, max=0.03,value=0.03, step=0.02999999999),
+
                  h4("Disease information"),
-                 sliderInput("i", "Incidence of annual infections", min=500000, max=1000000, value=500000, step=500000),  
+                 sliderInput("i", "Incidence of annual infections", min=250000, max=2000000, value=500000, step=250000),  
                  # sliderInput("?", "% of trial participants who become infected after exposure), min=.4, max=1.5, value=0.9, step = 0.1),    
                  
         ))),
     
     
     #Results
+    #edit text here: have "results summary" and then round values to whole # (except 1 decimal for yrs saved)
     mainPanel(tabsetPanel(type="tabs",
                           
                           #Text output
@@ -76,8 +84,12 @@ ui <- fluidPage(
                                    textOutput("br_ratio"),
                                    br(),
                                   
-                                    #plot output
-                                   plotOutput("plot")
+                                    #plot output: figure 1
+                                   plotOutput("plot"),
+                                   br(),
+                                   
+                                   #plot output: figure 2
+                                   plotOutput("plot2"),
                           ),
                           
                           #Documentation
@@ -108,18 +120,27 @@ server <- function(input, output, session) {
   
   filtered<- reactive({
     app_data %>%
-      filter(p == input$p,
-             t == input$t,
-             e == input$e,
-             d == input$d,
-             i == input$i,
-             y == input$y
+      filter(p == input$p, #prob success
+             t == input$t, #num trials
+             e == input$e, #efficacy
+             d == input$d, #vaccine uptake
+             i == input$i, #incidence
+             y == input$y #years saved if successful
       ) 
   })
   
+  df2_filtered <- reactive({
+    fig2_data %>%
+      filter(e==input$e, #efficacy
+             v == input$d, #vaccine uptake
+             t == input$t, #num trials
+             p == input$p, #prob success
+             i == input$i, #incidence
+             d == input$r #discount rate
+      ) 
+  })
   
-  
-  
+
   #OUTPUT: Take that filtered row from dataset, print output:
   
   #overall info:
@@ -148,29 +169,28 @@ server <- function(input, output, session) {
     paste("The benefit-risk ratio is",round(filtered()$ratio, digits=2), ".") 
   })
   
-  
-  #For Figure 1: store benefit value
-  #given p, t, e, d, i, y
-  fig1_filtered<-reactive({
-    app_data %>%
-      filter(p == input$p,
-             t == input$t,
-             e == 0.7,
-             d == input$d,
-             i == 1350000,
-             y == input$y
-      )
-  })
-  
+  #output for figure 1:
   #benefit value:  calculates benefit value from filtered data
   fig1_benefit<- reactive({
-    fig1_filtered()$benefit
+    filtered()$benefit
   })
   
   #save benefit value in variable called "benefit"
   observe({
     benefit<-fig1_benefit()
   })
+  
+  #output for figure 2:
+  #calculate difference in trial length from filtereed data
+  fig2_y<- reactive({
+    df2_filtered()$y
+  })
+  
+  #save y in variable called "y"
+  observe({
+    y<-fig2_y()
+  })
+  
   
   #Create Figure 1
   #HELP: How do I add a slider to multiply the outputs by 500, and then the plot will show estimated monetary cost instead?
@@ -179,7 +199,7 @@ server <- function(input, output, session) {
     
     #create a dataframe for the specified output:
     filtered2<- app_data %>% 
-      filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.06, .11)) %>%
+      filter(e==input$e & i == input$i & t %in% c(1,input$t,5) & p %in% c(.06, input$p)) %>%
       mutate(t_fac = paste("Number of candidates:", t),
              p_fac = paste("Per-candidate success probability:", p),
              p_fac = fct_rev(p_fac))
@@ -206,7 +226,33 @@ server <- function(input, output, session) {
   })
   
   #Create Figure 2: 
-  #help- struggling to copy in lines for df2 (getting lots of errors)
+  #still need to add on point to show where
+  #also need to create button: toggle from benefit risk ratio to quali benefit risk ratio (multiply by 100)
+  output$plot2<- renderPlot({
+    
+    #create dataframe for output
+    filtered_p2<- df2_final %>%
+      filter(d == input$r, e == input$e, i == 250000, base==T, p %in% c(.06, input$p), t %in% c(1,input$t, 5)) %>%
+      mutate(t_fac = paste("Number of candidates:", t),
+             p_fac = paste("Per-candidate success probability:", p),
+             p_fac = fct_rev(p_fac))
+      
+    ggplot(filtered_p2,
+           aes(x = v, y = y, group = threshold, col = factor(threshold))) + geom_line() + 
+      facet_grid(p_fac~t_fac) + 
+      ylim(0, 10) + 
+      theme(panel.grid.minor = element_blank(),
+            panel.grid.major = element_blank(),
+            panel.background = element_blank()) + 
+      scale_color_manual(name = "Benefit-risk\nthreshold", values = pal2) + 
+      labs(x = "Vaccine uptake", y = "Difference in trial length (y)") #+
+    
+    #Plot a point that corresponds with user value
+ #   geom_point(data=filtered_p2 %>% filter(p==input$p & t==input$t), aes(x=input$d, y=fig2_y()),
+#               color="red",
+#               size=3,
+#               show.legend=FALSE)
+  })
   
 }
 
