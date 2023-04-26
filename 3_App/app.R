@@ -1,23 +1,14 @@
 #************************************* Shiny App Code *************************************#
-
+#Edited code, updated with 4/25 edits
 
 #******************************************************************************************#
 
 ### SETUP ###
 
-# source model code
-#here::i_am("3_App/app.R")
+# source global options
 source("../global_options.R")
 
-#Data: for figure 1
-#app_data<- read.csv(here::here("3_App","data_final.csv"),stringsAsFactors=FALSE)
-
-#Data: for figure 2
-#fig2_data<- read.csv(here::here("3_App","data_fig2.csv"),stringsAsFactors=FALSE)
-
-
 # libraries
-#HELP: HOW DO I SOURCE TO GLOBAL OPTIONS????
 library(shiny)
 library(shinythemes)
 library(shinyjs)
@@ -41,36 +32,37 @@ ui <- fluidPage(
     sidebarPanel(
       tabsetPanel(
         
-        # MAIN PARAMETERS
+        # Main parameters
         tabPanel("Main", fluid=TRUE,
                  
                  h4("Vaccine information"),
                  h5("These sliders describe describe the efficacy and uptake of a vaccine, where 1 is 100%."),
-                 sliderInput("vu", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.1),        
+                 sliderInput("vu", "Vaccine uptake fraction", min=.1, max=.9, value=.1, step = 0.05),        
                  
                  #radio button:
-                 radioButtons("historic", "Historic Vaccine Uptake", c("Rotavirus", "HPV", "HBV")), #used unweighted
-                 sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.2),  
+                 radioButtons("historic", "Historic vaccine uptake", c("Rotavirus", "HPV", "HBV")), #used unweighted
+                 sliderInput("e", "Vaccine efficacy fraction", min=.5, max=.9, value=.7, step = 0.1),  
                  
                  h4("Trial information"),
                  h5("These sliders describe challenge trial inputs."),
-                 sliderInput("t", "Number of trials", min=1, max=10, value=3, step = 1),
-                 sliderInput("p", "Per candidate probability of success", min=.06, max=.4, value=.06, step = 0.02),
-                 sliderInput("y", "Difference in trial length between traditional and challenge trial", min=2.5, max=10, value=2.5, step = 2.5),
+                 sliderInput("t", "Number of candidates", min=1, max=10, value=3, step = 1),
+                 sliderInput("p", "Per-candidate probability of success", min=.06, max=.4, value=.06, step = 0.02),
+                 sliderInput("y", "Difference in trial length between traditional and challenge trial", min=2.5, max=20, value=2.5, step = 2.5),
         ),
         
+        #Advanced parameters
         tabPanel("Advanced",
                  #advanced parameter
                  h4("Disease information"),
-                 sliderInput("i", "Incidence of annual infections", min=250000, max=2000000, value=500000, step=250000),
+                 sliderInput("i", "Incidence of annual infections", min=250000, max=2000000, value=50000, step=250000),
                  
                  h4("Other"),
                  sliderInput("dr", "Discount rate", min=0, max=0.03,value=0.03, step=0.005), #I THINK THIS NEEDS TO BE A BUTTON?
-                 sliderInput("cost", "Estimated Monetary Cost", min=100, max=500, value=500, step=10),
-                 sliderInput("tr", "Time till rollout", min=10, max=50, value=30, step=5),
-                 sliderInput("q", "Proportion of people who go on to have chronic disease", min=0.7, max=0.9, value=0.8, step=0.1),
-                 sliderInput("n", "Number of people in each trial arm", min=20,max=160,value=100, step=20),
-                 sliderInput("qb", "Quali benefit-risk ratio", min=10, max=200, value=100, step=10)
+                 sliderInput("cost", "Cost of treating an HCV infection in LMIC (benchmark cost)", min=100, max=5000, value=500, step=100),
+                 sliderInput("tr", "Time from trial initiation until vaccine rollout", min=10, max=50, value=30, step=5),
+                 sliderInput("q", "Proportion of acute HCV cases who develop chronic HCV", min=0.7, max=0.9, value=0.8, step=0.05),
+                 sliderInput("n", "Number of people in each trial arm", min=20,max=160,value=100, step=10),
+                 sliderInput("qb", "QALY benefit-risk ratio", min=10, max=200, value=100, step=10)
         )
       )),
     
@@ -82,29 +74,10 @@ ui <- fluidPage(
                           #Text output
                           tabPanel("Model Results",
                                    
-                                   htmlOutput("results_summary"),
-                                   br(),
-                                   
-                                   #plot output: figure 1
-                                   #allow user to pick which plot it will be
-                                   selectInput("plotType", "Choose Plot Type for Figure 1:",
-                                               choices = c("Future infections averted", "Estimated monetary cost")),
-                                   
-                                   plotOutput("plot"),
-                                   br(),
-                                   
-                                   #print table output for fig2
-                                   #  tableOutput("table"),
-                                   
-                                   #plot output: figure 2
-                                   selectInput("plotType2", "Choose Plot Type for Figure 2:",
-                                               choices = c("Infection benefit-risk ratio", "Quali benefit risk ratio")),
-                                   
-                                   plotOutput("plot2"),
-                                   br(),
-                                   
                                    htmlOutput("overall_info"),
                                    br(),
+                                   
+                                   htmlOutput("results_summary"),
                                    
                                    textOutput("trial_infections"),
                                    
@@ -114,6 +87,22 @@ ui <- fluidPage(
                                    
                                    textOutput("br_ratio"),
                                    br(),
+                                   
+                                   
+                                   #plot output: figure 1
+                                   selectInput("plotType", "Choose Plot Type for Figure 1:",
+                                               choices = c("Future infections averted", "Estimated monetary cost")),
+                                   
+                                   plotOutput("plot"),
+                                   br(),
+                                   
+                                   #plot output: figure 2
+                                   selectInput("plotType2", "Choose Plot Type for Figure 2:",
+                                               choices = c("Infection benefit-risk ratio", "QALY benefit-risk ratio")),
+                                   
+                                   plotOutput("plot2"),
+                                   br(),
+                                  
                           ),
                           
                           
@@ -127,7 +116,7 @@ ui <- fluidPage(
   includeMarkdown("footer.md")
 )
 
-# Define server logic required to output values
+#Define server logic required to output values
 server <- function(input, output, session) {
   
   #connect radio button to slider w/historic vaccine uptake
@@ -143,7 +132,7 @@ server <- function(input, output, session) {
     }
   })
   
-  #filtered: setting up for fig1, and for text outputs
+  #filtered: setting up for text results
   filtered<- reactive({
     expand_grid(
       p = input$p, #prob success
@@ -162,23 +151,21 @@ server <- function(input, output, session) {
   #compute outputs from filtered (for text)
   filtered_computed<- reactive({
     df<-filtered()
-    #simulation:
     
-    # number of tries
+    #### SIMULATION ####
+    #number of tries
     tries = 1:df$t
     val = rep(0, length(tries))
     cost = rep(0, length(tries))
     
-    # contribution to expectation if successful in j tries
+    #contribution to expectation if successful in j tries
     for(j in tries){
       val[j] = (1-df$dr)^df$tr*(1-df$p)^(j-1)*df$p*(1-(1-df$dr)^(j*df$y))/(df$dr)
       cost[j] = (1-df$p)^(j-1)*df$p*(df$n*j - 1/2*df$n*df$e)
     }
     
     df$expected_years_saved = sum(val)
-    df$expected_years_saved_U = sum(val) + (1-df$dr)^df$tr*(1-df$p)^(j)*min((1-(1-df$dr)^(j*df$y))/(df$dr), 10)
     df$infs = sum(cost) + (1-df$p)^(j)*j*df$n
-    df$prob_success = 1-(1-df$p)^(j)
     
     
     df$benefit = df$expected_years_saved*df$vu*df$e*df$i
@@ -187,28 +174,25 @@ server <- function(input, output, session) {
     #return df
     data.frame(
       expected_years_saved = df$expected_years_saved,
-      expected_years_saved_U = df$expected_years_saved_U,
       infs = df$infs,
-      prob_success = df$prob_success,
       benefit = df$benefit,
       ratio = df$ratio
     )
   })
   
-  #for actual plot for figure 1:
+  #data for plot for figure 1:
   filtered_plot1<- reactive({
     p = c(input$p,0.06) #prob success
     t = c(input$t,1,5) #num trials
     e = input$e #efficacy
-    vu = seq(.1, .9, by = .1) #vaccine uptake
+    vu = seq(.1, .9, by = .05) #vaccine uptake
     i = input$i #incidence
-    y = c(2.5, 5, 7.5, 10) #difference in trial length
+    y = c(2.5, 5, 7.5, 10, input$y) #difference in trial length
     dr = if(input$dr == 0) 1e-12 else input$dr #discount rate
     tr = input$tr #time till rollout
     q = input$q #proportion chronic
     n = input$n #number in trial arm
-    #simulation:
-    
+   
     df = expand_grid(p, t, y, e, vu, i, dr, tr, q, n) #using values above
     
     #### SIMULATION ####
@@ -226,11 +210,9 @@ server <- function(input, output, session) {
       }
       
       df$expected_years_saved[i] = sum(val)
-      df$expected_years_saved_U[i] = sum(val) + (1-df$dr[i])^df$tr[i]*(1-df$p[i])^(j)*min((1-(1-df$dr[i])^(j*df$y[i]))/(df$dr[i]), 10)
     }
     
     df$benefit = df$expected_years_saved*df$vu*df$e*df$i
-    #  df$ratio = df$benefit/df$infs
     
     #return df
     data.frame(
@@ -243,7 +225,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #EDIT- FOR FIGURE 2
+  #Data for figure 2
   filtered_plot2<- reactive({
     
     # get threshold fcn
@@ -260,24 +242,17 @@ server <- function(input, output, session) {
       }
       
       expected_years_saved = sum(val)
-      expected_years_saved_U = sum(val) + (1-p)^(j)*(1-dr)^tr*min((1-(1-dr)^(j*y))/(dr), 10)
       infs = sum(cost) + (1-p)^(j)*j*n
-      prob_success = 1-(1-p)^(j)
-      
       benefit = expected_years_saved*vu*e*i
-      benefit2 = expected_years_saved_U*vu*e*i
-      
       ratio = benefit/infs
-      ratio2 = benefit2/infs
       
-      #b/c base = T:
       return(abs(ratio-threshold))
     }
     
     
     df2 = expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500), #threshold value
                       e = input$e,  #vaccine efficacy
-                      vu = seq(.1, .9, by = .1), #vaccine uptake
+                      vu = seq(.1, .9, by = .05), #vaccine uptake
                       t = c(input$t,1,5), #number of trials
                       p = c(input$p,0.06), #probability of success
                       y = NA,
@@ -305,19 +280,8 @@ server <- function(input, output, session) {
       y = df2$y,
       threshold = df2$threshold
     )
-    
   })
-  
-  #OUTPUT: Take that filtered row from dataset, print output:
-  # output$table<- renderTable({
-  # filtered_plot2()
-  #filtered_plot1()
-  # filtered_p2<- df2_final %>%
-  #  filter(d == .03, e == .5, i == 250000, base==T, p ==.06, t==1, v==.10) %>%
-  #  mutate(t_fac = paste("Number of candidates:", t),
-  #         p_fac = paste("Per-candidate success probability:", p),
-  #         p_fac = fct_rev(p_fac))
-  #})
+
   
   #overall info:
   output$overall_info <- renderUI({
@@ -328,21 +292,20 @@ server <- function(input, output, session) {
          <em>For more details, see the documentation tab.</em>")
   })
   
-  #this is infs
   output$trial_infections<-renderText({
-    paste("The expected number of trial infections is", round(filtered_computed()$infs,digits=0), ".")
+    paste0("The expected number of trial infections is ", round(filtered_computed()$infs,digits=0), ".")
   })
   
   output$infections_averted_discounted<-renderText({
-    paste("The expected infections averted (discounted) is", round(filtered_computed()$benefit, digits=0), ".")
+    paste0("The expected infections averted (discounted) is ", round(filtered_computed()$benefit, digits=0), ".")
   })
   
   output$years_saved<-renderText({
-    paste("The expected number of years saved by a challenge trial is", round(filtered_computed()$expected_years_saved, digits=1), ".")
+    paste0("The expected number of years saved by a challenge trial is ", round(filtered_computed()$expected_years_saved, digits=1), ".")
   })
   
   output$br_ratio <- renderText({
-    paste("The benefit-risk ratio is",round(filtered_computed()$ratio, digits=0), ".")
+    paste0("The benefit-risk ratio is ",round(filtered_computed()$ratio, digits=0), ".")
   })
   
   output$results_summary <- renderUI({
@@ -409,8 +372,8 @@ server <- function(input, output, session) {
         scale_color_manual(name = "Difference in\ntrial length (y)", values = pal) +
         theme(panel.grid.minor = element_blank(),
               panel.background = element_blank()) +
-        labs(x = "Vaccine uptake", y = "Estimated Monetary Cost",
-             title="Estimated Monetary Cost") +
+        labs(x = "Vaccine uptake", y = "Estimated monetary cost",
+             title="Estimated monetary cost") +
         theme (plot.title = element_text(hjust = 0.5)) +
         theme(plot.title = element_text(size = 14)) +
         
@@ -438,7 +401,7 @@ server <- function(input, output, session) {
       ggplot(filtered_p2,
              aes(x = vu, y = y, group = threshold, col = factor(threshold))) + geom_line() +
         facet_grid(p_fac~t_fac) +
-        ylim(0, 10) +
+        ylim(0, 10) + 
         theme(panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
               panel.background = element_blank()) +
@@ -474,14 +437,14 @@ server <- function(input, output, session) {
       ggplot(filtered_p2,
              aes(x = vu, y = y * input$qb, group = threshold, col = factor(threshold))) + geom_line() +
         facet_grid(p_fac~t_fac) +
-        ylim(0, 10 * input$qb) +
+        ylim(0, 10 * input$qb) + 
         theme(panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
               panel.background = element_blank()) +
         scale_color_manual(name = "Benefit-risk\nthreshold", values = pal2) +
         labs(x = "Vaccine uptake",
              y = "Difference in trial length (y)",
-             title= "Quali benefit-risk ratio")  +   #NOT SURE WHAT TITLE IS PREFERRED?
+             title= "QALY benefit-risk ratio")  +  
         theme(plot.title = element_text(hjust = 0.5)) +
         theme(plot.title = element_text(size = 14)) +
         
