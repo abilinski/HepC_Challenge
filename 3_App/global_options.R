@@ -33,6 +33,7 @@ library(lmtest)
 library(viridis)
 library(RColorBrewer)
 library(countrycode)
+library(markdown)
 
 # ggplot theme and color options
 theme_opts = theme_minimal() + 
