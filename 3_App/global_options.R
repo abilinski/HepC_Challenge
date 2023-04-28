@@ -34,6 +34,7 @@ library(viridis)
 library(RColorBrewer)
 library(countrycode)
 library(markdown)
+library(scales)
 
 # ggplot theme and color options
 theme_opts = theme_minimal() + 
