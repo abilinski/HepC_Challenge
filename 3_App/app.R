@@ -6,7 +6,8 @@
 ### SETUP ###
 
 # source global options
-source("../global_options.R")
+#source("../global_options.R")
+source("global_options.R") #edited for Shiny app
 
 # libraries
 library(shiny)
@@ -252,7 +253,7 @@ server <- function(input, output, session) {
     
     df2 = expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500), #threshold value
                       e = input$e,  #vaccine efficacy
-                      vu = seq(.1, .9, by = .05), #vaccine uptake
+                      vu = seq(.01, .9, by = .01), #vaccine uptake
                       t = c(input$t,1,5), #number of trials
                       p = c(input$p,0.06), #probability of success
                       y = NA,
@@ -293,19 +294,19 @@ server <- function(input, output, session) {
   })
   
   output$trial_infections<-renderText({
-    paste0("The expected number of trial infections is ", round(filtered_computed()$infs,digits=0), ".")
+    paste0("The expected number of trial infections is ", comma(round(filtered_computed()$infs,digits=0)), ".")
   })
   
   output$infections_averted_discounted<-renderText({
-    paste0("The expected infections averted (discounted) is ", round(filtered_computed()$benefit, digits=0), ".")
+    paste0("The expected infections averted (discounted) is ", comma(round(filtered_computed()$benefit, digits=0)), ".")
   })
   
   output$years_saved<-renderText({
-    paste0("The expected number of years saved by a challenge trial is ", round(filtered_computed()$expected_years_saved, digits=1), ".")
+    paste0("The expected number of years saved by a challenge trial is ", comma(round(filtered_computed()$expected_years_saved, digits=1)), ".")
   })
   
   output$br_ratio <- renderText({
-    paste0("The benefit-risk ratio is ",round(filtered_computed()$ratio, digits=0), ".")
+    paste0("The benefit-risk ratio is ",comma(round(filtered_computed()$ratio, digits=0)), ".")
   })
   
   output$results_summary <- renderUI({
@@ -360,7 +361,16 @@ server <- function(input, output, session) {
         geom_point(data=filtered2 %>% filter(p == input$p & t == input$t), aes(x=input$vu, y=fig1_benefit()/1e6),
                    color="red",
                    size=3,
-                   show.legend=FALSE)
+                   show.legend=FALSE) +
+      
+      #Add label:
+      geom_text(data=filtered2 %>%
+                  filter(p == input$p & t == input$t), 
+                aes(x=input$vu, y=fig1_benefit()/1e6, label=round(fig1_benefit()/1e6, digits=2)),
+                color="black",
+                size=3,
+                hjust=1.2,
+                vjust=2)
     }
     else {
       #code for plot 2
@@ -381,7 +391,16 @@ server <- function(input, output, session) {
         geom_point(data=filtered2 %>% filter(p == input$p & t == input$t), aes(x=input$vu, y=(fig1_benefit()/1e6) * input$cost),
                    color="red",
                    size=3,
-                   show.legend=FALSE)
+                   show.legend=FALSE) +
+        
+        #Add label:
+        geom_text(data=filtered2 %>%
+                    filter(p == input$p & t == input$t), 
+                  aes(x=input$vu, y=(fig1_benefit()/1e6) * input$cost, label=round((fig1_benefit()/1e6) * input$cost, digits=2)),
+                  color="black",
+                  size=3,
+                  hjust=1.2,
+                  vjust=2)
       
     }
   })
@@ -429,7 +448,7 @@ server <- function(input, output, session) {
                   color="black",
                   size=3,
                   hjust=1.2,
-                  vjust=-1)
+                  vjust=2)
     }
     else {
       #Figure 2: plot B
@@ -441,7 +460,9 @@ server <- function(input, output, session) {
         theme(panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
               panel.background = element_blank()) +
-        scale_color_manual(name = "Benefit-risk\nthreshold", values = pal2) +
+        scale_color_manual(name = "Benefit-risk\nthreshold", 
+                           values = pal2, 
+                           labels= comma(c(50, 100, 250, 500, 1000, 2500) * input$qb)) +
         labs(x = "Vaccine uptake",
              y = "Difference in trial length (y)",
              title= "QALY benefit-risk ratio")  +  
@@ -461,11 +482,11 @@ server <- function(input, output, session) {
         geom_text(data=filtered_p2 %>%
                     filter(t_fac == paste("Number of candidates:", input$t) &
                              p_fac == paste("Per-candidate success probability:", input$p)),  
-                  aes(x=input$vu, y=input$y * input$qb, label=ratio_val()),
+                  aes(x=input$vu, y=input$y * input$qb, label=ratio_val()*input$qb),
                   color="black",
                   size=3,
                   hjust=1.2,
-                  vjust=-1)
+                  vjust=2)
     }
     
   })
