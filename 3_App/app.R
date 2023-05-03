@@ -253,7 +253,7 @@ server <- function(input, output, session) {
     
     df2 = expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500), #threshold value
                       e = input$e,  #vaccine efficacy
-                      vu = seq(.01, .9, by = .01), #vaccine uptake
+                      vu = c(seq(0.01, 0.1, by = 0.01), seq(0.15, 0.9, by = 0.05)), #vaccine uptake
                       t = c(input$t,1,5), #number of trials
                       p = c(input$p,0.06), #probability of success
                       y = NA,
