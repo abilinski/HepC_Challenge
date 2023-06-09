@@ -65,7 +65,6 @@ df$benefit = df$expected_years_saved*df$v*df$e*df$i
 df$ratio = df$benefit/df$infs
 df$ratio2 = (df$expected_years_saved_U*df$d*df$e*df$i)/df$infs
 
-
 #### FIGURES ####
 pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
 
@@ -79,7 +78,6 @@ df_plots = df %>% gather(var, value, prob_success,
          y_lab = paste("Difference in trial length: ", y, "y", sep = ""),
          y_lab = factor(y_lab, levels = paste("Difference in trial length: ", c(2.5, 5, 10), "y", sep = ""))) %>%
   filter(d==0.03)
-
 
 # success probabilities
 a = ggplot(df_plots %>% filter(var%in%c("prob_success")), 
@@ -99,8 +97,7 @@ a = ggplot(df_plots %>% filter(var%in%c("prob_success")),
 # save results
 ggsave(a, filename = here("2_Figures", "figure_prob.png"), width = 10, height = 3)
 
-
-# plot results - Figure 1
+# expected years saved
 b = ggplot(df_plots %>% filter(var%in%c("expected_years_saved", "expected_years_saved_U")), 
            aes(x = p, y = value, col = factor(t), group = t)) + 
   geom_line() + 
@@ -117,8 +114,7 @@ b = ggplot(df_plots %>% filter(var%in%c("expected_years_saved", "expected_years_
 
 ggsave(b, filename = here("2_Figures", "figure_ey.png"), width = 10, height = 6)
 
-
-#### risks and benefits plot
+#### expected infections averted
 df_plots2 = df %>% filter(e==.7 & i == 1350000 & t %in% c(1,3,5) & p %in% c(.07, .11) & d == 0.03)
 ggplot(df_plots2 %>%
          mutate(t_fac = paste("Number of candidates:", t),
@@ -135,6 +131,7 @@ ggplot(df_plots2 %>%
 ggsave(filename = here("2_Figures", "figure_ben.png"), width = 9, height = 6)
 ggsave(filename = here("2_Figures", "figure_ben.tiff"), width = 9, height = 6)
 
+#### expected infections averted - monetary terms
 ggplot(df_plots2 %>%
          mutate(t_fac = paste("Number of candidates:", t),
                 p_fac = paste("Per-candidate success probability:", p),
@@ -326,8 +323,6 @@ max(df_plots2$ratio)
 quantile(df_plots2$ratio, c(.25, .75))*100
 quantile(df_plots2$ratio[df_plots2$p%in%c(.11)], c(.25, .75))*100
 quantile(df_plots2$ratio[df_plots2$p%in%c(.07)], c(.25, .75))*100
-
-
 
 # impact of BRR assumptions - discounting
 k = df %>% filter(p %in% c(.07, .11) & i == 1350000) %>% 
