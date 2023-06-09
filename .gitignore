@@ -39,3 +39,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Drafts
+4_Drafts*
