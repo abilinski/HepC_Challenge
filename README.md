@@ -1,4 +1,4 @@
-# Hepatitis C Challenge Studies
+# HCV Vaccine Challenge Trials
 
 
 This repository contains replication code for "First Do No Harm? Modeling risks and benefits of challenge trials for hepatitis C vaccine development."  An interactive version of the model can be found [here](https://rachel-slimovitch.shinyapps.io/3_app/).
