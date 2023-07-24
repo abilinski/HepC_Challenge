@@ -63,7 +63,9 @@ df$benefit = df$expected_years_saved*df$v*df$e*df$i
 
 # calculate infection BRR
 df$ratio = df$benefit/df$infs
-df$ratio2 = (df$expected_years_saved_U*df$d*df$e*df$i)/df$infs
+df$ratio2 = (df$expected_years_saved_U*df$v*df$e*df$i)/df$infs
+
+save(df, file = here("0_Data", "Processed_Data", "output.RData"))
 
 #### FIGURES ####
 pal = c("#fbe392", "#fab24d", "#ec8400", "#d25700", "#b02912", "#311432")
@@ -197,6 +199,7 @@ df2 = expand_grid(threshold = c(50, 100, 250, 500, 1000, 2500),
            as.numeric(d!=.03) + as.numeric(i!=1350000)) %>%
   filter(chk <= 1)
 
+# run over optimization
 for(i in 1:nrow(df2)) {
   temp = optim(par = 5, fn = get_threshold, threshold = df2$threshold[i],
                    t = df2$t[i], p = df2$p[i], e = df2$e[i], d = df2$d[i], 
@@ -206,6 +209,8 @@ for(i in 1:nrow(df2)) {
   df2$y[i] = temp$par
   df2$converged[i] = temp$value
 }
+
+save(df2, file = here("0_Data", "Processed_Data", "output2.RData"))
 
 #### FRONTIER FIGURES ####
 
@@ -283,7 +288,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.7, i < 1350000) %>%
 
 ggsave(filename = here("2_Figures", "figure_BRR_lower_inc.png"), width = 9, height = 6)
 
-# sens plot (half rate)
+# sens plot (non base)
 ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & !base) %>%
          mutate(threshold = comma(threshold*100),
                 threshold = factor(threshold, c("5,000", "10,000", "25,000", "50,000", "100,000", "250,000"))), 
@@ -301,33 +306,41 @@ ggsave(filename = here("2_Figures", "figure_BRR_alt.png"), width = 9, height = 6
 #### TEXT ####
 # success probability
 df %>% filter(t %in% c(1,3,5) & p %in% c(.07, .11)) %>% 
-  dplyr::select(p, t, prob_success) %>% unique()
+  dplyr::select(p, t, prob_success) %>% unique() %>%
+  mutate(prob_success_rounded = round(prob_success, 2))
 
 # outcomes
 df %>% filter(t %in% c(3) & p %in% c(.07, .11) & i == 1350000 & 
                 y == 5 & e == .7 & v %in% c(.2, .9) & d == 0.03) %>% 
   dplyr::select(p, t, v, benefit, infs, ratio) %>% unique() %>%
-  mutate(QALY_ratio = ratio*100, cost = benefit*500/1000000, per_inf = cost/infs*1000000)
+  mutate(
+    benefit_rounded = round(benefit/1000)*1000,
+    ratio_rounded = round(ratio/10)*10,
+    QALY_ratio = signif(ratio*100, 2), cost = benefit*500/1000000,
+    cost_rounded = round(cost), per_inf = cost/infs*1000000,
+    per_inf_rounded = round(per_inf/10000)*10000)
 
 
 # varying number of candidates
 df %>% filter(t %in% c(1,5) & p %in% c(.11) & i == 1350000 & 
                 y == 5 & e == .7 &  v %in% c(.2, .9) & d == 0.03) %>% 
-  dplyr::select(p, t, v, benefit, infs, ratio) %>% unique()
+  dplyr::select(p, t, v, benefit, infs, ratio) %>% unique() %>%
+  mutate(benefits_round = round(benefit/1000)*1000,
+         infs_round = round(infs))
 
 # range of ratios
-min(df_plots2$ratio)
-max(df_plots2$ratio)
+signif(min(df_plots2$ratio*100),2)
+signif(max(df_plots2$ratio*100),2)
 
 # IQRs
-quantile(df_plots2$ratio, c(.25, .75))*100
-quantile(df_plots2$ratio[df_plots2$p%in%c(.11)], c(.25, .75))*100
-quantile(df_plots2$ratio[df_plots2$p%in%c(.07)], c(.25, .75))*100
+signif(quantile(df_plots2$ratio, c(.25, .75))*100,2)
+signif(quantile(df_plots2$ratio[df_plots2$p%in%c(.11)], c(.25, .75))*100,2)
+signif(quantile(df_plots2$ratio[df_plots2$p%in%c(.07)], c(.25, .75))*100,2)
 
 # impact of BRR assumptions - discounting
 k = df %>% filter(p %in% c(.07, .11) & i == 1350000) %>% 
   group_by(p,t,v,e,y) %>% summarize(diff = ratio[1]/ratio[2], n = length(ratio))
-median(k$diff)
+round(median(k$diff),1)
 
 # impact of BRR assumptions - generous
 g = df %>% filter(p %in% c(.07, .11) & i == 1350000 & d==0.03) %>% 
@@ -336,6 +349,7 @@ g = df %>% filter(p %in% c(.07, .11) & i == 1350000 & d==0.03) %>%
 1/median(g$diff)
 
 # ranges
-mean(df_plots2$ratio>50)
+mean(df_plots2$ratio>=50)
 mean(df_plots2$ratio<2500)
 mean(df_plots2$ratio[df_plots2$v>.5]>1000)
+
