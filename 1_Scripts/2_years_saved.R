@@ -77,8 +77,8 @@ df_plots = df %>% gather(var, value, prob_success,
   mutate(var2 = ifelse(var=="prob_success", "Probability vaccine developed",
                        "Years saved (base case)"),
          var2 = ifelse(var=="expected_years_saved_U", "Years saved (generous)", var2),
-         y_lab = paste("Difference in trial length: ", y, "y", sep = ""),
-         y_lab = factor(y_lab, levels = paste("Difference in trial length: ", c(2.5, 5, 10), "y", sep = ""))) %>%
+         y_lab = paste("Difference in trial duration: ", y, " years", sep = ""),
+         y_lab = factor(y_lab, levels = paste("Difference in trial duration: ", c(2.5, 5, 10), " years", sep = ""))) %>%
   filter(d==0.03)
 
 # success probabilities
@@ -97,7 +97,7 @@ a = ggplot(df_plots %>% filter(var%in%c("prob_success")),
   geom_vline(xintercept = 0.11, lty = 2, col = "grey") + ylim(0,1)
 
 # save results
-ggsave(a, filename = here("2_Figures", "figure_prob.png"), width = 10, height = 3)
+ggsave(a, filename = here("2_Figures", "figure_prob.png"), width = 10, height = 5)
 
 # expected years saved
 b = ggplot(df_plots %>% filter(var%in%c("expected_years_saved", "expected_years_saved_U")), 
@@ -125,7 +125,7 @@ ggplot(df_plots2 %>%
        aes(x = v, y = benefit/1e6, group = paste(y, p), col = factor(y))) +
   facet_grid(p_fac~t_fac) + 
   geom_line() +
-  scale_color_manual(name = "Difference in\ntrial length (y)", values = pal[c(1,3,5)]) + 
+  scale_color_manual(name = "Difference in\ntrial duration (years)", values = pal[c(1,3,5)]) + 
   theme(panel.grid.minor = element_blank(),
         panel.background = element_blank()) + 
   labs(x = "Vaccine uptake", y = "Future infections averted (m, discounted)") 
@@ -141,10 +141,10 @@ ggplot(df_plots2 %>%
        aes(x = v, y = benefit/1e6*500, group = paste(y, p), col = factor(y))) +
   facet_grid(p_fac~t_fac) + 
   geom_line() +
-  scale_color_manual(name = "Difference in\ntrial length (y)", values = pal[c(1,3,5)]) + 
+  scale_color_manual(name = "Difference in\ntrial duration (years)", values = pal[c(1,3,5)]) + 
   theme(panel.grid.minor = element_blank(),
         panel.background = element_blank()) + 
-  labs(x = "Vaccine uptake", y = "Costs of achieving future benefits through treatment ($m)") 
+  labs(x = "Vaccine uptake", y = "Cost of achieving challenge trial benefits through treatment ($m)") 
 
 ggsave(filename = here("2_Figures", "figure_ben_monetary.png"), width = 9, height = 6)
 
@@ -223,7 +223,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & base),
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR.png"), width = 9, height = 6)
 
@@ -238,7 +238,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & base) %>%
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold (QALY)", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR_QALY.png"), width = 9, height = 6)
 ggsave(filename = here("2_Figures", "figure_BRR_QALY.tiff"), width = 9, height = 6)
@@ -254,7 +254,7 @@ ggplot(df2 %>% filter(d < 0.03, e == 0.7, i == 1350000) %>%
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR_no_discount.png"), width = 9, height = 6)
 
@@ -269,7 +269,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.9, i == 1350000) %>%
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR_high_eff.png"), width = 9, height = 6)
 
@@ -284,7 +284,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.7, i < 1350000) %>%
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR_lower_inc.png"), width = 9, height = 6)
 
@@ -299,7 +299,7 @@ ggplot(df2 %>% filter(d == 0.03, e == 0.7, i == 1350000 & !base) %>%
         panel.grid.major = element_blank(),
         panel.background = element_blank()) + 
   scale_color_manual(name = "Benefit-risk\nthreshold", values = pal) +
-  labs(x = "Vaccine uptake", y = "Difference in trial length (y)")
+  labs(x = "Vaccine uptake", y = "Difference in trial duration (years)")
 
 ggsave(filename = here("2_Figures", "figure_BRR_alt.png"), width = 9, height = 6)
 
@@ -351,5 +351,5 @@ g = df %>% filter(p %in% c(.07, .11) & i == 1350000 & d==0.03) %>%
 # ranges
 mean(df_plots2$ratio>=50)
 mean(df_plots2$ratio<2500)
-mean(df_plots2$ratio[df_plots2$v>.5]>1000)
-
+mean(df_plots2$v[df_plots2$ratio>1000]>.5)
+mean(df_plots2$ratio[df_plots2$v>.5]>100)
